@@ -1,0 +1,106 @@
+%
+% msvfonts.sty
+%
+% This style file sets fonts and math fonts
+%
+
+%----------------------------------------------------------------------
+% Identify package
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{msvfonts}%
+    [2015/04/20 v0.2 %
+    msvfonts.sty MSV presets for fonts]
+
+\RequirePackage{kvoptions}%
+\SetupKeyvalOptions{family=msvfonts,prefix=msvfonts@}%
+
+\DeclareBoolOption[true]{timestext}
+\DeclareComplementaryOption{fancytext}{timestext}
+
+\DeclareBoolOption[false]{timesmath}
+\DeclareComplementaryOption{cmrmath}{timesmath}
+
+\DeclareDefaultOption{\PassOptionsToPackage{\CurrentOption}{newtxmath}}
+\ProcessKeyvalOptions*
+
+%----------------------------------------------------------------------
+% Conditionals for XeTeX/LuaTeX
+%
+\RequirePackage{ifpdf,ifxetex,ifluatex}
+\newif\ifxetexorluatex
+\ifxetex
+  \xetexorluatextrue
+\else
+  \ifluatex
+    \xetexorluatextrue
+  \else
+    \xetexorluatexfalse
+  \fi
+\fi
+\newif\ifanypdf
+\ifxetexorluatex
+  \anypdftrue
+\else
+  \ifpdf
+    \anypdftrue
+  \else
+    \anypdffalse
+  \fi
+\fi
+
+%----------------------------------------------------------------------
+% Font settings
+\RequirePackage{amsmath,amsthm,amssymb,mathtools}
+  % needs to be loaded before newtxmath for some older versions of newtxmath
+
+\ifxetexorluatex
+  \RequirePackage[no-math]{fontspec}
+  \ifmsvfonts@timestext
+    \setmainfont{TeXGyreTermes}
+  \else
+    \setmainfont[
+      Path = fonts/,
+      Extension = .ttf ,
+      Scale = 1.10,
+      BoldFont={EBGaramond-Bold},
+      ItalicFont={EBGaramond-Italic},
+      BoldItalicFont={EBGaramond-BoldItalic}
+      ]{EBGaramond-Regular}%[Numbers={OldStyle,Proportional},RawFeature={+ss06}]
+  \fi
+  \setsansfont[
+  	Path = fonts/,
+    Extension = .ttf ,
+    Scale = 1.0,
+    BoldFont={TUMNeueHelvetica-Bold},
+    ItalicFont={TUMNeueHelvetica-Italic},
+    BoldItalicFont={TUMNeueHelvetica-BoldItalic}
+	]{TUMNeueHelvetica-Regular}
+  \ifmsvfonts@timesmath
+    \RequirePackage{unicode-math}
+    \setmathfont{texgyretermes-math.otf}
+    \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+    \let\mathbb\relax % remove the definition by unicode-math
+    \DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}
+  \else
+    % We stay with Computer Modern ...
+  \fi
+\else % latex, pdflatex, etc.
+  \ifmsvfonts@timestext
+    \RequirePackage{newtxtext} % loads Times font for text
+  \else
+    \RequirePackage[scale=1.10]{CormorantGaramond} % loads Garamond font for text
+  \fi
+  \usepackage{helvet} % loads Helvetica for sans-serif text
+  \ifmsvfonts@timesmath
+    \RequirePackage[cmintegrals]{newtxmath} % loads Times font for math
+    % Overwrite \sum and \prod with cm symbols
+    \DeclareSymbolFont{largesymbolsCM}{OMX}{cmex}{m}{n}
+    \let\sum\relax
+    \DeclareMathSymbol{\sum}{\mathop}{largesymbolsCM}{"50}
+    \let\prod\relax
+    \DeclareMathSymbol{\prod}{\mathop}{largesymbolsCM}{"51}
+  \else
+    % We stay with Computer Modern ...
+  \fi
+\fi

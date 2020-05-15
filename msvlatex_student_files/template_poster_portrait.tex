@@ -1,0 +1,354 @@
+\documentclass[a0,2col,print,fontscale=1.3]{msvposter}
+%
+% Options (among others):
+%
+% nopstricks (default): do not \RequirePackage{pstricks} and do not use ps to draw boxes
+% pstricks:             use pstricks package and draw ps boxes
+% rounded:              use rounded boxes (only works with pstricks)
+
+% load required packages
+\usepackage[ngerman,english]{babel}
+%\usepackage{psfrag}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+% my definitions
+\DeclareMathAlphabet{\mathbit}{OML}{cmr}{bx}{it}
+
+
+\newcommand{\marked}[1]{#1}
+\newcommand{\B}[1]{\boldsymbol{#1}}
+\newcommand{\nt}[1]{\textnormal{#1}}
+
+\newcommand{\Hermitian}{\textnormal{H}}
+\newcommand{\T}{\textnormal{T}}
+\newcommand{\link}[2]{$({#1,#2})$}
+\newcommand{\setof}[1]{\mathcal{#1}}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+\newcommand{\vecn}[3]{\boldsymbol{#1}^{#2}_{#3}}
+\newtheorem{theo}{Theorem}
+\newcommand{\RX}{\textnormal{RX}}
+\newcommand{\TX}{\textnormal{TX}}
+\newcommand{\Ntx}{N_{\text{tx}}}
+\newcommand{\Nrx}{N_{\text{rx}}}
+\newcommand{\Pntx}{\frac{P}{\Ntx}}
+\newcommand{\half}{\nicefrac{-1}{2}}
+\newcommand{\Eqcode}{}
+\DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\WF}{WF}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\st}{s. t.}
+\DeclareMathOperator*{\dom}{dom}
+\DeclareMathOperator*{\co}{co}
+\DeclareMathOperator*{\He}{H}
+%\usepackage{tikz}
+\colorlet{ULTrans}{red}
+\colorlet{DLTrans}{orange}
+\colorlet{ULNoise}{TUMDarkBlue!60}
+\colorlet{DLNoise}{TUMBlue}
+
+% \tikzset{
+%   every overlay node/.style={
+%     draw=black,fill=white,rounded corners,anchor=north west,
+%   }
+% }
+% % Usage:
+% % \tikzoverlay at (-1cm,-5cm) {content};
+% % or
+% % \tikzoverlay[text width=5cm] at (-1cm,-5cm) {content};
+% \def\tikzoverlay{%
+%    \tikz[baseline,overlay]\node[every overlay node]
+% }%
+
+\begin{document}
+
+\author{\underline{Andreas Dotzler}\footnotemark[1],  Maximilian Riemensberger\footnotemark[1], Guido Dietl\footnotemark[2], and Wolfgang Utschick\footnotemark[1]}
+\title{Interference Robustness for Cellular MIMO  Networks 
+}
+\affiliationA{[1] \MSVname - \TUMname} % text below authors, first line
+\affiliationB{[2] DOCOMO Euro-Labs and University of Applied Sciences Landshut} % text below authors, second line
+
+
+\begin{poster}
+
+\begin{postercolumn}
+
+
+\begin{posterbox}{System Model}
+\begin{itemize}
+ \item downlink of a cellular network
+ \begin{itemize}
+%       \item set of users $\setof{K}, K =  \lvert \setof{K} \rvert$ set of transmitters $\setof{T}, T =  \lvert \setof{T} \rvert$
+%       \item MIMO $\Nrx$ receive antennas, $\Ntx$ transmit antennas 
+%       \item $\B H_{kt} \in \mathbbC}^{\Nrx \times \Ntx }$ channel between user $k$ and transmitter $t$
+%       \item $\setof{K}_t$ users assigned to $t$, served with covariances $\setof{Q}_t = \left(\B Q_{k} : k \in \setof{K}_t \right)$ 
+%       \item noise plus interference covariances are $\setof{R}_t = \left(\B R_{k} : k \in \setof{K}_t \right)$, where 
+% $
+%     
+  \item $\setof{K}$ set of users, $\setof{T}$ set of transmitters , $\setof{K}_t$ set of transmitters served by $t$
+  \item $\B H_{kt} \in \mathbb{C}^{\Nrx \times \Ntx }$ channel between user $k$ and transmitter $t$
+  \item downlink transmit covariances 
+        $\setof{Q}_t = \left(\B Q_{k} : k \in \setof{K}_t \right)$ 
+  \item sum transmit covariance $\B Q_t = \sum_{k\in\setof{K}_t} \B Q_k$
+  \item noise plus (inter-cell) interference covariances
+        $\setof{R}_t = \left( \B R_{k} : k \in \setof{K}_t \right)$, with
+ $$\B R_k = \B R_{\eta,k} + \sum_{t^{\prime}  \in  \setof{T} \setminus t} \B H_{kt} \B Q_{t^{\prime}} \B H_{kt}^{\He}$$ 
+  \item utility: weighted sum-rate optimization $\sum_{k\in\setof{K}} w_k r_k(\setof{Q}_t,\B R_k)$
+  \item $r_k(\setof{Q}_t,\B R_k)$ downlink data rate of user $k$
+  \item DPC and encoding order according to weights
+\end{itemize}
+\item virtual uplink model
+\begin{itemize}
+ \item uplink noise covariance $\B \Omega_t$ 
+ \item uplink transmit covariances $\setof{S}_t = \left(\B \Sigma_{k} : k \in \setof{K}_t\right)$
+ \item uplink data rate of user $k$ is $r_k(\setof{S}_t,\B \Omega_t)$. 
+\end{itemize}
+
+\end{itemize}
+ 
+
+\end{posterbox}
+
+\begin{posterbox}{Minimax Uplink--Downlink Duality [3]}
+  \begin{itemize}\itemsep7mm
+    \item generalization of [4] to weighted sum-rate and general conic constraints 
+    \item minimax: optimize transmit strategy under worst case noise assumption
+  \end{itemize}
+          \begin{equation*}   
+            \label{eq:minimax_dl_mu}
+            \min_{{\color{DLNoise}\left(\B R_k : k \in \setof{K}_t\right) \in \setof{Y}^{\perp}} } \left \lbrace  \max_{{\color{DLTrans}\setof{Q}_t,\B Z \in \setof{Z}}} \left \lbrace \sum_{k \in \setof{K}_t} w_k r_k(\setof{Q}_t, \B R_k) : {\color{DLTrans}\B Q_t \preceq \B C + \B Z}  \right \rbrace : {\color{DLNoise}\sum\limits_{k \in \setof{K}_t} \tr\left(\B B_k \B R_k\right) = \sigma^{2}}\right \rbrace
+          \end{equation*}
+  \begin{itemize}
+    \item design parameters: $\B C, \left(\B B_k : k \in \setof{K}_t\right), \sigma^2$ and
+linear subspaces $\setof{Z},\setof{Y}^{\perp}$
+    \item can be transformed to equivalent uplink problem
+  \end{itemize}
+          \begin{equation*}   
+            \label{eq:minimax_ul_mu}
+            \min_{\color{ULNoise}{ \B \Omega_t \in \setof{Z}^{\perp}}}\! \left \lbrace \max_{\color{ULTrans}{\setof{S}_t,\left(\B Y_k: k \in \setof{K}_t\right) \in \setof{Y}} }\!\left \lbrace \sum_{k \in \setof{K}_t} w_k r_k(\setof{S}_t, \B \Omega_t) : {\color{ULTrans}\B \Sigma_k \preceq \B B_k + \B Y_k \forall k}\!\right \rbrace : {\color{ULNoise}\tr\left(\B C \B \Omega_t \right) = \sigma^{2}}\!\right \rbrace
+          \end{equation*}
+  \begin{itemize}\itemsep7mm
+    \item $\setof{Z}^{\perp}$ and $\setof{Y}$ are the orthogonal subspaces of $\setof{Z},\setof{Y}^{\perp}$
+    \item proof via Lagrange duality and zero-duality gap   
+  \end{itemize}
+\begin{center}
+\begin{tabular}{ |c|c| }
+\hline
+\hphantom{\rule{14cm}{0pt}} & \hphantom{\rule{21cm}{0pt}} \\[-1.5ex]
+\color{DLTrans} Downlink - Transmit & \color{DLNoise} Downlink - Noise\\[0.9ex]
+\color{DLTrans} $\B Q_t \preceq \B C + \B Z$ & \color{DLNoise} $\sum_{k \in \setof{K}_t}\tr\left(\B B_k \B R_k\right) = \sigma^{2}$\\[0.9ex]
+\color{DLTrans} $ \B Z \in \setof{Z}$ & \color{DLNoise} $\left(\B R_k : k \in \setof{K}_t\right) \in \setof{Y}^{\perp}$\\[0.9ex]
+\hline
+\hspace{14cm} & \hspace{21cm}\\[-1.5ex]
+\color{ULNoise} Uplink - Noise & \color{ULTrans} Uplink - Transmit \\[0.9ex]
+\color{ULNoise} $\tr\left(\B C \B \Omega_t \right) = \sigma^{2}$ &  \color{ULTrans} $\B \Sigma_k \preceq \B B_k + \B Y_k \forall k $\\[0.9ex]
+\color{ULNoise} $\B \Omega_t \in \setof{Z}^{\perp}$ & \color{ULTrans} $\left(\B Y_k: k \in \setof{K}_t\right) \in \setof{Y}$\\[0.9ex]
+\hline
+\end{tabular}
+\end{center}
+
+\end{posterbox}
+
+% NO LINE BREAKS BEFORE NEXT POSTER COLUMN
+\end{postercolumn}%
+\hskip\fill
+\begin{postercolumn}
+
+
+
+\begin{posterbox}{Worst Case Noise}
+  \begin{itemize}\itemsep7mm
+   
+    \item downlink problem, sum power constraint and worst case noise directions
+     \begin{equation*}   
+      \min_{{\color{DLNoise}\left(\B R_k : k \in \setof{K}_t\right) \in \setof{Y}^{\perp}}} \left \lbrace  \max_{\color{DLTrans}{\setof{Q}_t,\tr\left(\B Q_t \right)=P}} \left \lbrace\sum_{k\in\setof{K}_t}w_k r_k(\setof{Q}_t,\B R_k)\right \rbrace: {\color{DLNoise}\tr\left(\B R_k\right)=1 \forall k }\right \rbrace.
+    \end{equation*}
+   \item generic model and transformation to uplink problem
+\end{itemize}
+\begin{center}
+\begin{tabular}{ |c|c| }
+\hline
+\hspace{14cm} & \hspace{21cm}\\[-1.5ex]
+\color{DLTrans} Downlink - Transmit &\color{DLNoise} Downlink - Noise \\[0.9ex]
+\color{DLTrans} $\setof{Z} = \left \lbrace \B Z : \tr\lbrace \B Z \rbrace = 0\right \rbrace$ &\color{DLNoise} $\setof{Y}^{\perp} = \left \lbrace \left(\B R_k : k \in \setof{K}_t\right):\tr\left(\B R_j\right) = \tr\left(\B R_k\right) \forall j,k \right \rbrace$\\[0.9ex]
+\color{DLTrans} $\B C = \Pntx \B I$ &\color{DLNoise} $\B B_k = \frac{1}{K_t}\B I \ \forall k, \sum_{k \in \setof{K}_t} \tr\left(\B B_k \B R_k\right) = 1$\\[0.9ex]
+\hline
+\hspace{14cm} & \hspace{21cm}\\[-1.5ex]
+\color{ULNoise} Uplink - Noise & \color{ULTrans} Uplink - Transmit\\[0.9ex]
+\color{ULNoise} $\setof{Z}^{\perp} = \left \lbrace \B Z : \B Z = \lambda \B I, \lambda \in \mathbb{R} \right \rbrace $ & \color{ULTrans} $\setof{Y} = \left \lbrace \left(\mu_k \B I: k \in \setof{K}_t\right) :\sum_{k \in \setof{K}_t} \mu_k = 0 \right \rbrace$ \\[0.9ex]
+\color{ULNoise} $\tr\left(\B C \B \Omega_t \right) = 1$ & \color{ULTrans} $\B \Sigma_k \preceq \frac{1}{K_t}\B I + \mu_k \B I \ \forall k \in \setof{K}_t$\\[0.9ex]
+\hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+    \item uplink noise is fixed
+    \item uplink covariances can be chosen white under sum power constraint     
+    \item uplink problem (after some reformulations)
+     \begin{equation*}   
+        \max_{\color{ULTrans}\setof{S}_t}\left \lbrace\sum_{k\in\setof{K}_t}w_k r_k(\setof{S}_t,{\color{ULNoise}\B I}): {\color{ULTrans}\B \Sigma_k=P_k \B I, P_k\geq 0 \ \forall k, \sum_{k\in\setof{K}_t}P_k=P}\right \rbrace
+     \end{equation*}  
+  \end{itemize}
+\end{posterbox}
+
+
+\begin{posterbox}{Conclusions}
+\begin{itemize}
+\item interesting symmetry
+
+
+
+  \begin{center}
+    \begin{tabular}{|l|c|c|c|c|c|c|}
+      \hline
+      & DL  & UL  &  $\color{DLTrans} \B Q_t$ & $\color{DLNoise} \setof{R}_t$ & $\color{ULTrans} \setof{S}_t$ & $\color{ULNoise} \B \Omega_t$ \\
+      \hline
+      worst case noise & minimax & max  & power & shaping   & power & fixed\\
+      \hline
+      shaping constraint & max & minimax & shaping  & power & fixed & power \\
+      \hline
+    \end{tabular}
+  \end{center}
+
+\vspace{0.4cm} 
+
+ \item simulation results indicate that the shaping constraint approach has potential to increase robustness and performance
+ \item outlook
+ \begin{itemize}
+  \item DPC is not implementable, look for less complex methods 
+  \item investigate approaches that are between the two extremes (constrain interference to a linear subspace)
+  \item potential new applications in the field of robust transmission strategies or cognitive radio networks 
+ \end{itemize}
+\end{itemize}
+\end{posterbox}
+
+\begin{posterbox}{References}
+\tiny{
+\begin{enumerate}
+\item
+S.~Vishwanath, S.~Boyd, and A.~Goldsmith, ``Worst-case capacity of gaussian
+  vector channels,'' in \emph{Proocedings of {IEEE} Canadian Workshop on
+  Information Theory}, 2003.
+\item
+E.~Jorswieck and H.~Boche, ``Performance analysis of capacity of {MIMO} systems
+  under multiuser interference based on {Worst-Case} noise behavior,''
+  \emph{{EURASIP} Journal on Wireless Communications and Networking}, no.~2,
+  pp. 273--285, 2004.
+\item
+A.~Dotzler, M.~Riemensberger, and W.~Utschick, ``Uplink--downlink minimax
+  duality with linear conic constraints,'' in \emph{preparation}, 2012.
+\item
+W.~Yu, ``Uplink-downlink duality via minimax duality,'' \emph{{IEEE}
+  Transactions on Information Theory}, vol.~52, no.~2, pp. 361--374, Feb. 2006.
+\end{enumerate}
+}
+
+\end{posterbox}
+
+\end{postercolumn}
+
+\end{poster}
+    
+\end{document}
+% 
+% \begin{posterbox}{Worst Case Noise}
+%   \begin{itemize}\itemsep15mm
+%    
+%     \item downlink problem
+%      \begin{equation*}   
+%       \min_{\setof{R}_t } \left \lbrace  \max_{\setof{Q}_t,\tr\left(\B Q_t \right)=P} \left \lbrace\sum_{k\in\setof{K}_t}w_k r_k(\setof{Q}_t,\B R_k)\right \rbrace: \tr\left(\B R_k\right)=1 \forall k \right \rbrace.
+%     \end{equation*}
+%     \item model for sum-power constraint 
+%       \begin{equation}
+%       \label{eq:sum_power_constraint}
+%       \B C = \Pntx \B I \text{ and } \setof{Z} = \left \lbrace \B Z : \tr\lbrace \B Z \rbrace = 0\right \rbrace.
+%       \end{equation}
+%        $$\Rightarrow \setof{Z}^{\perp} = \left \lbrace \B Z : \B Z = \lambda \B I, \lambda \in \mathbb{R} \right \rbrace \text{ and } \tr\left(\B C \B \Omega_t \right) = 1$$ 
+%     results in fixed uplink noise $\B \Omega_t = \frac{1}{P}\B I$
+%     \item model for worst case noise 
+%      $\setof{Y}^{\perp} = \left \lbrace \B R_k : k \in \setof{K}_t,\tr\left(\B R_j\right) = \tr\left(\B R_k\right) \forall j,k \right \rbrace$ 
+%      chose $\color{TUMBeamerGreen} \B B_k = \frac{1}{K_t}\B I \ \forall k \in \setof{K}_t$ 
+% $\sum\limits_{k \in \setof{K}_t} \tr\left(\B B_k \B R_k\right) = 1$.
+%      
+%      $\setof{Y} = \left \lbrace \left(\mu_k \B I: k \in \setof{K}_t\right) :\sum_{k \in \setof{K}_t} \mu_k = 0 \right \rbrace \text{ and } \B \Sigma_k \leq \frac{1}{K_t}\B I + \mu_k \B I \ \forall k \in \setof{K}_t$
+% 
+% $ \Rightarrow $  uplink covariances can be chosen  white 
+% 
+% %$$\B \Sigma_k \leq \B B_k + \B Y_k \ \forall k \in \setof{K}_t \Rightarrow $$
+% 
+%      
+%      \item uplink problem (after some reformulations)
+%      \begin{equation*}   
+%         \max_{\setof{S}_t}\left \lbrace\sum_{k\in\setof{K}_t}w_k r_k(\setof{S}_t,\B I):\B \Sigma_k=1P_k \B I, P_k\geq0 \forall k, \sum_{k\in\setof{K}_t}P_k=P\right \rbrace.
+%      \end{equation*}  
+%   \end{itemize}
+% \end{posterbox}
+
+% \begin{posterbox}{Shaping Constraint}
+%   \begin{itemize}\itemsep7mm
+%     \item downlink problem, shaping constraint and fixed noise covariances
+%       \begin{equation}  
+%         \label{eq:downlink_shaping}
+%         \max_{\setof{Q}_t} \left \lbrace \sum_{k\in\setof{K}_t} w_k r_k(\setof{Q}_t,{\color{DLNoise}\B R_k}): {\color{DLTrans} \B Q_t \preceq \frac{P}{\Ntx}\B I} \right \rbrace. 
+%       \end{equation}
+%     \item generic model and translation to uplink problem
+% \begin{tabular}{ |c|c| }
+% \hline
+% \begin{minipage}[c][5.5cm][c]{14cm}
+% \color{DLTrans}
+% \begin{center}
+% Downlink - Transmit 
+% 
+% $\B C = \frac{P}{\Ntx}\B I$
+% 
+% $\setof{Z} = \lbrace \B 0 \rbrace$
+% \end{center}
+% \end{minipage}
+% & 
+% \begin{minipage}[c][5.5cm][c]{21cm}
+% \begin{center}
+% \color{DLNoise}
+% Downlink - Noise
+% 
+% $\setof{Y}^{\perp} = \left(\mu \B R_k: k \in \setof{K}_t\right)$
+% 
+% $\B B_k = \B I \ \forall k, \sum_{k \in \setof{K}_t} \tr\left(\B B_k \B R_k\right) = 1$
+% \end{center}
+% \end{minipage}
+% \\
+% \hline
+% \begin{minipage}[c][5.5cm][c]{14cm}
+% \color{ULNoise}
+% \begin{center}
+% Uplink - Noise
+% 
+% $\setof{Z}^{\perp} = \mathbb{C}^{\Ntx \times \Ntx}$
+% 
+% $\tr(\B \Omega_t) = \frac{1}{P}$
+% \end{center}
+% \end{minipage}
+% & 
+% \begin{minipage}[c][5.5cm][c]{21cm}
+% \color{ULTrans}
+% \begin{center}
+% Uplink - Transmit 
+% 
+% $\setof{Y} = \left \lbrace \left(\B Y_k: k \in \setof{K}_t\right) : \sum_{k \in \setof{K}_t} \tr\left(\B R_k \B Y_k\right) = 0 \right \rbrace$
+% 
+% $\B \Sigma_k \preceq \B I + \B Y_k \forall k$
+% \end{center}
+% \end{minipage}
+% \\
+% \hline
+% \end{tabular}
+%     \item uplink noise can be freely chosen under power constraint
+%     \item free uplink transmit covariances under sum power constraint $$\color{ULTrans}\sum_{k\in\setof{K}_t} \tr\left(\B R_k \B \Sigma_k\right) = 1$$
+%     \item uplink problem (after some reformulations)
+%     \begin{equation*}   
+%       \min_{\B \Omega_t,{\color{ULNoise}\tr\left(\B \Omega_t\right) = 1}} \left \lbrace \max_{\setof{S}_t} \left \lbrace \sum_{k\in\setof{K}_t} w_k r_k(\setof{S}_t,\B \Omega_t) :{\color{ULTrans}\sum_{k\in\setof{K}_t}\tr\left(\B \Sigma_k\right)=P}\right \rbrace \right\rbrace, 
+%     \end{equation*}
+%   \end{itemize}
+% \end{posterbox}

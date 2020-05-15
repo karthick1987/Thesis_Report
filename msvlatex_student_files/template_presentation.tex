@@ -1,0 +1,214 @@
+\documentclass[10pt,t]{beamer}
+\usepackage{msvcommon}
+
+% -------------------------------------------------------------------------------
+% ** Input Encoding
+% - utf8x is recommended at MSV
+% - Some comments on encoding can be found here:
+%   https://groups.google.com/forum/?fromgroups=#!msg/comp.text.tex/4LC-xODb-LU/1Bd5UZOMNM4J
+%
+\ifxetexorluatex
+  % XeTeX and LuaTeX support utf8 by default
+\else
+  % File encoding utf8x
+  \usepackage{ucs}
+  \usepackage[utf8x]{inputenc}
+\fi
+%
+%--------------------------------------------------------------------------------
+% ** Language Settings and Hyphenation Patterns
+%
+% Note: final argument to babel sets the main language
+%
+\ifxetex%
+  \usepackage{polyglossia}
+%  \setmainlanguage{english}
+%  \setotherlanguage{german}
+  \setmainlanguage{german}
+  \setotherlanguage{english}
+\else
+  \usepackage[english,ngerman]{babel} 
+\fi
+
+
+%--------------------------------------------------------------------------------
+% ** MSV style defintions for beamer presentations
+%
+\usepackage[colorblock]{msvpresentation}
+%-------------------------------------------------------------------------------
+% ** Options for msvpresentation (all options are disabled by default)
+% 1) boolean options for msvpresentation package:
+%  | bw             | black and white color scheme                             |
+%  | colorblock     | use non-white background colors for blocks               |
+%  | frameblock     | use colored borders for blocks                           |
+%
+%--------------------------------------------------------------------------------
+% ** Setup look of presentation
+%
+% MSV style should be compatible with the beamer themes
+%
+\useinnertheme{default}
+\useoutertheme{default}
+
+% Colors:
+%\usecolortheme[named=TUMDarkerBlue]{structure} % variant: TUMBlack
+\usecolortheme[named=TUMBlack]{structure} % variant: TUMBlack
+\setbeamercolor{frametitle}{fg=TUMBlack} % variant: TUMDarkerBlue
+\setbeamercolor{normal text}{fg=TUMBlack,bg=TUMWhite} % font/background
+\setbeamercolor{alerted text}{fg=TUMBeamerRed,bg=TUMWhite} % alert boxes
+\setbeamercolor{example text}{fg=TUMBeamerGreen,bg=TUMWhite} % example boxes
+
+% Headers, Footers, Titlepage:
+%   Note: can adjust height of the frame title with \raisetitle and \lowertitle
+\setbeamertemplate{headline}[tum] % no, tum, msvtum
+\setbeamertemplate{footline}[authortitle] % minimal, author, authortitle
+\setbeamertemplate{title page}[tum][left] % with clock tower
+%\setbeamertemplate{title page}[default][left,sep=0pt] % without clock tower
+
+%--------------------------------------------------------------------------------
+% ** Presentation title, author, etc.
+%
+\title{This Presentation has a Long Title that Spans Two Rows}
+\author[Max Mustermann (TUM)]{Max Mustermann}
+\institute{\MSVname}
+\date{23. Mai 2016}
+
+\begin{document}
+{ % use custom header/footer for title page
+\setbeamertemplate{headline}[tum]
+\setbeamertemplate{footline}[no]
+\begin{frame}
+\titlepage
+\end{frame}
+}
+
+\section{Introduction}
+\subsection{A Typical Slide}
+
+\begin{frame}{Gültigkeit der Masterfolien}
+Dieser Folienmaster gilt bei offiziellen Präsentationen im Rahmen der TUM. Es ist darauf zu achten,
+dass wir uns in einem durchgängigen Layout präsentieren.
+
+\bigskip % Use \bigskips between paragraphs (do not set \parskip as this distorts block environments)
+
+Abweichungen vom vorgegebenen Layout bitte auf ein Minimum reduzieren.
+\end{frame}
+
+{
+\begin{frame}{A Slide with a different header}
+Some text, possibly \textbf{bold} or \alert{highlighted}.
+
+\begin{itemize}
+\item Bullet points
+\item Second point
+\begin{itemize}
+\item Sub-bullet
+\end{itemize}
+\end{itemize}
+
+\pause
+\begin{enumerate}
+\item First
+\item Second
+\item Third
+\end{enumerate}
+
+\end{frame}
+}
+
+{\lowertitle\lowertitle
+\setbeamertemplate{headline}[msvtum]
+\begin{frame}{Frame with highlight boxes and alternative header}
+
+\begin{block}{Important Result\footnotemark[1]}
+The following holds:\footnotemark[2]
+\begin{equation*}
+E = mc^2
+\end{equation*}
+\end{block}
+\footnotetext[1]{This is a footnote in a block title.}
+\footnotetext[2]{This is a footnote in a block body.}
+
+\pause
+
+\begin{center}
+$\Downarrow$
+\end{center}
+
+\begin{alertblock}{}
+Can also be used without a title.
+Three color types are available: block (blue), alertblock (red), and exampleblock (green).
+Spacing may need some manual adjustment if formulas are included at the top or bottom of blocks.
+\end{alertblock}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{headline}[no]
+\begin{frame}{Some math}
+    \begin{itemize}
+        \item We consider some simple formulas, e.g. $\max(0,1) = 1$
+        \item Complicated formula: $h_J(y) = \sum_{K\subset N}\int_{\mathbb{R}}g_K(x,y)f_J(x)dx$
+        \item This looks slightly weired since math fonts are smaller than text fonts.
+    \end{itemize}
+
+    However, this does not really affect equations.
+    \begin{equation*}
+        h_J(y) = \sum_{K\subset N}\int_{\mathbb{R}}g_K(x,y)f_J(x)dx
+    \end{equation*}
+\end{frame}
+}
+
+\begin{frame}{}
+    No title on this frame.\footnote{Smith et al., 2100: ``Title of a paper that will be written in the future'', \itshape IEEE Trans Inf. Theory}
+
+    \begin{exampleblock}{Example Block}
+        Spacing around blocks is minimal (if option frameblock is used).
+        Extra spaces, e.g. \texttt{vskip} or \texttt{vspace}, should be used.
+    \end{exampleblock}
+
+    Text below block.
+
+\end{frame}
+
+
+\section{Main Part}
+
+
+\begin{frame}{TUM Colors}
+In diagrams and plots only use the following colors:
+\begin{itemize}
+\item Black, White
+\item \textcolor{TUMBeamerYellow}{Yellow, RGB 255/180/000}
+\item \textcolor{TUMBeamerOrange}{Orange, RGB 255/128/000}
+\item \textcolor{TUMBeamerRed}{Red, RGB 229/052/024}
+\item \textcolor{TUMBeamerDarkRed}{Dark Red, RGB 202/033/063}
+\item \textcolor{TUMBeamerBlue}{Blue, RGB 000/153/255}
+\item \textcolor{TUMBeamerLightBlue}{Light Blue, RGB 065/190/255}
+\item \textcolor{TUMBeamerGreen}{Green, RGB 145/172/107}
+\item \textcolor{TUMBeamerLightGreen}{Light Green, RGB 181/202/130}
+\end{itemize}
+\end{frame}
+
+
+
+\section{Conclusion}
+
+
+\begin{frame}{Final Slide}
+Add some vertical space.
+
+\vspace{8mm}
+Increase spacing between bullet points:
+
+\vspace{5mm}
+\begin{itemize}\addtolength{\itemsep}{5mm}
+\item More information can be found in the \alert{beamer user guide}
+\item Use \texttt{pdflatex} to compile the source
+\item Have fun creating your slides!
+\end{itemize}
+\end{frame}
+
+
+\end{document}

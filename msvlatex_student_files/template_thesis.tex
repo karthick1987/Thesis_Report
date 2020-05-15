@@ -1,0 +1,230 @@
+%-------------------------------------------------------------------------------
+% * MSV Report Class Template and Documentation
+\documentclass[twoside]{msvreport}%
+% - msvreport is an extension of the standard report class and passes
+%   all options to report
+% - default options are as in report class with exception of a4paper,
+%   openright, and 11pt
+% - msvcommon package is loaded and provides TUM color definitions,
+%   logos, etc
+%
+%-------------------------------------------------------------------------------
+% ** Options for msvreport (default options are marked (*))
+% 1) boolean options for msvreport class:
+%  | rmheads (*)    | use roman for headlines and contents                     |
+%  | sfheads        | use sans-serif for headlines and contents                |
+%  | chapterprefix  | print Chapter prefix in first chapter page               |
+%  | bwchapters (*) | print chapter names in black                             |
+%  | bluechapters   | print chapter names in blue                              |
+%  | headrule       | print horizontal line in header                          |
+%  | widetext (*)   | use a wide text body                                     |
+%  | narrowtext     | use a narrow text body                                   |
+%  | cmyk (*)       | use CMYK colors optimized for printing                   |
+%  | print          | alias for cmyk                                           |
+%  | rgb            | use RGB colors optimized for monitors                    |
+%  | lores (*)      | use low-resolution TUM Banner                            |
+%  | hires          | use high resolution TUM Banner                           |
+
+%
+% 2) Key/Value options for msvreport class
+%  - coverstyle=(none|bw|banner|flags)
+%    | none (*) | do not generate cover page                                               |
+%    | color    | use color style for cover page                                           |
+%    | bw       | use black/white style for cover page (eg for printing on colored covers) |
+%    | banner   | use simple banner without flags for cover page (deprecated)              |
+%    | flags    | use TUM flag banner for cover page (deprecated)                          |
+%
+%  - titlestyle=(flags|none|bw|banner)
+%    same as coverstyle but for title page
+%
+%  - copyright=(none|cover|title)
+%    | none (*) | do not print copyright notice           |
+%    | cover    | print copyright notice after cover page |
+%    | title    | print copyright notice after title page |
+%
+%
+%-------------------------------------------------------------------------------
+% ** MSV Font Package
+% - Standard MSV Report fonts are Times for text and Computer Modern for maths
+% - Use option timesmath to enable Times font also in math mode (only pdftex)
+% - Do not use msvfonts package if you want to use your own fonts
+% - Note that msvfonts loads amsmath package
+%
+\usepackage{msvfonts}
+%
+% *** Options for msvfonts
+% 1) boolean options for msvfonts package:
+% | timestext (*) | use times font for text                                        |
+% | fancytext     | use garamond font for text                                     |
+% |             +-+                                                                |
+% | cmrmath (*) | use computer modern font for text and operators in math-mode     |
+% | timesmath   | use times font for text and operators in math mode               |
+% |             |   WARNING: timesmath in LuaLaTeX uses unicode-math, which does   |
+% |             |   not support the bm package. Use \symbfit and \symbf instead.   |
+%
+%
+% -------------------------------------------------------------------------------
+% ** Input Encoding
+% - utf8x is recommended at MSV
+% - Some comments on encoding can be found here:
+%   https://groups.google.com/forum/?fromgroups=#!msg/comp.text.tex/4LC-xODb-LU/1Bd5UZOMNM4J
+%
+\ifxetexorluatex
+  % XeTeX and LuaTeX support utf8 by default
+\else
+  % File encoding utf8x
+  \usepackage{ucs}
+  \usepackage[utf8x]{inputenc}
+\fi
+%
+%--------------------------------------------------------------------------------
+% ** Language Settings and Hyphenation Patterns
+%
+% Note: final argument to babel sets the main language
+%
+\ifxetex%
+  \usepackage{polyglossia}
+  \setmainlanguage{english}
+  \setotherlanguage{german}
+%  \setmainlanguage{german}
+%  \setotherlanguage{english}
+\else
+  \usepackage[ngerman,english]{babel} 
+\fi
+%
+%--------------------------------------------------------------------------------
+% ** Custom Preamble
+% - Start your custom preamble here
+% - Use the space before \begin{document} to
+%   - Load packages \usepackage{...}
+%   - Define custom math operators (DeclareMathOperator)
+% - Everything else (including newcommands) starts
+%   below \begin{document}
+
+% Here is a list of commonly used packages
+% | amsmath   | Many useful tools for typesetting mathematics        |
+% | amssymb   | Loads symbol fonts for mathematics, eg \mathbb       |
+% | amsthm    | \newtheorem,\theoremstyle commands etc               |
+% | thmtools  | Some advanced options for theorem customization      |
+% | mathtools | Many useful tools for typesetting maths      |
+% | bm        | Bold math (Warning: use only if bold fonts available |
+% | algorithm | Tools to typeset algorithms                          |
+% | booktabs  | Nice looking tables                                  |
+% | enumerate | Enumerated lists                                     |
+% | subfig    | Subfigures with common caption                       |
+% | caption   | Control caption font                                 |
+% | relsize   | Some useful relative font size commands              |
+% | xspace    | Control white space after abbreviations              |
+% | csquotes  | Quotations according to language selection           |
+
+%-------------------------------------
+% random.sty: for sans-serif math fonts
+% use with:
+%   \usepackage[greek,ngerman,english]{babel}
+% does not work with 'timesmath' option in msvfonts
+%
+
+
+\usepackage{blindtext}
+
+\begin{document}
+%--------------------------------------------------------------------------------
+% ** Custom Commands
+% Put your \newcommand's here or \input them from a file
+%
+%
+%--------------------------------------------------------------------------------
+% ** Title and Author Information
+%
+\title{The MSV Thesis Style}
+\author{Your-Name Here}
+
+\msvdoctype{Master Thesis}
+
+\msvcovertext{%
+Supervisor: Name Here\\[1.5em]
+Submission: Xxx xx, 20XX
+}
+
+%--------------------------------------------------------------------------------
+% ** Title Page
+%
+\frontmatter
+\maketitle
+%
+%--------------------------------------------------------------------------------
+% ** Optional: Abstract
+%
+\begin{abstract}
+Put your abstract text here.
+\end{abstract}
+%
+%--------------------------------------------------------------------------------
+% ** Table of Contents
+%
+\tableofcontents
+%
+%
+%--------------------------------------------------------------------------------
+% ** First Chapter
+%
+\mainmatter
+\chapter{Example with Citations}
+\blindtext
+
+\section{Citation and Equation}
+If we write a floating point definition without suffixes$\mathrm{suffixes}\operatorname{suffixes}$ as in $y = \sin(x)$ sin(x), we obtain inline math symbols~\cite{Aldroubi01,Bazaraa06,WeStSh06}.
+\begin{equation}
+\prod_{j=1}^J\sum_{i=1}^\infty \int_{-\infty}^\zeta e^{\xi^2/\nu}d\xi \int_{S^1} \mathcal{R}f_i^j(\omega) d\omega
+\end{equation}
+\begin{equation}
+\left(\frac{\sin(x)}{\pi x} <\leq=\geq>|\|\sim+-\pm \| z^Hz\|\right)\quad \forall \zeta \in R
+\end{equation}%
+
+\blindtext[8]
+
+\section{This is a Section}
+\blindtext[1]
+
+\subsection{This is a Subsection}
+\blindtext[1]
+
+\subsubsection{This is a Subsubsection}
+\blindtext[1]
+
+\paragraph{This is a Paragraph}
+\blindtext[1]
+
+\subparagraph{This is a Subparagraph}
+\blindtext[1]
+
+
+\chapter{Check Text Height}
+\blindtext[40]
+
+\blindmathtrue
+\Blinddocument
+\blinddocument
+
+
+%--------------------------------------------------------------------------------
+% ** Appendix
+%
+\appendix
+\blinddocument
+
+\cleardoublepage
+% \bibliographystyle{unsrt}
+%--------------------------------------------------------------------------------
+% ** References 
+\bibliographystyle{IEEEtran}
+\refstepcounter{chapter}
+\addcontentsline{toc}{chapter}{\bibname}
+\bibliography{IEEEabrv,examplebibfile}
+
+% \cleardoublepage
+% \refstepcounter{chapter}
+% \addcontentsline{toc}{chapter}{\indexname}
+% \printindex
+% \end{comment}
+\end{document}

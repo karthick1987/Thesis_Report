@@ -1,0 +1,232 @@
+\documentclass[a0,landscape,3col,print]{msvposter}
+%
+% Options (among others):
+%
+% nopstricks (default): do not \RequirePackage{pstricks} and do not use ps to draw boxes
+% pstricks:             use pstricks package and draw ps boxes
+% rounded:              use rounded boxes (only works with pstricks)
+
+% load required packages
+\usepackage[ngerman,english]{babel}
+%\usepackage{psfrag}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+% my definitions
+\DeclareMathAlphabet{\mathbit}{OML}{cmr}{bx}{it}
+
+\DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\st}{\operatorname{subject}\operatorname{to}}
+
+\newcommand{\xs}{\mathbit{x}_{\mathrm{S}}}
+\newcommand{\xr}{\mathbit{x}_{\mathrm{R}}}
+\newcommand{\yr}{\mathbit{y}_{\mathrm{R}}}
+\newcommand{\yd}{\mathbit{y}_{\mathrm{D}}}
+\newcommand{\nrr}{\mathbit{n}_{\mathrm{R}}}
+\newcommand{\nd}{\mathbit{n}_{\mathrm{D}}}
+\newcommand{\Hsr}{\mathbit{H}_{\mathrm{SR}}}
+\newcommand{\Hsd}{\mathbit{H}_{\mathrm{SD}}}
+\newcommand{\Hrd}{\mathbit{H}_{\mathrm{RD}}}
+\newcommand{\Hone}{\mathbit{H}_{1}}
+\newcommand{\Htwo}{\mathbit{H}_{2}}
+\newcommand{\Nd}{N_{\mathrm{D}}}
+\newcommand{\Ns}{N_{\mathrm{S}}}
+\newcommand{\Nr}{N_{\mathrm{R}}}
+\newcommand{\CN}{\mathcal{N}_{\mathbb{C}}}
+\newcommand{\zero}{\boldsymbol{0}}
+\newcommand{\id}{\mathbf{I}}
+\newcommand{\Q}{\mathbit{Q}}
+\newcommand{\R}{\mathbit{R}}
+\newcommand{\Rs}{\mathbit{R}_{\mathrm{S}}}
+\newcommand{\Rr}{\mathbit{R}_{\mathrm{R}}}
+\newcommand{\Rsr}{\mathbit{R}_{\mathrm{SR}}}
+\newcommand{\Rsgr}{\mathbit{R}_{\mathrm{S}|\mathrm{R}}}
+\newcommand{\Ds}{\mathbit{D}_{\mathrm{S}}}
+\newcommand{\Dr}{\mathbit{D}_{\mathrm{R}}}
+\newcommand{\he}{\operatorname{H}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\PS}{P_{\mathrm{S}}}
+\newcommand{\PR}{P_{\mathrm{R}}}
+\newcommand{\psd}{\succeq}
+\newcommand{\nsd}{\preceq}
+\newcommand{\CSB}{C_{\text{CSB}}}
+\newcommand{\marked}[1]{#1}
+
+
+\begin{document}
+
+\author{\underline{Lennart Gerdes} and Wolfgang Utschick}
+\title{OPTIMIZED CAPACITY BOUNDS FOR THE MIMO RELAY CHANNEL} % no need
+                                % to  use bold face....
+%\affiliationA{\MSVname} % text below authors, first line
+%\affiliationB{\TUMname} % text below authors, second line
+
+
+% It is not necessary to use the "posterbox" environment inside columns
+\begin{poster}
+\begin{postercolumn}
+
+\begin{posterbox}{Introduction}
+    \begin{itemize}\itemsep7mm
+        \item xea of general relay channel is unknown
+        \item xea upper and lower bounds on capacity established by Cover \& El~Gamal \marked{[1]}:
+        \begin{itemize}
+            \item xea cut-set bound (CSB)
+            \item xea decode-and-forward (DF) protocol
+            \begin{itemize}
+                \item xea full decode and forward
+                \item xea partial decode and forward
+            \end{itemize}
+            \item xea compress-and-forward (CF) protocol
+        \end{itemize}
+    \end{itemize}
+    \vspace{1cm}
+
+{\Large \textcolor{TUMOrange}{\textbf{Goal:}}}
+    \begin{itemize}
+        \item efficiently determine upper and lower bounds on the capacity of the MIMO relay channel $\; \Rightarrow \;$ \textcolor{TUMOrange}{cut-set bound, achievable decode-and-forward rate}
+    \end{itemize}
+\end{posterbox}
+
+\begin{posterbox}{System Model}
+    \begin{itemize}\itemsep7mm
+        \item standard (full-duplex) relay channel: one source S transmits information to one destination D with the help of a single relay R
+        \item all nodes may be equipped with multiple antennas
+        \item all channels assumed to be perfectly known at all nodes
+    \end{itemize}
+
+    \vspace{-15mm}
+    \begin{align*}
+    \yr &= \Hsr \xs + \nrr \\
+    \yd &= \Hsd \xs + \Hrd \xr + \nd
+    \end{align*}
+
+    \begin{itemize}\itemsep7mm
+        \item additive complex white Gaussian noise:
+        $\; \nrr \sim \CN(\zero, \id_{\Nr}), \; \nd \sim \CN(\zero, \id_{\Nd})$
+
+        \item joint transmit covariance matrix:
+        \begin{align*}
+            \R & = \E \left[ \begin{bmatrix} \xs \\ \xr \end{bmatrix} \begin{bmatrix} \xs \\ \xr \end{bmatrix}^{\he} \right] = \begin{bmatrix} \Rs & \Rsr \\ \Rsr^{\he} & \Rr \end{bmatrix},\\
+            \Rs & = \Ds \R \Ds^{\he}, \; \Rr = \Dr \R \Dr^{\he}
+        \end{align*}
+        with appropriate selection matrices $\Ds$ and $\Dr$
+
+        \item transmit power constraints:
+        $\; \tr(\Rs) \leq \PS, \; \tr(\Rr) \leq \PR$
+    \end{itemize}
+\end{posterbox}
+
+
+% NO LINE BREAKS BEFORE NEXT POSTER COLUMN
+\end{postercolumn}%
+\hskip\fill
+\begin{postercolumn}
+
+\begin{posterbox}{Optimizing the Cut-Set Bound}
+    \begin{itemize}\itemsep7mm
+        \item optimization problem in epigraph notation:
+        \begin{align*}
+            \max_{\R \psd \zero} \quad &\CSB \\
+            \st \quad &\CSB \leq \log\det \bigl( \id + \Hone \Rsgr \Hone^{\he} \bigr), \\
+            &\CSB \leq \log\det \bigl( \id + \Htwo \R \Htwo^{\he} \bigr), \\
+            &\tr(\Ds \R \Ds^{\he}) \leq \PS, \; \tr(\Dr \R \Dr^{\he}) \leq \PR
+        \end{align*}
+        where $\Hone = \begin{bmatrix} \Hsr^{\he} & \Hsd^{\he} \end{bmatrix}^{\he}, \; \Htwo = \begin{bmatrix} \Hsd & \Hrd \end{bmatrix}$
+
+        \item $\Rsgr = \Rs - \Rsr \Rr^{\dagger} \Rsr^{\he}$ is the conditional covariance matrix of $X_{\text{S}}$ given $X_{\text{R}}$
+
+        \item $\Rr^{\dagger}$ is Moore-Penrose pseudoinverse of $\Rr$
+
+        \item optimization problem in this form is \alert{nonconvex} due to term $\Rsgr$
+    \end{itemize}
+\end{posterbox}
+
+\begin{posterbox}{Reformulation of Optimization Problem}
+    \begin{itemize}\itemsep7mm
+        \item reformulate problematic constraint by means of slack variable:
+        \begin{align*}
+            &\CSB \leq \log\det \bigl( \id + \Hone \Q \Hone^{\he} \bigr), \\ &\zero \nsd \Q \nsd \Rsgr = \Rs - \Rsr \Rr^{\dagger} \Rsr^{\he}
+        \end{align*}
+
+        \item apply Schur complement condition for semi-definite matrices \marked{[2]}:
+            \begin{align*}
+                \begin{bmatrix} \Rs - \Q & \Rsr \\ \Rsr^{\he} & \Rr \end{bmatrix} = \R - \Ds^{\he} \Q \Ds \psd \zero
+            \end{align*}
+
+        \item conditions are always satisfied for given optimization problem:
+        \begin{align*}
+            &\;\;\;\;\CSB \leq \log\det \bigl( \id + \Hone \Rsgr \Hone^{\he} \bigr) \\
+            \Leftrightarrow &\left\{
+            \begin{array}{l}
+                \CSB \leq \log\det \bigl( \id + \Hone \Q \Hone^{\he} \bigr), \\
+                \R - \Ds^{\he} \Q \Ds \psd \zero, \; \Q \psd \zero
+            \end{array}
+            \right.
+        \end{align*}
+
+        \item reformulated optimization problem is \alert{jointly convex} in $\R, \Q \psd \zero$:
+        \begin{align*}
+            \max_{\R, \Q} \quad &\CSB \\
+            \st \quad &\CSB \leq \log\det \bigl( \id + \Hone \Q \Hone^{\he} \bigr), \\
+            &\CSB \leq \log\det \bigl( \id + \Htwo \R \Htwo^{\he} \bigr), \\
+            &\R - \Ds^{\he} \Q \Ds \psd \zero, \; \Q \psd \zero, \\
+            &\tr(\Ds \R \Ds^{\he}) \leq \PS, \; \tr(\Dr \R \Dr^{\he}) \leq \PR
+        \end{align*}
+    \end{itemize}
+\end{posterbox}
+
+
+% NO LINE BREAKS BEFORE NEXT POSTER COLUMN
+\end{postercolumn}%
+\hskip\fill
+\begin{postercolumn}
+
+\begin{posterbox}{Optimizing the Achievable DF Rate}
+    \begin{itemize}\itemsep7mm
+        \item achievable DF rate differs from cut-set bound only in one mutual information term $\; \Rightarrow \;$ replace $\Hone$ with $\Hsr \; \Rightarrow \;$ structure of problem exactly the same
+        \item use same approach as for cut-set bound to discover hidden convexity\end{itemize}
+\end{posterbox}
+
+\begin{posterbox}{Numerical Results}
+    Standard Line Network Setup 
+
+    \fbox{%
+    \begin{minipage}[t][.32\textwidth][c]{0.5\textwidth}
+        \centering
+        Here should be some pictures
+    \end{minipage}}\hfill
+    \begin{minipage}[t][.32\textwidth][c]{0.46\textwidth}
+        \vspace{5mm}
+        \begin{itemize}\itemsep7mm
+            \item line network
+            \item entries of $\mathbit{H}_{\text{XY}}$ iid. $\sim \CN(0, d_{\text{XY}}^{-3})$
+            \item $\PS = \PR = 10$
+        \end{itemize}
+    \end{minipage}
+    \vspace{10mm}
+
+    \hrule
+    \vspace{8mm}
+
+    \begin{itemize}\itemsep7mm
+        \item $C_{\text{UB}1}$: upper bound from \marked{[3]} obtained by substituting $\Rs$ for conditional covariance matrix $\Rsgr = \Rs - \Rsr \Rr^{\dagger} \Rsr^{\he} \nsd \Rs$
+        \item $C_{\text{UB}2}$: upper bound from \marked{[4]}, where cross correlation is captured only by scalar parameter $\rho$ instead of $\Rsr$ (note that $C_{\text{UB}2} = \CSB$ for $\Ns = \Nr = \Nd = 1$)
+    \end{itemize}
+\end{posterbox}
+
+
+\begin{posterbox}{References}
+    \begin{enumerate}\itemsep0mm
+        \item Cover, El Gamal: ``Capacity Theorems for the Relay Channel'', \textit{IEEE Trans. IT}, 1979
+        \item Boyd, Vandenberghe: ``\textit{Convex Optimization}'', Cambridge Univ. Press, 2004
+        \item Simoens et al.: ``On the Gaussian MIMO Relay Channel With Full Channel State Information'', \textit{IEEE Trans. SP, 2009}
+        \item Wang et al.: ``On the Capacity of MIMO Relay Channels'', \textit{IEEE Trans. IT}, 2005
+    \end{enumerate}
+\end{posterbox}
+
+\end{postercolumn}
+
+\end{poster}
+    
+\end{document}
