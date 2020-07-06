@@ -1,0 +1,116 @@
+\chapter{Conclusion and Outlook}
+\label{ch:conOutlook}
+
+Over the course of the internship many different parameters had to be determined and set up for the final demo. This chapters documents the results of all the experiments performed as well as the final demo of the working setup.
+
+\section{Transmit Power Measurements}\label{GainDistortion}
+
+A Rohde and Schwarz FSQ 8GHz spectrum analyser was used to capture the spurious emission at the output of the Spectrum analyser. The spectrum analyser had the following settings for this test.
+
+\begin{table}[H]
+    \begin{center}
+        \begin{tabular}{|c|c|}
+            \hline
+            Parameter & Value \\ \hline
+            RBW & 20kHz \\ \hline
+            VBW & 50kHz \\ \hline
+            SWP Time & 50ms  \\ 
+            \hline
+        \end{tabular}
+    \end{center}
+    \caption{Spectrum analyser settings for the transmit power tests}
+    \label{}
+\end{table}
+
+An unmodulated test signal containing 2 sine tones each at 0.5 MHz and 1MHz was sent from the USRP transmitter with the measurement setup as shown below in the Figure \ref{fig:TxPwrSetup}. The 25W 20dB attenuator from spinner (Pt No: 36234) was used to protect the input of the spectrum analyser from high power.
+
+%\begin{figure}[!htb]
+%    \centering
+%    \includegraphics[width=7cm]{../ReportImages/TxPwrSetup.png}
+%    \caption{Setup for measuring the transmit power}%
+%    \label{fig:TxPwrSetup}%
+%\end{figure}
+
+The results in Figure \ref{fig:GainDistortion} and Table \ref{tab:LinkBudgetMeas} show that any gain setting above 60 results in out of band emissions. Hence the maximum setting was chosen, which did not introduce any out of band emissions, namely Tx Gain setting of 60 which corresponds to -25dBm.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\begin{tabular}[c]{@{}c@{}}Tx Gain\\ Setting\\ USRP\end{tabular} & \begin{tabular}[c]{@{}c@{}}Attenuator\\ (dBm)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Tx Power\\ Measured\\ (dBm)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Tx Power\\ Actual\\ (dBm)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Distortion\\ observed\end{tabular} \\ \hline
+\multicolumn{1}{|c|}{35}                                         & \multicolumn{1}{c|}{20}                                    & \multicolumn{1}{c|}{-70.18}                                         & \multicolumn{1}{c|}{-50.18}                                       & \multicolumn{1}{c|}{No}                                       \\ \hline
+\multicolumn{1}{|c|}{40}                                         & \multicolumn{1}{c|}{20}                                    & \multicolumn{1}{c|}{-64.95}                                         & \multicolumn{1}{c|}{-44.95}                                       & \multicolumn{1}{c|}{No}                                       \\ \hline
+\multicolumn{1}{|c|}{45}                                         & \multicolumn{1}{c|}{20}                                    & \multicolumn{1}{c|}{-60.01}                                         & \multicolumn{1}{c|}{-40.01}                                       & \multicolumn{1}{c|}{No}                                       \\ \hline
+\multicolumn{1}{|c|}{50}                                         & \multicolumn{1}{c|}{20}                                    & \multicolumn{1}{c|}{-54.9}                                          & \multicolumn{1}{c|}{-34.9}                                        & \multicolumn{1}{c|}{No}                                       \\ \hline
+\multicolumn{1}{|c|}{55}                                         & \multicolumn{1}{c|}{20}                                    & \multicolumn{1}{c|}{-50.05}                                         & \multicolumn{1}{c|}{-30.05}                                       & \multicolumn{1}{c|}{No}                                       \\ \hline
+\multicolumn{1}{|c|}{60}                                         & \multicolumn{1}{c|}{20}                                    & \multicolumn{1}{c|}{-44.99}                                         & \multicolumn{1}{c|}{-24.99}                                       & \multicolumn{1}{c|}{No}                                       \\ \hline
+\multicolumn{1}{|c|}{65}                                         & \multicolumn{1}{c|}{20}                                    & \multicolumn{1}{c|}{-39.96}                                         & \multicolumn{1}{c|}{-19.96}                                       & \multicolumn{1}{c|}{Yes}                                      \\ \hline
+\multicolumn{1}{|c|}{70}                                         & \multicolumn{1}{c|}{20}                                    & \multicolumn{1}{c|}{-34.77}                                         & \multicolumn{1}{c|}{-14.77}                                       & \multicolumn{1}{c|}{Yes}                                      \\ \hline
+\multicolumn{1}{|c|}{75}                                         & \multicolumn{1}{c|}{20}                                    & \multicolumn{1}{c|}{-29.9}                                          & \multicolumn{1}{c|}{-9.9}                                         & \multicolumn{1}{c|}{Yes}                                      \\ \hline
+\multicolumn{1}{|c|}{80}                                         & \multicolumn{1}{c|}{20}                                    & \multicolumn{1}{c|}{-24.9}                                          & \multicolumn{1}{c|}{-4.9}                                         & \multicolumn{1}{c|}{Yes}                                      \\ \hline
+\end{tabular}
+\caption{Distortion Values}
+\label{tab:my-table}
+\end{table}
+
+\section{Path Loss Measurements}\label{PathLossMeasurements}
+
+The measurements were performed in the Nokia car park entrance as shown below in Figure \ref{fig:NokiaCarpark}. The free space path loss experiments were performed by setting the transmit power to -25dBm and measuring the received power at Line of Sight(LoS) locations which were 4,6,8 and 10m apart.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ccccccc}
+\hline
+\multicolumn{1}{|c|}{\begin{tabular}[c]{@{}c@{}}Range \\ (m)\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Tx Pwr\\ (dBm)\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Antenna \\ Gain (dBi)\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Calculated\\ Path Loss(dBm)\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Expected Rx \\ Pwr(dBm)\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Measured\\ (dBm)\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Delta\\ (dBm)\end{tabular}} \\ \hline
+\multicolumn{1}{|c|}{4}                                                    & \multicolumn{1}{c|}{-25}                                                    & \multicolumn{1}{c|}{4.0}                                                           & \multicolumn{1}{c|}{49.0}                                                                & \multicolumn{1}{c|}{-66.0}                                                           & \multicolumn{1}{c|}{-69.8}                                                    & \multicolumn{1}{c|}{-3.8}                                                  \\ \hline
+\multicolumn{1}{|c|}{6}                                                    & \multicolumn{1}{c|}{-25}                                                    & \multicolumn{1}{c|}{4.0}                                                           & \multicolumn{1}{c|}{53.0}                                                                & \multicolumn{1}{c|}{-70.0}                                                           & \multicolumn{1}{c|}{-74.5}                                                    & \multicolumn{1}{c|}{-4.5}                                                  \\ \hline
+\multicolumn{1}{|c|}{8}                                                    & \multicolumn{1}{c|}{-25}                                                    & \multicolumn{1}{c|}{4.0}                                                           & \multicolumn{1}{c|}{55.8}                                                                & \multicolumn{1}{c|}{-72.8}                                                           & \multicolumn{1}{c|}{-75.8}                                                    & \multicolumn{1}{c|}{-3.0}                                                  \\ \hline
+    \multicolumn{1}{|c|}{10}                                                   & \multicolumn{1}{c|}{-25}                                                    & \multicolumn{1}{c|}{4.0}                                                           & \multicolumn{1}{c|}{58.0}                                                                & \multicolumn{1}{c|}{-75.0}                                                           & \multicolumn{1}{c|}{-77.3}                                                    & \multicolumn{1}{c|}{-2.3}                                                  \\ \hline
+                                                                           &                                                                             &                                                                                    &                                                                                          &                                                                                      &                                                                               &                                                                            \\ \cline{6-7} 
+                                                                           &                                                                             &                                                                                    &                                                                                          & \multicolumn{1}{c|}{}                                                                & \multicolumn{1}{c|}{Mean}                                                     & \multicolumn{1}{c|}{-3.4}                                                  \\ \cline{6-7} 
+\end{tabular}
+\caption{Path Loss Measurements}
+\label{tab:LinkBudgetMeas}
+\end{table}
+
+\section{Transmit and Receive Loopback}
+
+This test was performed to test and identify the transmitter and receiver system response without the air interface. The system should ideally return a flat response across all the subcarriers with a magnitude of 0dBm. But due to cable and insertion losses the response is lower than 0dBm. Figure \ref{fig:TxRxLoopback} shows the mean value of the magnitude in dB over the frequency is -2.36dBm which corresponds approximately to the loss figure obtained from Section \ref{PathLossMeasurements}. The other losses could be attributed to insertion losses when the antenna is plugged in on both ends.
+
+For this experiment the transmit power was -25dBm with the center frequency 2.6GHz and the LTE Frame described in Section \ref{LTEFrame} was transmitted. The transmitter was connected to the receiver with the help of a 1.5m long 50 \si{\ohm} coaxial cable.
+
+\section{Radar Calibration}
+
+An object was placed in the horizontal axis of the radar sensor at a distance of 10m from the radar sensor. Markings were laid out on the road as shown in the figure \ref{fig:RadarCenter} and the reading was compared to the data processed by the radar sensor which was 10.1m still within the accuracy of the radar sensor.
+
+\section{Hardware Performance}
+
+\subsection{USRP Sampling Rate}\label{ssec:USRPSamplingRate}
+The USRP Software defined radio is very convenient for prototyping. There are although some drawbacks with using the drivers in MATLAB. Experiments with the full LTE bandwidth of 20MHz resulted in consistently dropped frames and consequently led to unreliable channel estimation data. On further investigation it was found that the MATLAB drivers were single threaded and could not allocate sufficient buffers in the kernel to support the higher sampling rates of 15.36MSps and 30.72MSps. Therefore a 7.68MSps was chosen which corresponds to a 5MHz LTE bandwidth as this worked the most reliabily with the current available hardware. Alternatives to MATLAB to USRP interface is described in Section \ref{ssec:GNURadio}.
+
+\subsection{Max Frame Rate for Demo}
+Real time processing of channel estimation is an especially demanding operation for a general purpose compute platform. The performance was better on a more powerful intel i7 compared to an intel i5 processor.
+
+It was also found that the USRP drivers worked more reliably on a linux platform than on a windows platform i.e: for a given USRP sampling rate the frame drops were seldom observed on the linux platform. Table \ref{tab:OSComp} is a comparison of a standalone channel estimation application running on MATLAB on 2 devices and the approximate frame rates that could be achieved. The frame rate performance does degrade upon running other compute intensive programs simultaneously.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ccc}
+\hline
+\multicolumn{1}{|c|}{}                & \multicolumn{1}{c|}{OS}         & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Update Rate\\ Frames/s\end{tabular}} \\ \hline
+\multicolumn{1}{|c|}{Nokia Laptop}    & \multicolumn{1}{c|}{Windows 10} & \multicolumn{1}{c|}{1-2}                                                                 \\ \hline
+\multicolumn{1}{|c|}{Personal Laptop} & \multicolumn{1}{c|}{Linux} & \multicolumn{1}{c|}{8-10}                                                                \\ \hline
+\end{tabular}
+\caption{Comparison on different operating systems}
+\label{tab:OSComp}
+\end{table}
+
+
+\section{Demo}
+The demo took place in the carpark entrance of the Nokia Munich site in St.Martin Straße as shown in Figure \ref{fig:NokiaCarpark}. The setup for the final demo is shown in the Figure \ref{fig:TestSetup} below. The LTE frame was transmitted by a laptop running on a Linux OS continously transmitting LTE frames. The laptop across the street was connected to the USRP, which receives and decodes the LTE frames. The radar sensor is also attached to this computer to get the range and angle data. The laptops were placed approximately 15m apart on opposite sides of the carpark entry ramp.
+
+Shown below in Figure \ref{fig:TestSetupLegend} is a legend of what is seen as a part of the demo video and the subsequent figures that follow this. The first figure on top shows position of the object w.r.t the Radar transceiver. The 2nd figure displays the 2D channel estimate in both the time axis as well as the frequency axis (subcarriers). The third figure below the 2D grid shows the trend of the first, middle and the last subcarrier namely 1,150 and 300 subcarriers. The magnitude for both the plots is in dBm and the x axis on the figure at the bottom represents the symbols captured. This is 20 Symbols per frame, this is the compressed information picking only every 7th symbol in the frame of 140 symbols.
+
+Figures \ref{fig:DemoBefore} - \ref{fig:DemoAfter} show the screen captures of an object passing through the LoS channel. The Figures \ref{fig:DemoBefore}, \ref{fig:DemoDuring2} and \ref{fig:DemoAfter} show the state of the channel before, during and after the object has passed. The object passed by around 9m and this is shown in Figure \ref{fig:DemoDuring2}. The channel trend shows that the channel is severely attenuated when the object obstructs the channel. This can also be infered from Figure \ref{fig:DemoBefore} and Figure \ref{fig:DemoAfter} where the channel returns to normal.
+
+The full video of the demo can be viewed here \cite{demoVideo}.

@@ -18,7 +18,7 @@ PDFLATEXFLAGS="-halt-on-error"
 echo "Compiling the $FILEWITHEX using PDFlatex"
 
 runBibTex="bibtex ${FILE}"
-runpdfLatex="pdflatex ${FILEWITHEX} ${PDFLATEXFLAGS}"
+runpdfLatex="pdflatex ${PDFLATEXFLAGS} ${FILEWITHEX}"
 
 outputBib=$(eval ${runBibTex})
 outputPdf=$(eval ${runpdfLatex})

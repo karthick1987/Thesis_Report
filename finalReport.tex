@@ -172,45 +172,50 @@ Put your abstract text here.
 %
 %
 %--------------------------------------------------------------------------------
-% ** First Chapter
 %
+% ** First Chapter
 \mainmatter
-\chapter{Example with Citations}
-\blindtext
-
-\section{Citation and Equation}
-If we write a floating point definition without suffixes$\mathrm{suffixes}\operatorname{suffixes}$ as in $y = \sin(x)$ sin(x), we obtain inline math symbols~\cite{Aldroubi01,Bazaraa06,WeStSh06}.
-\begin{equation}
-\prod_{j=1}^J\sum_{i=1}^\infty \int_{-\infty}^\zeta e^{\xi^2/\nu}d\xi \int_{S^1} \mathcal{R}f_i^j(\omega) d\omega
-\end{equation}
-\begin{equation}
-\left(\frac{\sin(x)}{\pi x} <\leq=\geq>|\|\sim+-\pm \| z^Hz\|\right)\quad \forall \zeta \in R
-\end{equation}%
-
-\blindtext[8]
-
-\section{This is a Section}
-\blindtext[1]
-
-\subsection{This is a Subsection}
-\blindtext[1]
-
-\subsubsection{This is a Subsubsection}
-\blindtext[1]
-
-\paragraph{This is a Paragraph}
-\blindtext[1]
-
-\subparagraph{This is a Subparagraph}
-\blindtext[1]
-
-
-\chapter{Check Text Height}
-\blindtext[40]
-
-\blindmathtrue
-\Blinddocument
-\blinddocument
+\include{Chapters/introduction}
+\include{Chapters/systemModel}
+\include{Chapters/hardwareSetup}
+\include{Chapters/results}
+\include{Chapters/conclusion}
+%\chapter{Example with Citations}
+%\blindtext
+%
+%\section{Citation and Equation}
+%If we write a floating point definition without suffixes$\mathrm{suffixes}\operatorname{suffixes}$ as in $y = \sin(x)$ sin(x), we obtain inline math symbols~\cite{Aldroubi01,Bazaraa06,WeStSh06}.
+%\begin{equation}
+%\prod_{j=1}^J\sum_{i=1}^\infty \int_{-\infty}^\zeta e^{\xi^2/\nu}d\xi \int_{S^1} \mathcal{R}f_i^j(\omega) d\omega
+%\end{equation}
+%\begin{equation}
+%\left(\frac{\sin(x)}{\pi x} <\leq=\geq>|\|\sim+-\pm \| z^Hz\|\right)\quad \forall \zeta \in R
+%\end{equation}%
+%
+%\blindtext[8]
+%
+%\section{This is a Section}
+%\blindtext[1]
+%
+%\subsection{This is a Subsection}
+%\blindtext[1]
+%
+%\subsubsection{This is a Subsubsection}
+%\blindtext[1]
+%
+%\paragraph{This is a Paragraph}
+%\blindtext[1]
+%
+%\subparagraph{This is a Subparagraph}
+%\blindtext[1]
+%
+%
+%\chapter{Check Text Height}
+%\blindtext[40]
+%
+%\blindmathtrue
+%\Blinddocument
+%\blinddocument
 
 
 %--------------------------------------------------------------------------------
@@ -226,7 +231,7 @@ If we write a floating point definition without suffixes$\mathrm{suffixes}\opera
 \bibliographystyle{IEEEtran}
 \refstepcounter{chapter}
 \addcontentsline{toc}{chapter}{\bibname}
-\bibliography{IEEEabrv,examplebibfile}
+\bibliography{IEEEabrv,bibfile}
 
 % \cleardoublepage
 % \refstepcounter{chapter}
