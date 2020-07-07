@@ -6,6 +6,7 @@ A level-1 auxiliary file: Chapters/systemModel.aux
 A level-1 auxiliary file: Chapters/hardwareSetup.aux
 A level-1 auxiliary file: Chapters/results.aux
 A level-1 auxiliary file: Chapters/conclusion.aux
+A level-1 auxiliary file: Chapters/appendix.aux
 The style file: IEEEtran.bst
 Reallocated singl_function (elt_size=8) to 100 items from 50.
 Reallocated singl_function (elt_size=8) to 100 items from 50.
@@ -22,7 +23,7 @@ Warning--I didn't find a database entry for "demoVideo"
 Done.
 You've used 0 entries,
             4087 wiz_defined-function locations,
-            1351 strings with 17753 characters,
+            1352 strings with 17774 characters,
 and the built_in function-call counts, 104 in all, are:
 = -- 0
 > -- 0

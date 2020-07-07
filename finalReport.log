@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.5.13)  6 JUL 2020 11:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.5.13)  7 JUL 2020 15:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1209,6 +1209,10 @@ LaTeX Warning: Label `ssec:USRPSamplingRate' multiply defined.
 
 LaTeX Warning: Label `tab:OSComp' multiply defined.
 
+) (./Chapters/appendix.aux
+
+LaTeX Warning: Label `GainDistortion' multiply defined.
+
 ))
 \openout1 = `finalReport.aux'.
 
@@ -1935,40 +1939,47 @@ LaTeX Warning: Reference `fig:DemoAfter' on page 28 undefined on input line 114
 
 LaTeX Warning: Citation `demoVideo' on page 29 undefined on input line 116.
 
-) [29] [30
+) [29]
+\openout2 = `Chapters/appendix.aux'.
+
+ (./Chapters/appendix.tex [30
+
 
 
 ]
 Appendix A.
 [31
 
+] [32
+
 ]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 10.95pt on input line 225.
-LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input lin
-e 225.
- (/usr/share/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
-File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
-)
-LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 225.
- [32] [33] [34]
-(./finalReport.bbl
+Appendix B.
+[33
+
+] [34
+
+]
+Appendix C.
+) [35
+
+] [36
+
+
+] (./finalReport.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 24.
 
-) [35
+) [37
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 241.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 241.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 242.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 242.
  (./finalReport.aux (./Chapters/introduction.aux)
 (./Chapters/systemModel.aux) (./Chapters/hardwareSetup.aux)
-(./Chapters/results.aux) (./Chapters/conclusion.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 241.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 241.
-
+(./Chapters/results.aux) (./Chapters/conclusion.aux) (./Chapters/appendix.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 242.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 242.
 
 LaTeX Warning: There were undefined references.
 
@@ -1977,24 +1988,24 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 34023 strings out of 492167
- 661949 string characters out of 6131558
- 739429 words of memory out of 5000000
- 37734 multiletter control sequences out of 15000+600000
- 590839 words of font info for 128 fonts, out of 8000000 for 9000
+ 33979 strings out of 492167
+ 661150 string characters out of 6131558
+ 740201 words of memory out of 5000000
+ 37704 multiletter control sequences out of 15000+600000
+ 586882 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  76i,14n,102p,837b,971s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texmf-d
-ist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texmf-dist/fonts/enc/dvips
-/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/share/texmf-dist/fonts/type1/public/tex-gyre/qtmb.pfb></usr/share/texmf-dis
-t/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/tex-gyre/qtmri.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb
-></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on finalReport.pdf (41 pages, 169690 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texmf
+-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/tex-gyre/qtmb.pfb>
+</usr/share/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf-d
+ist/fonts/type1/public/tex-gyre/qtmri.pfb></usr/share/texmf-dist/fonts/type1/ur
+w/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pf
+b>
+Output written on finalReport.pdf (43 pages, 163643 bytes).
 PDF statistics:
- 170 PDF objects out of 1000 (max. 8388607)
- 119 compressed objects within 2 object streams
+ 174 PDF objects out of 1000 (max. 8388607)
+ 121 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 22541 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 18445 words of extra memory for PDF output out of 20736 (max. 10000000)
 
