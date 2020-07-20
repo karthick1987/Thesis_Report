@@ -1,0 +1,57 @@
+\chapter{Potential Hardware Setups}
+\label{ch:PotenHWSetup}
+
+Measurements of MIMO channel can be achieved in multiple methods. This chapter discusses some of the potential approaches which were implemented and elaborates each of their advantages and disadvantages.
+
+\section{Software Defined Radios USRP}\label{sec:USRP}
+
+USRP is a Software Defined Radio (SDR) designed by National Instruments that enables quick prototyping of different wireless applications. It is aimed at anyone from hobbists, research labs, universities, etc... or anyone interested in evaluating custom algorithms. The SDR used here is a USRP2940 specifications of which are described in Table \ref{tb:USRP}
+
+\begin{table}[H]
+    \begin{center}
+        \begin{tabular}{|l|c|}
+        \hline
+            Model                   & USRP2940          \\ \hline
+            Baseband Bandwidth      & 40MHz             \\ \hline
+            RF-Operating Frequency  & 50MHz-2200MHz     \\ \hline
+            FPGA                    & Kintex-7 410T     \\ \hline
+            No of Transmitters      & 2                 \\ \hline
+            No of Receivers         & 2                 \\ \hline
+            Connectivity            & MXIe, Ethernet    \\ \hline
+            Oscillator              & Internal Crystal  \\ \hline
+            ADC/DAC                 & 14 (For Rx)/16 (For Tx) bit         \\ \hline
+            Frequency Accuracy      & 2.5 ppm           \\ \hline
+            Maximum Power Output    & 20dBm             \\ \hline
+        \end{tabular}
+    \end{center}
+    \caption{USRP SDR Product details}
+    \label{tb:USRP}
+\end{table}
+
+%\begin{table}[H]
+%    \begin{center}
+%        \begin{tabular}{|c|c|}
+%            \hline
+%            Parameter & Value \\ \hline
+%            RBW & 20kHz \\ \hline
+%            VBW & 50kHz \\ \hline
+%            SWP Time & 50ms  \\ 
+%            \hline
+%        \end{tabular}
+%    \end{center}
+%    \caption{Spectrum analyser settings for the transmit power tests}
+%    \label{}
+%\end{table}
+
+\section{MIMO Application Framework}\label{sec:MIMOAFW}
+\section{LTE Application Framework}\label{sec:LTEAFW}
+
+
+
+%\begin{figure}[!htb]
+%    \centering
+%    \includegraphics[width=7cm]{../ReportImages/TxPwrSetup.png}
+%    \caption{Setup for measuring the transmit power}%
+%    \label{fig:TxPwrSetup}%
+%\end{figure}
+
