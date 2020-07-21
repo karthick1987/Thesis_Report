@@ -26,7 +26,10 @@ H.~Rohling, \emph{OFDM - Concepts for Future Communication Systems},
   3rd~ed.\hskip 1em plus 0.5em minus 0.4em\relax Springer, Jun. 2011.
 
 \bibitem{3gpp36211}
-3GPP, ``Ts 36.211 technical specification group radio access network,''
-  \emph{3}.
+3GPP, ``{TS 36.211 Technical Specification Group Radio Access Network; Physical
+  Channels and Modulation (Release 13), V13.2.0},'' vol.~13, Jun. 2016.
+
+\bibitem{MIMOAFWGettingStarted}
+\emph{{MIMO Prototyping SystemGetting Started Guide}}, 2016.
 
 \end{thebibliography}

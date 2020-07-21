@@ -22,21 +22,23 @@
 \contentsline {subsection}{\numberline {3.2.3}MMSE}{9}{subsection.3.2.3}%
 \contentsline {chapter}{\numberline {4}Potential Hardware Setups}{11}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Software Defined Radios USRP}{11}{section.4.1}%
-\contentsline {section}{\numberline {4.2}MIMO Application Framework}{11}{section.4.2}%
-\contentsline {section}{\numberline {4.3}LTE Application Framework}{11}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Experimantal Setup}{13}{chapter.5}%
-\contentsline {section}{\numberline {5.1}LTE Application Framework}{13}{section.5.1}%
-\contentsline {chapter}{\numberline {6}Results}{15}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Transmit Power Measurements}{15}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Path Loss Measurements}{16}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Transmit and Receive Loopback}{17}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Radar Calibration}{17}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Hardware Performance}{17}{section.6.5}%
-\contentsline {subsection}{\numberline {6.5.1}USRP Sampling Rate}{17}{subsection.6.5.1}%
-\contentsline {subsection}{\numberline {6.5.2}Max Frame Rate for Demo}{17}{subsection.6.5.2}%
-\contentsline {section}{\numberline {6.6}Demo}{18}{section.6.6}%
-\contentsline {chapter}{\numberline {7}Conclusion and Outlook}{21}{chapter.7}%
-\contentsline {chapter}{\numberline {A}Antenna Pattern}{23}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Schematic Octoclock}{25}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Troubleshooting}{29}{appendix.C}%
-\contentsline {chapter}{Bibliography}{31}{appendix.D}%
+\contentsline {section}{\numberline {4.2}MIMO Application Framework (MIMO AFW)}{12}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}USRP 2940}{12}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.3}LTE Application Framework}{12}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Experimantal Setup}{15}{chapter.5}%
+\contentsline {section}{\numberline {5.1}LTE Application Framework}{15}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Application Example}{15}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Results}{17}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Transmit Power Measurements}{17}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Path Loss Measurements}{18}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Transmit and Receive Loopback}{19}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Radar Calibration}{19}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Hardware Performance}{19}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}USRP Sampling Rate}{19}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Max Frame Rate for Demo}{19}{subsection.6.5.2}%
+\contentsline {section}{\numberline {6.6}Demo}{20}{section.6.6}%
+\contentsline {chapter}{\numberline {7}Conclusion and Outlook}{23}{chapter.7}%
+\contentsline {chapter}{\numberline {A}Antenna Pattern}{25}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Schematic Octoclock}{27}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Troubleshooting}{31}{appendix.C}%
+\contentsline {chapter}{Bibliography}{33}{appendix.D}%

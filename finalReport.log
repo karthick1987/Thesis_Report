@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.7.10)  20 JUL 2020 14:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.7.10)  21 JUL 2020 17:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -850,21 +850,37 @@ File: pppdftex.def 2020/01/28 v0.5q Pdfpages driver for pdfTeX (AM)
 \c@AM@survey=\count333
 \AM@templatesizebox=\box73
 )
+(/usr/share/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+\c@r@tfl@t=\count334
+\rotFPtop=\skip82
+\rotFPbot=\skip83
+\rot@float@box=\box74
+\rot@mess@toks=\toks49
+)
+(/usr/share/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+
+(/usr/share/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
 (/usr/share/texmf-dist/tex/latex/ucs/ucs.sty
 Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
 
 (/usr/share/texmf-dist/tex/latex/ucs/data/uni-global.def
 File: uni-global.def 2013/05/13 UCS: Unicode global data
 )
-\uc@secondtry=\count334
-\uc@combtoks=\toks49
-\uc@combtoksb=\toks50
-\uc@temptokena=\toks51
+\uc@secondtry=\count335
+\uc@combtoks=\toks50
+\uc@combtoksb=\toks51
+\uc@temptokena=\toks52
 )
 (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
-\inpenc@prehook=\toks52
-\inpenc@posthook=\toks53
+\inpenc@prehook=\toks53
+\inpenc@posthook=\toks54
 
 (/usr/share/texmf-dist/tex/latex/ucs/utf8x.def
 File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
@@ -874,14 +890,14 @@ Package: babel 2020/05/13 3.44 The Babel package
 
 (/usr/share/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2020/05/13 3.44 Babel common definitions
-\babel@savecnt=\count335
+\babel@savecnt=\count336
 \U@D=\dimen305
 \l@babelnohyphens=\language86
 
 (/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read3
 )
-\bbl@dirlevel=\count336
+\bbl@dirlevel=\count337
 
 (/usr/share/texmf-dist/tex/generic/babel-german/ngerman.ldf
 Language: ngerman 2018/12/08 v2.11 German support for babel (post-1996 orthogra
@@ -907,24 +923,24 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
 (/usr/share/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count337
-\c@Blindtext=\count338
-\c@blind@countparstart=\count339
-\blind@countxx=\count340
-\blindtext@numBlindtext=\count341
-\blind@countyy=\count342
-\c@blindlist=\count343
-\c@blindlistlevel=\count344
-\c@blindlist@level=\count345
-\blind@listitem=\count346
-\c@blind@listcount=\count347
-\c@blind@levelcount=\count348
-\blind@mathformula=\count349
-\blind@Mathformula=\count350
-\c@blind@randomcount=\count351
-\c@blind@randommax=\count352
-\c@blind@pangramcount=\count353
-\c@blind@pangrammax=\count354
+\c@blindtext=\count338
+\c@Blindtext=\count339
+\c@blind@countparstart=\count340
+\blind@countxx=\count341
+\blindtext@numBlindtext=\count342
+\blind@countyy=\count343
+\c@blindlist=\count344
+\c@blindlistlevel=\count345
+\c@blindlist@level=\count346
+\blind@listitem=\count347
+\c@blind@listcount=\count348
+\c@blind@levelcount=\count349
+\blind@mathformula=\count350
+\blind@Mathformula=\count351
+\c@blind@randomcount=\count352
+\c@blind@randommax=\count353
+\c@blind@pangramcount=\count354
+\c@blind@pangrammax=\count355
 ) (./finalReport.aux
 (./Chapters/introduction.aux) (./Chapters/systemModel.aux)
 (./Chapters/channelEstimation.aux) (./Chapters/possibleHWSetup.aux)
@@ -934,22 +950,22 @@ LaTeX Warning: Label `sec:LTEAFW' multiply defined.
 
 ) (./Chapters/results.aux) (./Chapters/conclusion.aux) (./Chapters/appendix.aux
 ))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -990,17 +1006,17 @@ LaTeX Font Info:    ... okay on input line 139.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count355
+\scratchcounter=\count356
 \scratchdimen=\dimen306
-\scratchbox=\box74
-\nofMPsegments=\count356
-\nofMParguments=\count357
-\everyMPshowfont=\toks54
-\MPscratchCnt=\count358
+\scratchbox=\box75
+\nofMPsegments=\count357
+\nofMParguments=\count358
+\everyMPshowfont=\toks55
+\MPscratchCnt=\count359
 \MPscratchDim=\dimen307
-\MPnumerator=\count359
-\makeMPintoPDFobject=\count360
-\everyMPtoPDFconversion=\toks55
+\MPnumerator=\count360
+\makeMPintoPDFobject=\count361
+\everyMPtoPDFconversion=\toks56
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1011,14 +1027,14 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-LaTeX Info: Redefining \microtypecontext on input line 139.
+LaTeX Info: Redefining \microtypecontext on input line 141.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `roman'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using expansion set `roman'.
-LaTeX Info: Redefining \showhyphens on input line 139.
+LaTeX Info: Redefining \showhyphens on input line 141.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1026,11 +1042,12 @@ Package microtype Info: No adjustment of character kerning.
 (/usr/share/texmf-dist/tex/latex/microtype/mt-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
-\c@mv@tabular=\count361
-\c@mv@boldtabular=\count362
+\c@mv@tabular=\count362
+\c@mv@boldtabular=\count363
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
+Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 (/usr/share/texmf-dist/tex/latex/translator/translator-basic-dictionary-English
@@ -1039,8 +1056,8 @@ Dictionary: translator-basic-dictionary, Language: English
 ) (/usr/share/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 )
-\AtBeginShipoutBox=\box75
-Package hyperref Info: Link coloring OFF on input line 139.
+\AtBeginShipoutBox=\box76
+Package hyperref Info: Link coloring OFF on input line 141.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1051,23 +1068,15 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count363
+\c@section@level=\count364
 )
-LaTeX Info: Redefining \ref on input line 139.
-LaTeX Info: Redefining \pageref on input line 139.
-LaTeX Info: Redefining \nameref on input line 139.
+LaTeX Info: Redefining \ref on input line 141.
+LaTeX Info: Redefining \pageref on input line 141.
+LaTeX Info: Redefining \nameref on input line 141.
 
 (./finalReport.out) (./finalReport.out)
 \@outlinefile=\write4
 
-(/usr/share/texmf-dist/tex/latex/pdflscape/pdflscape.sty
-Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
-
-(/usr/share/texmf-dist/tex/latex/graphics/lscape.sty
-Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
-)
-Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-)
 (/usr/share/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
@@ -1075,7 +1084,7 @@ File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 139
+LaTeX Font Info:    Trying to load font information for U+msa on input line 141
 .
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1084,7 +1093,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 139
+LaTeX Font Info:    Trying to load font information for U+msb on input line 141
 .
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1127,13 +1136,13 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Trying to load font information for T1+phv on input line 16
-7.
+9.
 
 (/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 167.
+(Font)              scaled to size 12.0pt on input line 169.
  [1
 
 
@@ -1142,9 +1151,9 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 
 ]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 24.88pt on input line 167.
+(Font)              scaled to size 24.88pt on input line 169.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 174.
+(Font)              scaled to size 10.0pt on input line 176.
  [3
 
 
@@ -1159,7 +1168,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 ])
 \tf@toc=\write5
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 10.0pt on input line 180.
+(Font)              scaled to size 10.0pt on input line 182.
  [6]
 (./Chapters/introduction.tex
 Chapter 1.
@@ -1205,38 +1214,49 @@ Chapter 3.
 
 ]
 Chapter 4.
-) [11
 
-] (./Chapters/experimentalSetup.tex [12
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11
+
+]
+(/usr/share/texmf-dist/tex/latex/ucs/data/uni-32.def
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+)
+Overfull \hbox (20.31073pt too wide) in paragraph at lines 62--83
+ [] 
+ []
+
+) [12] [13] (./Chapters/experimentalSetup.tex [14
 
 
 
 ]
 Chapter 5.
-) [13
+) [15
 
-] (./Chapters/results.tex [14
+] (./Chapters/results.tex [16
 
 
 
 ]
 Chapter 6.
 
-LaTeX Warning: Reference `fig:TxPwrSetup' on page 15 undefined on input line 25
+LaTeX Warning: Reference `fig:TxPwrSetup' on page 17 undefined on input line 25
 .
 
 
-LaTeX Warning: Reference `fig:GainDistortion' on page 15 undefined on input lin
+LaTeX Warning: Reference `fig:GainDistortion' on page 17 undefined on input lin
 e 34.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15
+ [17
 
 ]
 
-LaTeX Warning: Reference `fig:NokiaCarpark' on page 16 undefined on input line 
+LaTeX Warning: Reference `fig:NokiaCarpark' on page 18 undefined on input line 
 58.
 
 
@@ -1245,98 +1265,98 @@ Overfull \hbox (23.99051pt too wide) in paragraph at lines 62--72
  []
 
 
-LaTeX Warning: Reference `fig:TxRxLoopback' on page 16 undefined on input line 
+LaTeX Warning: Reference `fig:TxRxLoopback' on page 18 undefined on input line 
 78.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16]
+ [18]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 8.0pt on input line 80.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 6.0pt on input line 80.
 
 
-LaTeX Warning: Reference `fig:RadarCenter' on page 17 undefined on input line 8
+LaTeX Warning: Reference `fig:RadarCenter' on page 19 undefined on input line 8
 4.
 
 
-LaTeX Warning: Reference `ssec:GNURadio' on page 17 undefined on input line 89.
+LaTeX Warning: Reference `ssec:GNURadio' on page 19 undefined on input line 89.
 
 
-[17] (/usr/share/texmf-dist/tex/latex/ucs/data/uni-0.def
+[19] (/usr/share/texmf-dist/tex/latex/ucs/data/uni-0.def
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
 
-LaTeX Warning: Reference `fig:NokiaCarpark' on page 18 undefined on input line 
+LaTeX Warning: Reference `fig:NokiaCarpark' on page 20 undefined on input line 
 110.
 
 
-LaTeX Warning: Reference `fig:TestSetup' on page 18 undefined on input line 110
+LaTeX Warning: Reference `fig:TestSetup' on page 20 undefined on input line 110
 .
 
 
-LaTeX Warning: Reference `fig:TestSetupLegend' on page 18 undefined on input li
+LaTeX Warning: Reference `fig:TestSetupLegend' on page 20 undefined on input li
 ne 112.
 
 
-LaTeX Warning: Reference `fig:DemoBefore' on page 18 undefined on input line 11
+LaTeX Warning: Reference `fig:DemoBefore' on page 20 undefined on input line 11
 4.
 
 
-LaTeX Warning: Reference `fig:DemoAfter' on page 18 undefined on input line 114
+LaTeX Warning: Reference `fig:DemoAfter' on page 20 undefined on input line 114
 .
 
 
-LaTeX Warning: Reference `fig:DemoBefore' on page 18 undefined on input line 11
+LaTeX Warning: Reference `fig:DemoBefore' on page 20 undefined on input line 11
 4.
 
 
-LaTeX Warning: Reference `fig:DemoDuring2' on page 18 undefined on input line 1
+LaTeX Warning: Reference `fig:DemoDuring2' on page 20 undefined on input line 1
 14.
 
 
-LaTeX Warning: Reference `fig:DemoAfter' on page 18 undefined on input line 114
+LaTeX Warning: Reference `fig:DemoAfter' on page 20 undefined on input line 114
 .
 
 
-LaTeX Warning: Reference `fig:DemoDuring2' on page 18 undefined on input line 1
+LaTeX Warning: Reference `fig:DemoDuring2' on page 20 undefined on input line 1
 14.
 
 
-LaTeX Warning: Reference `fig:DemoBefore' on page 18 undefined on input line 11
+LaTeX Warning: Reference `fig:DemoBefore' on page 20 undefined on input line 11
 4.
 
 
-LaTeX Warning: Reference `fig:DemoAfter' on page 18 undefined on input line 114
+LaTeX Warning: Reference `fig:DemoAfter' on page 20 undefined on input line 114
 .
 
-[18]
+[20]
 
-LaTeX Warning: Citation `demoVideo' on page 19 undefined on input line 116.
+LaTeX Warning: Citation `demoVideo' on page 21 undefined on input line 116.
 
-) [19] (./Chapters/conclusion.tex [20
+) [21] (./Chapters/conclusion.tex [22
 
 
 
 ]
 Chapter 7.
-) [21
+) [23
 
-] (./Chapters/appendix.tex [22
+] (./Chapters/appendix.tex [24
 
 
 
 ]
 Appendix A.
-[23
+[25
 
-] [24
+] [26
 
 ]
 Appendix B.
-<images/OctoclockSchematics/octoclock.pdf, id=362, 1228.59pt x 794.97pt>
+<images/OctoclockSchematics/octoclock.pdf, id=387, 1228.59pt x 794.97pt>
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 <use images/OctoclockSchematics/octoclock.pdf>
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf  used on inpu
@@ -1352,7 +1372,7 @@ File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf  used on inpu
 t line 9.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
-<images/OctoclockSchematics/octoclock.pdf, id=366, page=1, 1228.59pt x 794.97pt
+<images/OctoclockSchematics/octoclock.pdf, id=391, page=1, 1228.59pt x 794.97pt
 >
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 <use images/OctoclockSchematics/octoclock.pdf, page 1>
@@ -1364,7 +1384,7 @@ File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf , page1 used 
 on input line 9.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
-[25
+[27
 
 ]
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
@@ -1382,8 +1402,8 @@ File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf , page1 used 
 on input line 9.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
- [26 <./images/OctoclockSchematics/octoclock.pdf>]
-<images/OctoclockSchematics/octoclock.pdf, id=380, page=2, 1228.59pt x 794.97pt
+ [28 <./images/OctoclockSchematics/octoclock.pdf>]
+<images/OctoclockSchematics/octoclock.pdf, id=404, page=2, 1228.59pt x 794.97pt
 >
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 <use images/OctoclockSchematics/octoclock.pdf, page 2>
@@ -1400,30 +1420,30 @@ File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf , page2 used 
 on input line 9.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
- [27 <./images/OctoclockSchematics/octoclock.pdf>] [28
+ [29 <./images/OctoclockSchematics/octoclock.pdf>] [30
 
 ]
 Appendix C.
-) [29
+) [31
 
-] [30
+] [32
 
 
-] (./finalReport.bbl) [31
+] (./finalReport.bbl) [33
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 247.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 247.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 249.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 249.
  (./finalReport.aux
 (./Chapters/introduction.aux) (./Chapters/systemModel.aux)
 (./Chapters/channelEstimation.aux) (./Chapters/possibleHWSetup.aux)
 (./Chapters/experimentalSetup.aux) (./Chapters/results.aux)
 (./Chapters/conclusion.aux) (./Chapters/appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 247.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 247.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 249.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 249.
 Package rerunfilecheck Info: File `finalReport.out' has not changed.
-(rerunfilecheck)             Checksum: F10BE1F4367978170C4975669CACE661;2023.
+(rerunfilecheck)             Checksum: 10A518BA401E428BD97F9292909EDFC8;2165.
 
 
 LaTeX Warning: There were undefined references.
@@ -1433,10 +1453,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 28339 strings out of 480478
- 540964 string characters out of 5905959
- 856654 words of memory out of 5000000
- 43519 multiletter control sequences out of 15000+600000
+ 28663 strings out of 480478
+ 544832 string characters out of 5905959
+ 859588 words of memory out of 5000000
+ 43830 multiletter control sequences out of 15000+600000
  590079 words of font info for 130 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  76i,20n,102p,837b,996s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1452,10 +1472,10 @@ msy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 nts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/public/new
 tx/ztmb.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/shar
 e/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on finalReport.pdf (37 pages, 334529 bytes).
+Output written on finalReport.pdf (39 pages, 341517 bytes).
 PDF statistics:
- 473 PDF objects out of 1000 (max. 8388607)
- 410 compressed objects within 5 object streams
- 95 named destinations out of 1000 (max. 500000)
- 20787 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 498 PDF objects out of 1000 (max. 8388607)
+ 433 compressed objects within 5 object streams
+ 102 named destinations out of 1000 (max. 500000)
+ 20803 words of extra memory for PDF output out of 24883 (max. 10000000)
 

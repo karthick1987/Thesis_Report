@@ -13,21 +13,23 @@
 \BOOKMARK [2][-]{subsection.3.2.3}{MMSE}{section.3.2}% 13
 \BOOKMARK [0][-]{chapter.4}{Potential Hardware Setups}{}% 14
 \BOOKMARK [1][-]{section.4.1}{Software Defined Radios USRP}{chapter.4}% 15
-\BOOKMARK [1][-]{section.4.2}{MIMO Application Framework}{chapter.4}% 16
-\BOOKMARK [1][-]{section.4.3}{LTE Application Framework}{chapter.4}% 17
-\BOOKMARK [0][-]{chapter.5}{Experimantal Setup}{}% 18
-\BOOKMARK [1][-]{section.5.1}{LTE Application Framework}{chapter.5}% 19
-\BOOKMARK [0][-]{chapter.6}{Results}{}% 20
-\BOOKMARK [1][-]{section.6.1}{Transmit Power Measurements}{chapter.6}% 21
-\BOOKMARK [1][-]{section.6.2}{Path Loss Measurements}{chapter.6}% 22
-\BOOKMARK [1][-]{section.6.3}{Transmit and Receive Loopback}{chapter.6}% 23
-\BOOKMARK [1][-]{section.6.4}{Radar Calibration}{chapter.6}% 24
-\BOOKMARK [1][-]{section.6.5}{Hardware Performance}{chapter.6}% 25
-\BOOKMARK [2][-]{subsection.6.5.1}{USRP Sampling Rate}{section.6.5}% 26
-\BOOKMARK [2][-]{subsection.6.5.2}{Max Frame Rate for Demo}{section.6.5}% 27
-\BOOKMARK [1][-]{section.6.6}{Demo}{chapter.6}% 28
-\BOOKMARK [0][-]{chapter.7}{Conclusion and Outlook}{}% 29
-\BOOKMARK [0][-]{appendix.A}{Antenna Pattern}{}% 30
-\BOOKMARK [0][-]{appendix.B}{Schematic Octoclock}{}% 31
-\BOOKMARK [0][-]{appendix.C}{Troubleshooting}{}% 32
-\BOOKMARK [0][-]{appendix.D}{Bibliography}{}% 33
+\BOOKMARK [1][-]{section.4.2}{MIMO Application Framework \(MIMO AFW\)}{chapter.4}% 16
+\BOOKMARK [2][-]{subsection.4.2.1}{USRP 2940}{section.4.2}% 17
+\BOOKMARK [1][-]{section.4.3}{LTE Application Framework}{chapter.4}% 18
+\BOOKMARK [0][-]{chapter.5}{Experimantal Setup}{}% 19
+\BOOKMARK [1][-]{section.5.1}{LTE Application Framework}{chapter.5}% 20
+\BOOKMARK [1][-]{section.5.2}{Application Example}{chapter.5}% 21
+\BOOKMARK [0][-]{chapter.6}{Results}{}% 22
+\BOOKMARK [1][-]{section.6.1}{Transmit Power Measurements}{chapter.6}% 23
+\BOOKMARK [1][-]{section.6.2}{Path Loss Measurements}{chapter.6}% 24
+\BOOKMARK [1][-]{section.6.3}{Transmit and Receive Loopback}{chapter.6}% 25
+\BOOKMARK [1][-]{section.6.4}{Radar Calibration}{chapter.6}% 26
+\BOOKMARK [1][-]{section.6.5}{Hardware Performance}{chapter.6}% 27
+\BOOKMARK [2][-]{subsection.6.5.1}{USRP Sampling Rate}{section.6.5}% 28
+\BOOKMARK [2][-]{subsection.6.5.2}{Max Frame Rate for Demo}{section.6.5}% 29
+\BOOKMARK [1][-]{section.6.6}{Demo}{chapter.6}% 30
+\BOOKMARK [0][-]{chapter.7}{Conclusion and Outlook}{}% 31
+\BOOKMARK [0][-]{appendix.A}{Antenna Pattern}{}% 32
+\BOOKMARK [0][-]{appendix.B}{Schematic Octoclock}{}% 33
+\BOOKMARK [0][-]{appendix.C}{Troubleshooting}{}% 34
+\BOOKMARK [0][-]{appendix.D}{Bibliography}{}% 35

@@ -22,31 +22,75 @@ USRP is a Software Defined Radio (SDR) designed by National Instruments that ena
             ADC/DAC                 & 14 (For Rx)/16 (For Tx) bit         \\ \hline
             Frequency Accuracy      & 2.5 ppm           \\ \hline
             Maximum Power Output    & 20dBm             \\ \hline
+            Maximum I/Q Sample Rate & 200MHz            \\ \hline
         \end{tabular}
     \end{center}
-    \caption{USRP SDR Product details}
+    \caption{USRP2940 SDR Product details}
     \label{tb:USRP}
 \end{table}
 
-%\begin{table}[H]
-%    \begin{center}
-%        \begin{tabular}{|c|c|}
-%            \hline
-%            Parameter & Value \\ \hline
-%            RBW & 20kHz \\ \hline
-%            VBW & 50kHz \\ \hline
-%            SWP Time & 50ms  \\ 
-%            \hline
-%        \end{tabular}
-%    \end{center}
-%    \caption{Spectrum analyser settings for the transmit power tests}
-%    \label{}
-%\end{table}
+\section{MIMO Application Framework (MIMO AFW)}\label{sec:MIMOAFW}
+MIMO Application Framework is a Software developed by National Instruments, that offers a comprehensive plug and play MIMO setup. This setup requires a host of additional hardware which are required for the functioning of the MIMO AFW. \cite{MIMOAFWGettingStarted}
+\begin{table}[H]
+    \begin{center}
+        \begin{tabular}{|l|l|}
+        \hline
+            \textbf{Part Number} & \textbf{Description}          \\ \hline
+            USRP-2940            & SDR                           \\ \hline
+            PXIe-7976            & FPGA Module for FlexRIO       \\ \hline
+            CDA-2990             & Clock Distribution Device     \\ \hline
+            CPS-8910             & Switch Device for PCI Express \\ \hline
+            PXIe-6674T           & Synchronization Module        \\ \hline
+            PXIe-1085            & Chassis                       \\ \hline
+            PXIe-8135            & Controller                    \\ \hline
+        \end{tabular}
+    \end{center}
+    \caption{Additional Hardware for required for MIMO AFW to function}
+    \label{tb:MIMOAFWPartsList}
+\end{table}
 
-\section{MIMO Application Framework}\label{sec:MIMOAFW}
+\subsection{USRP 2940}\label{MIMOAFWUSRP}
+As mentioned in Section \ref{sec:USRP}, this is the backbone of the architecture. The Software defined radio (USRP2940) is used as an air interface for over the air transmission. There are host of other options that can be used here instead of the USRP2940. Table \ref{} lists the alternatives with an overview of the functionality of each of the parts.
+
+    %\clearpage% Flush earlier floats (otherwise order might not be correct)
+    %\thispagestyle{empty}% empty page style (?)
+    %\begin{landscape}% Landscape page
+        %\begin{table}[!htb]
+            \begin{sidewaystable}[htp]
+                \begin{center}
+            %\resizebox{\textwidth}{!}{
+                \begin{tabular}{|l|l|l|c|c|c|c|c|}
+                \hline
+                \textbf{Model} & \textbf{\begin{tabular}[c]{@{}c@{}}RF-Frequency\\ Range\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}RF-Frontend\\ Bandwidth\end{tabular}} & \textbf{FPGA} & \textbf{Inputs} & \textbf{Outputs} & \textbf{Communication} & \textbf{GPS Osillator} \\ \hline
+                USRP-2940      & 50 MHz - 2.2 GHz            & 40 MHz                                & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
+                USRP-2940      & 50 MHz – 2.2 GHz            & 120 MHz                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
+                USRP-2942      & 400 MHz - 4.4 GHz           & 40 MHz                                & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
+                USRP-2942      & 400 MHz - 4.4 GHz           & 120 MHz                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
+                USRP-2943      & 1.2 GHz - 6 GHz             & 40 MHz                                & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
+                USRP-2943      & 1.2 GHz – 6 GHz             & 120 MHz                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
+                USRP-2944      & 10 MHz - 6 GHz              & 160 MHz                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
+                USRP-2945      & 10 MHz - 6 GHz              & 80 MHz                                & Kintex-7 410T & 4               & 0                & MXIe Ethernet          & No                     \\ \hline
+                USRP-2950      & 50 MHz - 2.2 GHz            & 40 MHz                                & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & Yes                    \\ \hline
+                USRP-2950      & 50 MHz - 2.2 GHz            & 120 MHz                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & Yes                    \\ \hline
+                USRP-2952      & 400 MHz - 4.4 GHz           & 40 MHz                                & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & Yes                    \\ \hline
+                USRP-2952      & 400 MHz - 4.4 GHz           & 120 MHz                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & Yes                    \\ \hline
+                USRP-2953      & 1.2 GHz - 6 GHz             & 40 MHz                                & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & Yes                    \\ \hline
+                USRP-2953      & 1.2 GHz - 6 GHz             & 120 MHz                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & Yes                    \\ \hline
+                USRP-2954      & 10 MHz - 6 GHz              & 160 MHz                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & Yes                    \\ \hline
+                USRP-2955      & 10 MHz - 6 GHz              & 80 MHz                                & Kintex-7 410T & 4               & 0                & MXIe Ethernet          & Yes                    \\ \hline
+                \end{tabular}
+            %}
+            \end{center}
+            \caption{List of alternative Software defined radios offered by National Instruments}
+            \label{tb:USRPPartsList}
+        \end{sidewaystable}
+%\end{landscape}
+%\clearpage% Flush page
+
+
 \section{LTE Application Framework}\label{sec:LTEAFW}
 
-
+LTE Application Framework is a Software that National Instruments designed and offers to set up a LTE setup. This setup requires a host of additional hardware which are required for the functioning of the LTE AFW.
 
 %\begin{figure}[!htb]
 %    \centering

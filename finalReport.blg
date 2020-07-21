@@ -15,58 +15,53 @@ Reallocated singl_function (elt_size=8) to 100 items from 50.
 Reallocated singl_function (elt_size=8) to 100 items from 50.
 Reallocated wiz_functions (elt_size=8) to 6000 items from 3000.
 Reallocated singl_function (elt_size=8) to 100 items from 50.
-Database file #1: IEEEabrv.bib
-Database file #2: bibfile.bib
-I was expecting a `,' or a `}'---line 77 of file bibfile.bib
- :   journal                  = 3
- :                               GPP,
-I'm skipping whatever remains of this entry
+Database file #1: bibfile.bib
 Warning--I didn't find a database entry for "demoVideo"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
-Warning--empty year in 3gpp36211
+Warning--empty journal in 3gpp36211
 
 Done.
-You've used 2 entries,
+You've used 3 entries,
             4087 wiz_defined-function locations,
-            1363 strings with 17989 characters,
-and the built_in function-call counts, 858 in all, are:
-= -- 48
-> -- 11
-< -- 3
-+ -- 4
+            846 strings with 7842 characters,
+and the built_in function-call counts, 1134 in all, are:
+= -- 70
+> -- 12
+< -- 4
++ -- 5
 - -- 2
-* -- 49
-:= -- 153
-add.period$ -- 4
-call.type$ -- 2
+* -- 57
+:= -- 200
+add.period$ -- 5
+call.type$ -- 3
 change.case$ -- 2
 chr.to.int$ -- 9
-cite$ -- 3
-duplicate$ -- 73
-empty$ -- 87
+cite$ -- 4
+duplicate$ -- 100
+empty$ -- 112
 format.name$ -- 2
-if$ -- 176
+if$ -- 238
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 11
-newline$ -- 29
+int.to.str$ -- 3
+missing$ -- 18
+newline$ -- 32
 num.names$ -- 2
-pop$ -- 37
+pop$ -- 51
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 53
+skip$ -- 78
 stack$ -- 0
 substring$ -- 10
-swap$ -- 33
-text.length$ -- 0
+swap$ -- 52
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 2
+type$ -- 3
 warning$ -- 1
 while$ -- 3
-width$ -- 3
-write$ -- 36
-(There was 1 error message)
+width$ -- 4
+write$ -- 43
+(There were 2 warnings)
