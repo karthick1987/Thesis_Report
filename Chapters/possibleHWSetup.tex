@@ -5,7 +5,7 @@ Measurements of MIMO channel can be achieved in multiple methods. This chapter d
 
 \section{Software Defined Radios USRP}\label{sec:USRP}
 
-USRP is a Software Defined Radio (SDR) designed by National Instruments that enables quick prototyping of different wireless applications. It is aimed at anyone from hobbists, research labs, universities, etc... or anyone interested in evaluating custom algorithms. The SDR used here is a USRP2940 specifications of which are described in Table \ref{tb:USRP}
+USRP is a Software Defined Radio (SDR) designed by National Instruments that enables quick prototyping of different wireless applications. It is aimed at hobbists, research labs, universities, etc... or anyone interested in evaluating custom algorithms. The SDR used in this masters thesis is a USRP294, specifications of which are described in Table \ref{tb:USRP}.
 
 \begin{table}[H]
     \begin{center}
@@ -30,7 +30,8 @@ USRP is a Software Defined Radio (SDR) designed by National Instruments that ena
 \end{table}
 
 \section{MIMO Application Framework (MIMO AFW)}\label{sec:MIMOAFW}
-MIMO Application Framework is a Software developed by National Instruments, that offers a comprehensive plug and play MIMO setup. This setup requires a host of additional hardware which are required for the functioning of the MIMO AFW. \cite{MIMOAFWGettingStarted}
+MIMO Application Framework (MIMO AFW) is a Software developed by National Instruments, that offers a comprehensive plug and play MIMO setup. This setup requires a host of additional hardware which are required for the functioning of the MIMO AFW \cite{MIMOAFWGettingStarted}. When setup with all the required Hardware MIMO AFW can support a maximum of 128 Antennas on the Base Station (BS) side and upto 12 Antennas on the User 
+
 \begin{table}[H]
     \begin{center}
         \begin{tabular}{|l|l|}
@@ -49,20 +50,32 @@ MIMO Application Framework is a Software developed by National Instruments, that
     \label{tb:MIMOAFWPartsList}
 \end{table}
 
-\subsection{USRP 2940}\label{MIMOAFWUSRP}
-As mentioned in Section \ref{sec:USRP}, this is the backbone of the architecture. The Software defined radio (USRP2940) is used as an air interface for over the air transmission. There are host of other options that can be used here instead of the USRP2940. Table \ref{} lists the alternatives with an overview of the functionality of each of the parts.
+\subsection{USRP 2940}\label{sec:MIMOAFWUSRP}
+As mentioned in Section \ref{sec:USRP}, this is the backbone of the architecture. The Software defined radio (USRP2940) is used as an air interface for over the air transmission. There are host of other options that can be used here instead of the USRP2940. Table \ref{tb:USRPPartsList} lists the alternatives with an overview of the functionality of each of the parts.
 
-    %\clearpage% Flush earlier floats (otherwise order might not be correct)
-    %\thispagestyle{empty}% empty page style (?)
-    %\begin{landscape}% Landscape page
-        %\begin{table}[!htb]
-            \begin{sidewaystable}[htp]
+\subsection{PXIe-7976}\label{ssec:PXIe-7976}
+MIMO has very demanding operations that are quite compute intensive such as precoding, equalization as well as channel estimation in the frequency domain. In addition to the aforementioned processing tasks this FPGA card also perform the \emph{bit processing}
+
+This PXIe communication based FPGA card contains a Xilinx Kintex-7 FPGA and moves data in and out using an 8 lane PCIe slot.
+
+\subsection{CDA-2990}\label{ssec:CDA-2990}
+\subsection{CPS-8910}\label{ssec:CPS-8910}
+\subsection{PXIe-6674T}\label{ssec:PXIe-6674T}
+\subsection{PXIe-1085}\label{ssec:PXIe-1085}
+\subsection{PXIe-8135}\label{ssec:PXIe-8135}
+
+
+    \clearpage% Flush earlier floats (otherwise order might not be correct)
+    \thispagestyle{empty}% empty page style (?)
+    \begin{landscape}% Landscape page
+        \begin{table}[!htb]
+            %\begin{sidewaystable}[htp]
                 \begin{center}
             %\resizebox{\textwidth}{!}{
                 \begin{tabular}{|l|l|l|c|c|c|c|c|}
                 \hline
                 \textbf{Model} & \textbf{\begin{tabular}[c]{@{}c@{}}RF-Frequency\\ Range\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}RF-Frontend\\ Bandwidth\end{tabular}} & \textbf{FPGA} & \textbf{Inputs} & \textbf{Outputs} & \textbf{Communication} & \textbf{GPS Osillator} \\ \hline
-                USRP-2940      & 50 MHz - 2.2 GHz            & 40 MHz                                & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
+                USRP-2940      & 5 MHz - 2.2 GHz            & 40 MHz                                & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
                 USRP-2940      & 50 MHz – 2.2 GHz            & 120 MHz                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
                 USRP-2942      & 400 MHz - 4.4 GHz           & 40 MHz                                & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
                 USRP-2942      & 400 MHz - 4.4 GHz           & 120 MHz                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
@@ -83,10 +96,9 @@ As mentioned in Section \ref{sec:USRP}, this is the backbone of the architecture
             \end{center}
             \caption{List of alternative Software defined radios offered by National Instruments}
             \label{tb:USRPPartsList}
-        \end{sidewaystable}
-%\end{landscape}
-%\clearpage% Flush page
-
+        \end{table}
+\end{landscape}
+\clearpage% Flush page
 
 \section{LTE Application Framework}\label{sec:LTEAFW}
 

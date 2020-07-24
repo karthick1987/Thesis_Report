@@ -1,6 +1,6 @@
 %-------------------------------------------------------------------------------
 % * MSV Report Class Template and Documentation
-\documentclass[twoside]{msvreport}%
+\documentclass[twoside]{msvreport}
 % - msvreport is an extension of the standard report class and passes
 %   all options to report
 % - default options are as in report class with exception of a4paper,
@@ -62,6 +62,9 @@
 \usepackage{pdfpages}
 \usepackage{rotating}
 \usepackage{pdflscape}
+\usepackage[acronym,nomain,nonumberlist,toc,shortcuts]{glossaries}
+
+
 %
 % *** Options for msvfonts
 % 1) boolean options for msvfonts package:
@@ -135,10 +138,9 @@
 % does not work with 'timesmath' option in msvfonts
 %
 
-
-\usepackage{blindtext}
-
+\input{Chapters/glossary}
 \begin{document}
+
 %--------------------------------------------------------------------------------
 % ** Custom Commands
 % Put your \newcommand's here or \input them from a file
@@ -167,8 +169,14 @@ Submission: Xxx xx, 2020
 % ** Optional: Abstract
 %
 \begin{abstract}
-Put your abstract text here.
+    Put your abstract text here. 
+
 \end{abstract}
+
+\listoffigures
+
+\listoftables
+
 %
 %--------------------------------------------------------------------------------
 % ** Table of Contents
@@ -179,7 +187,12 @@ Put your abstract text here.
 %--------------------------------------------------------------------------------
 %
 % ** First Chapter
+
 \mainmatter
+
+\glsaddall
+\printglossary[type=\acronymtype,title=Acronyms]
+
 \include{Chapters/introduction}
 \include{Chapters/systemModel}
 \include{Chapters/channelEstimation}

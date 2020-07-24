@@ -79,7 +79,7 @@ For the puprpose of channel estmation, the most important signals are Primary Sy
         \end{table}
 
 \subsubsection{Final Waveform}
-All the signals mentioned in Section \ref{LTEFrame} are generated in MATLAB and arranged in a 2D grid of frequency and time as shown below in Figure \ref{fig:RBSignals}. The CRS are placed every 6 subcarriers in the frequency domain and every 3 or 4 time symbols apart, according to the position on the grid. Where as the PSS and SSS only repeat every 5 subframes.
+All the signals mentioned in Section \ref{LTEFrame} are generated in Labview using the LTE Application Framework Software and arranged in a 2D grid of frequency and time as shown below in Figure \ref{fig:RBSignals}. The CRS are placed every 6 subcarriers in the frequency domain and every 3 or 4 time symbols apart, according to the position on the grid. Where as the PSS and SSS only repeat every 5 subframes.
 
 \begin{figure}[H]
     \begin{center}
@@ -127,7 +127,7 @@ Once the frame has been demodulated and the 2D OFDM grid has been obtained, the 
 %TODO
 
 \subsection{Antenna}
-The analog time domain signal is transmitted from the USRP (Section \ref{USRP}) over the air using a Triband antenna. For the setup an omni directional Antenna from TODO capable of transmitting and receiving around frequencies of 400,800 or 1200 MHz. The antenna radiation pattern is shown in Appendix \ref{ch:AntPat}. This antenna shown in Figure \ref{fig:USRPAnt} was used as the transmit and the receive antenna for the demo setup.
+The analog time domain signal is transmitted from the USRP (Section \ref{sec:USRP}) over the air using a Triband antenna. For the setup an omni directional Antenna from TODO capable of transmitting and receiving around frequencies of 144, 400 or 1200 MHz. The antenna radiation pattern is shown in Appendix \ref{ch:AntPat}. This antenna shown in Figure \ref{fig:USRPAnt} was used as the transmit and the receive antenna for the demo setup.
 
 \begin{figure}[H]
     \begin{center}

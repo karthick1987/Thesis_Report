@@ -12,15 +12,17 @@ fi
 if [ "$#" -eq 1 ]; then
     FILE="$1"
 fi
-FILEWITHEX=${FILE}".tex"
+FILEWITHTEX=${FILE}".tex"
 PDFLATEXFLAGS="-halt-on-error"
 
-echo "Compiling the $FILEWITHEX using PDFlatex"
+echo "Compiling the $FILEWITHTEX using PDFlatex"
 
 runBibTex="bibtex ${FILE}"
-runpdfLatex="pdflatex ${PDFLATEXFLAGS} ${FILEWITHEX}"
+runGlos="makeglossaries ${FILE}"
+runpdfLatex="pdflatex ${PDFLATEXFLAGS} ${FILEWITHTEX}"
 
 outputBib=$(eval ${runBibTex})
+outputGlos=$(eval ${runGlos})
 outputPdf=$(eval ${runpdfLatex})
 
 testError=$(echo $outputPdf | grep -ci "error") #>/dev/null
