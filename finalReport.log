@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.7.10)  23 JUL 2020 14:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.7.10)  29 JUL 2020 17:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1387,52 +1387,69 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [15
 
 ]
-Underfull \vbox (badness 1147) has occurred while \output is active []
+LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input lin
+e 44.
 
- [16]
-[17] (/usr/share/texmf-dist/tex/latex/ucs/data/uni-32.def
-File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+(/usr/share/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
+File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 )
-Overfull \hbox (20.31073pt too wide) in paragraph at lines 75--96
- [] 
+LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.95pt on input line 44.
+ [16] [17]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 9.0pt on input line 77.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 9.0pt on input line 81.
+
+Overfull \hbox (185.11443pt too wide) has occurred while \output is active
+[]|
  []
 
 [18
 
+] [19
 
-]) [19
+] [20] (/usr/share/texmf-dist/tex/latex/ucs/data/uni-32.def
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+)
+Overfull \hbox (20.31073pt too wide) in paragraph at lines 124--145
+ [] 
+ []
+
+[21
 
 
-] (./Chapters/experimentalSetup.tex [20
+]) [22
 
 
-
-]
+] (./Chapters/experimentalSetup.tex
 Chapter 5.
-) [21
+) [23
 
-] (./Chapters/results.tex [22
+
+
+] (./Chapters/results.tex [24
 
 
 
 ]
 Chapter 6.
 
-LaTeX Warning: Reference `fig:TxPwrSetup' on page 23 undefined on input line 25
+LaTeX Warning: Reference `fig:TxPwrSetup' on page 25 undefined on input line 25
 .
 
 
-LaTeX Warning: Reference `fig:GainDistortion' on page 23 undefined on input lin
+LaTeX Warning: Reference `fig:GainDistortion' on page 25 undefined on input lin
 e 34.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [23
+ [25
 
 ]
 
-LaTeX Warning: Reference `fig:NokiaCarpark' on page 24 undefined on input line 
+LaTeX Warning: Reference `fig:NokiaCarpark' on page 26 undefined on input line 
 58.
 
 
@@ -1441,92 +1458,92 @@ Overfull \hbox (23.99051pt too wide) in paragraph at lines 62--72
  []
 
 
-LaTeX Warning: Reference `fig:TxRxLoopback' on page 24 undefined on input line 
+LaTeX Warning: Reference `fig:TxRxLoopback' on page 26 undefined on input line 
 78.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [24]
+ [26]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 8.0pt on input line 80.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 6.0pt on input line 80.
 
 
-LaTeX Warning: Reference `fig:RadarCenter' on page 25 undefined on input line 8
+LaTeX Warning: Reference `fig:RadarCenter' on page 27 undefined on input line 8
 4.
 
 
-LaTeX Warning: Reference `ssec:GNURadio' on page 25 undefined on input line 89.
+LaTeX Warning: Reference `ssec:GNURadio' on page 27 undefined on input line 89.
 
 
-[25] (/usr/share/texmf-dist/tex/latex/ucs/data/uni-0.def
+[27] (/usr/share/texmf-dist/tex/latex/ucs/data/uni-0.def
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
 
-LaTeX Warning: Reference `fig:NokiaCarpark' on page 26 undefined on input line 
+LaTeX Warning: Reference `fig:NokiaCarpark' on page 28 undefined on input line 
 110.
 
 
-LaTeX Warning: Reference `fig:TestSetup' on page 26 undefined on input line 110
+LaTeX Warning: Reference `fig:TestSetup' on page 28 undefined on input line 110
 .
 
 
-LaTeX Warning: Reference `fig:TestSetupLegend' on page 26 undefined on input li
+LaTeX Warning: Reference `fig:TestSetupLegend' on page 28 undefined on input li
 ne 112.
 
 
-LaTeX Warning: Reference `fig:DemoBefore' on page 26 undefined on input line 11
+LaTeX Warning: Reference `fig:DemoBefore' on page 28 undefined on input line 11
 4.
 
 
-LaTeX Warning: Reference `fig:DemoAfter' on page 26 undefined on input line 114
+LaTeX Warning: Reference `fig:DemoAfter' on page 28 undefined on input line 114
 .
 
 
-LaTeX Warning: Reference `fig:DemoBefore' on page 26 undefined on input line 11
+LaTeX Warning: Reference `fig:DemoBefore' on page 28 undefined on input line 11
 4.
 
 
-LaTeX Warning: Reference `fig:DemoDuring2' on page 26 undefined on input line 1
+LaTeX Warning: Reference `fig:DemoDuring2' on page 28 undefined on input line 1
 14.
 
 
-LaTeX Warning: Reference `fig:DemoAfter' on page 26 undefined on input line 114
+LaTeX Warning: Reference `fig:DemoAfter' on page 28 undefined on input line 114
 .
 
 
-LaTeX Warning: Reference `fig:DemoDuring2' on page 26 undefined on input line 1
+LaTeX Warning: Reference `fig:DemoDuring2' on page 28 undefined on input line 1
 14.
 
 
-LaTeX Warning: Reference `fig:DemoBefore' on page 26 undefined on input line 11
+LaTeX Warning: Reference `fig:DemoBefore' on page 28 undefined on input line 11
 4.
 
 
-LaTeX Warning: Reference `fig:DemoAfter' on page 26 undefined on input line 114
+LaTeX Warning: Reference `fig:DemoAfter' on page 28 undefined on input line 114
 .
 
-[26]
+[28]
 
-LaTeX Warning: Citation `demoVideo' on page 27 undefined on input line 116.
+LaTeX Warning: Citation `demoVideo' on page 29 undefined on input line 116.
 
-) [27] (./Chapters/conclusion.tex [28
+) [29] (./Chapters/conclusion.tex [30
 
 
 
 ]
 Chapter 7.
-) [29
+) [31
 
-] (./Chapters/appendix.tex [30
+] (./Chapters/appendix.tex [32
 
 
 
 ]
 Appendix A.
-<images/OctoclockSchematics/octoclock.pdf, id=488, 1228.59pt x 794.97pt>
+<images/OctoclockSchematics/octoclock.pdf, id=509, 1228.59pt x 794.97pt>
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 <use images/OctoclockSchematics/octoclock.pdf>
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf  used on inpu
@@ -1542,7 +1559,7 @@ File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf  used on inpu
 t line 6.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
-<images/OctoclockSchematics/octoclock.pdf, id=492, page=1, 1228.59pt x 794.97pt
+<images/OctoclockSchematics/octoclock.pdf, id=513, page=1, 1228.59pt x 794.97pt
 >
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 <use images/OctoclockSchematics/octoclock.pdf, page 1>
@@ -1554,7 +1571,7 @@ File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf , page1 used 
 on input line 6.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
-[31
+[33
 
 ]
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
@@ -1572,8 +1589,8 @@ File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf , page1 used 
 on input line 6.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
- [32 <./images/OctoclockSchematics/octoclock.pdf>]
-<images/OctoclockSchematics/octoclock.pdf, id=505, page=2, 1228.59pt x 794.97pt
+ [34 <./images/OctoclockSchematics/octoclock.pdf>]
+<images/OctoclockSchematics/octoclock.pdf, id=527, page=2, 1228.59pt x 794.97pt
 >
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 <use images/OctoclockSchematics/octoclock.pdf, page 2>
@@ -1590,16 +1607,16 @@ File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf , page2 used 
 on input line 6.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
- [33 <./images/OctoclockSchematics/octoclock.pdf>] [34
+ [35 <./images/OctoclockSchematics/octoclock.pdf>] [36
 
 ]
 Appendix B.
-) [35
+) [37
 
-] [36
+] [38
 
 
-] (./finalReport.bbl) [37
+] (./finalReport.bbl) [39
 
 
 ]
@@ -1612,9 +1629,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 262.
 (./Chapters/conclusion.aux) (./Chapters/appendix.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 262.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 262.
-Package rerunfilecheck Info: File `finalReport.out' has not changed.
-(rerunfilecheck)             Checksum: 73772EA9056A8A3FF4C777562FE6C917;2638.
 
+
+Package rerunfilecheck Warning: File `finalReport.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `finalReport.out':
+(rerunfilecheck)             Before: D58E7A8753F16996C721C37865E9FA53;2654
+(rerunfilecheck)             After:  C2318FB90C37375C0A3AD34E1CE123DF;2775.
 
 LaTeX Warning: There were undefined references.
 
@@ -1623,29 +1646,31 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 34451 strings out of 480478
- 655837 string characters out of 5905959
- 1000679 words of memory out of 5000000
- 49464 multiletter control sequences out of 15000+600000
- 590465 words of font info for 134 fonts, out of 8000000 for 9000
+ 34628 strings out of 480478
+ 658598 string characters out of 5905959
+ 1002067 words of memory out of 5000000
+ 49607 multiletter control sequences out of 15000+600000
+ 599167 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  76i,20n,102p,991b,997s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texmf
--dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi1
-0.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/sha
-re/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
-/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fo
-nts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/public/new
-tx/ztmb.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/shar
-e/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on finalReport.pdf (47 pages, 347404 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texmf-d
+ist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texmf-dist/fonts/enc/dvips
+/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.p
+fb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fon
+ts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf-dist/fonts/type1/urw/helvet
+ic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/
+share/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texmf-dist/fonts
+/type1/public/newtx/ztmr.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/zt
+mri.pfb>
+Output written on finalReport.pdf (49 pages, 357445 bytes).
 PDF statistics:
- 605 PDF objects out of 1000 (max. 8388607)
- 531 compressed objects within 6 object streams
- 131 named destinations out of 1000 (max. 500000)
- 20867 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 633 PDF objects out of 1000 (max. 8388607)
+ 556 compressed objects within 6 object streams
+ 139 named destinations out of 1000 (max. 500000)
+ 27011 words of extra memory for PDF output out of 29859 (max. 10000000)
 

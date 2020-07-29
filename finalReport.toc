@@ -20,33 +20,35 @@
 \contentsline {chapter}{\numberline {3}Channel Estimation}{13}{chapter.3}%
 \contentsline {section}{\numberline {3.1}OFDM}{13}{section.3.1}%
 \contentsline {section}{\numberline {3.2}MIMO Channel Estimation}{13}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Simple}{13}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.1}Maximum Ratio Combiner}{13}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Zero Forcing}{13}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}MMSE}{13}{subsection.3.2.3}%
 \contentsline {chapter}{\numberline {4}Potential Hardware Setups}{15}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Software Defined Radios USRP}{15}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}PCIe-8371}{16}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Host}{16}{subsection.4.1.2}%
 \contentsline {section}{\numberline {4.2}MIMO Application Framework (MIMO AFW)}{16}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}USRP 2940}{16}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}PXIe-7976}{16}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}CDA-2990}{17}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}CPS-8910}{17}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}PXIe-6674T}{17}{subsection.4.2.5}%
-\contentsline {subsection}{\numberline {4.2.6}PXIe-1085}{17}{subsection.4.2.6}%
-\contentsline {subsection}{\numberline {4.2.7}PXIe-8135}{17}{subsection.4.2.7}%
-\contentsline {section}{\numberline {4.3}LTE Application Framework}{19}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Experimantal Setup}{21}{chapter.5}%
-\contentsline {section}{\numberline {5.1}LTE Application Framework}{21}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Application Example}{21}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Results}{23}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Transmit Power Measurements}{23}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Path Loss Measurements}{24}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Transmit and Receive Loopback}{25}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Radar Calibration}{25}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Hardware Performance}{25}{section.6.5}%
-\contentsline {subsection}{\numberline {6.5.1}USRP Sampling Rate}{25}{subsection.6.5.1}%
-\contentsline {subsection}{\numberline {6.5.2}Max Frame Rate for Demo}{25}{subsection.6.5.2}%
-\contentsline {section}{\numberline {6.6}Demo}{26}{section.6.6}%
-\contentsline {chapter}{\numberline {7}Conclusion and Outlook}{29}{chapter.7}%
-\contentsline {chapter}{\numberline {A}Schematic Octoclock}{31}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Troubleshooting}{35}{appendix.B}%
-\contentsline {chapter}{Bibliography}{37}{appendix.C}%
+\contentsline {subsection}{\numberline {4.2.1}USRP 2940}{19}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}PXIe-7976}{19}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}CDA-2990}{19}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}CPS-8910}{19}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}PXIe-1085}{19}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.6}PXIe-6674T}{20}{subsection.4.2.6}%
+\contentsline {subsection}{\numberline {4.2.7}PXIe-8135}{20}{subsection.4.2.7}%
+\contentsline {section}{\numberline {4.3}LTE Application Framework}{22}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Experimantal Setup}{23}{chapter.5}%
+\contentsline {section}{\numberline {5.1}LTE Application Framework}{23}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Application Example}{23}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Results}{25}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Transmit Power Measurements}{25}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Path Loss Measurements}{26}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Transmit and Receive Loopback}{27}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Radar Calibration}{27}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Hardware Performance}{27}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}USRP Sampling Rate}{27}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Max Frame Rate for Demo}{27}{subsection.6.5.2}%
+\contentsline {section}{\numberline {6.6}Demo}{28}{section.6.6}%
+\contentsline {chapter}{\numberline {7}Conclusion and Outlook}{31}{chapter.7}%
+\contentsline {chapter}{\numberline {A}Schematic Octoclock}{33}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Troubleshooting}{37}{appendix.B}%
+\contentsline {chapter}{Bibliography}{39}{appendix.C}%

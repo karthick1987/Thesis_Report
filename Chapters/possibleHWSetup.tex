@@ -5,7 +5,7 @@ Measurements of MIMO channel can be achieved in multiple methods. This chapter d
 
 \section{Software Defined Radios USRP}\label{sec:USRP}
 
-USRP is a Software Defined Radio (SDR) designed by National Instruments that enables quick prototyping of different wireless applications. It is aimed at hobbists, research labs, universities, etc... or anyone interested in evaluating custom algorithms. The SDR used in this masters thesis is a USRP294, specifications of which are described in Table \ref{tb:USRP}.
+USRP is a Software Defined Radio (SDR) designed by National Instruments that enables quick prototyping of different wireless applications. It is aimed at hobbists, research labs, universities, etc... or anyone interested in evaluating custom algorithms. The SDR used in this masters thesis is a USRP2940, specifications of which are described in Table \ref{tb:USRP}.
 
 \begin{table}[H]
     \begin{center}
@@ -29,8 +29,31 @@ USRP is a Software Defined Radio (SDR) designed by National Instruments that ena
     \label{tb:USRP}
 \end{table}
 
+\subsection{PCIe-8371}\label{ssec:PCIe-8371}
+The USRP SDRs are PXIe communication based devices. They connect to a Host/PC using a 1/4/8 way PCIe slot. For this setup a 4 lane PCIe daughter card was installed on the motherboard of the host PC to provide a dedicated PCIe communication port for the USRP.
+
+\subsection{Host}\label{ssec:host}
+The host chosen to be used here is a Fujitsu Celcius M770. It has the following specifications.
+
 \section{MIMO Application Framework (MIMO AFW)}\label{sec:MIMOAFW}
-MIMO Application Framework (MIMO AFW) is a Software developed by National Instruments, that offers a comprehensive plug and play MIMO setup. This setup requires a host of additional hardware which are required for the functioning of the MIMO AFW \cite{MIMOAFWGettingStarted}. When setup with all the required Hardware MIMO AFW can support a maximum of 128 Antennas on the Base Station (BS) side and upto 12 Antennas on the User 
+MIMO Application Framework (MIMO AFW) is a Software developed by National Instruments, that offers a comprehensive plug and play MIMO setup. This setup requires a host of additional hardware which are required for the functioning of the MIMO AFW \cite{MIMOAFWGettingStarted}. When setup with all the required Hardware MIMO AFW can support a Multi-user system with a maximum of 128 Antennas on the Base Station (BS) side and upto 12 Antennas on the User Equipment (UE) side.
+
+The Complete MIMO system with the hardware There are many different MIMO configurations possible and the hardware requirements of each of these configurations are mentioned in Table \ref{tb:MIMOAFWConf}. A high level system overview of the main features of MIMO AFW is as follows
+
+\begin{itemize}
+
+    \item Multi-User MIMO transmission between one Base Station (BS) with up to 128 Antennas and up to 12 single antenna Mobile Stations (MS)
+    \item Single-user MIMO transmission between one BS with up to 128 antennas and one MS with up to 12 antennas
+    \item Modulation Schemes from QPSK to 256 QAM
+    \item Automatic gain control (AGC) at the BS and MS
+    \item FPGA based real time signal processing such as modulation, over-the-air synchronization, MIMO equalization and MIMO precoding
+    \item Scalable number of antennas (multi-antenna MS: between 2 and 12; BS: between 2 and 128). Interfaces and configuration adapt automatically
+    \item Fully reconfigurable LTE like radio frame structure
+    \item Bi Directional TDD and FDD functionality transmission of 20MHz bandwidth
+    \item FPGA based real time signal processing such as modulation, over-the-air synchronization, MIMO equalization and MIMO precoding
+\end{itemize}
+
+A minimum system is realisable with the following parts as listed in Table \ref{tb:MIMOAFWPartsList}
 
 \begin{table}[H]
     \begin{center}
@@ -50,20 +73,47 @@ MIMO Application Framework (MIMO AFW) is a Software developed by National Instru
     \label{tb:MIMOAFWPartsList}
 \end{table}
 
+
+\begin{landscape}% Landscape page
+\begin{table}[h]\footnotesize
+    \begin{center}
+        \begin{tabular}{|l|c|c|c|c|c|}
+            \hline
+            \textbf{}                                                                                            & \textbf{\begin{tabular}[c]{@{}c@{}}128-antenna BS\\ 8 subsystems\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}64-antenna BS\\ 4 subsystems\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}32-antenna BS\\ 2 subsystems\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}16-antenna BS\\ 1 subsystems\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}8-antenna BS\\ 1 subsystems\end{tabular}} \\ \hline
+                \begin{tabular}[c]{@{}l@{}}USRP-29xx SDR \\ Reconfigurable Device\end{tabular}                       & 64                                                                             & 32                                                                            & 16                                                                            & 8                                                                             & 6                                                                            \\ \hline
+                    \begin{tabular}[c]{@{}l@{}}PXIe-1085 Chassis \\ (18-Slot, 24 GB/sSystem Bandwidth (BW))\end{tabular} & 1                                                                              & 1                                                                             & 1                                                                             & 1                                                                             & 1                                                                            \\ \hline
+                        PXIe-8135 Controller                                                                                 & 1                                                                              & 1                                                                             & 1                                                                             & 1                                                                             & 1                                                                            \\ \hline
+                        PXIe-7976 FPGA Module for FlexRIO                                                                    & 5                                                                              & 3                                                                             & 2                                                                             & 2                                                                             & 2                                                                            \\ \hline
+                        PXIe-6674T Synchronization                                                                           & 1                                                                              & 1                                                                             & 1                                                                             & 1                                                                             & 1                                                                            \\ \hline
+                        CDA-2990 Clock Distribution Device                                                                   & 8                                                                              & 5                                                                             & 3                                                                             & 1                                                                             & 1                                                                            \\ \hline
+                        CPS-8910 Switch Device for PCI Express                                                               & 8                                                                              & 4                                                                             & 2                                                                             & 1                                                                             & 1                                                                            \\ \hline
+        \end{tabular}
+        \caption{MIMO Configurations and HW requirements}
+        \label{tb:MIMOAFWConf}
+    \end{center}
+\end{table}
+\end{landscape}
+
 \subsection{USRP 2940}\label{sec:MIMOAFWUSRP}
 As mentioned in Section \ref{sec:USRP}, this is the backbone of the architecture. The Software defined radio (USRP2940) is used as an air interface for over the air transmission. There are host of other options that can be used here instead of the USRP2940. Table \ref{tb:USRPPartsList} lists the alternatives with an overview of the functionality of each of the parts.
 
 \subsection{PXIe-7976}\label{ssec:PXIe-7976}
-MIMO has very demanding operations that are quite compute intensive such as precoding, equalization as well as channel estimation in the frequency domain. In addition to the aforementioned processing tasks this FPGA card also perform the \emph{bit processing}
-
-This PXIe communication based FPGA card contains a Xilinx Kintex-7 FPGA and moves data in and out using an 8 lane PCIe slot.
+MIMO has very demanding operations that are quite compute intensive such as precoding, equalization as well as channel estimation in the frequency domain. In addition to the aforementioned processing tasks this FPGA card also perform the \emph{bit processing}. This PXIe communication based FPGA card contains a Xilinx Kintex-7 FPGA and moves data in and out using an 8 lane PCIe slot.
 
 \subsection{CDA-2990}\label{ssec:CDA-2990}
-\subsection{CPS-8910}\label{ssec:CPS-8910}
-\subsection{PXIe-6674T}\label{ssec:PXIe-6674T}
-\subsection{PXIe-1085}\label{ssec:PXIe-1085}
-\subsection{PXIe-8135}\label{ssec:PXIe-8135}
+This device also known as the Octoclock is a clock distribution accessory. It can either receive an input reference clock and distribute the clock to 8 other devices synchronously along with a PPS (Pulse Per Second). The CDA-2990 also contains an input for a GNSS Antenna which uses the GNSS signal to generate a PPS signal. In the absense of a GNSS Antenna the device generates its own internal clock based on an internal oven controlled oscillator (OCXO).
 
+\subsection{CPS-8910}\label{ssec:CPS-8910}
+The CPS-8910 is a 8 way PCIe data aggregator and has 2 upstream ports. With the 8 downstream ports it can aggregate large amounts of data from a maximum of 8 USRPs and send them out to a PC/Controller via the 2 other upstream ports. This is essential for Massive MIMO applications.
+
+\subsection{PXIe-1085}\label{ssec:PXIe-1085}
+National instruments is a company that manufactures devices intended for different industries and end applications. Hence they follow a modular approach to their designs. The PXIe-1085 is an 18 slot chassis, which can be populated by many different daughter cards suitable to the customers needs. Out of the 18 slots 16 are hybrid that can be populated with various add ones, and one slot is reserved for a timing and synchronisation slot as described in section \ref{ssec:PXIe-6674T} and the other reserved for a PXI-controller which is define in section \ref{ssec:PXIe-8135}. The chassis is capable of supporting a throughput of upto 24GBps.
+
+\subsection{PXIe-6674T}\label{ssec:PXIe-6674T}
+The PXIe-6674T generates and routes clocks and trigger signals (PPS Signals) between PXI devices or chassis. This timing and synchronisation card not only generates an accurate clock but can also shift levels of an input signal according to the user's settings. Although the octoclock distributes the clock, it is generated, synchronised and level shifted by the PXIe-6674T.
+
+\subsection{PXIe-8135}\label{ssec:PXIe-8135}
+The PXIe-8135 is a PXI Controller needed to handle the different slot daughter cards installed in the \emph{PXIe-1085} (section \ref{ssec:PXIe-1085}). Its a Intel Cpre i7 based embedded controller for PXI express systems. The controller also has a variety of ports to support the 10/100/1000BASE-TX Gigabit Ethernet, 2 SuperSpeed USB ports and four Hi-Speed USB ports, as well as an integrated hard drive, serial port, and other peripheral I/O.
 
     \clearpage% Flush earlier floats (otherwise order might not be correct)
     \thispagestyle{empty}% empty page style (?)

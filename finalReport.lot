@@ -5,14 +5,15 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {4.1}{\ignorespaces USRP2940 SDR Product details\relax }}{15}{table.caption.11}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Additional Hardware for required for MIMO AFW to function\relax }}{16}{table.caption.12}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces List of alternative Software defined radios offered by National Instruments\relax }}{18}{table.caption.13}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Additional Hardware for required for MIMO AFW to function\relax }}{17}{table.caption.12}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces MIMO Configurations and HW requirements\relax }}{18}{table.caption.13}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces List of alternative Software defined radios offered by National Instruments\relax }}{21}{table.caption.14}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Spectrum analyser settings for the transmit power tests\relax }}{23}{table.caption.14}%
-\contentsline {table}{\numberline {6.2}{\ignorespaces Distortion Values\relax }}{24}{table.caption.15}%
-\contentsline {table}{\numberline {6.3}{\ignorespaces Path Loss Measurements\relax }}{24}{table.caption.16}%
-\contentsline {table}{\numberline {6.4}{\ignorespaces Comparison on different operating systems\relax }}{26}{table.caption.17}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Spectrum analyser settings for the transmit power tests\relax }}{25}{table.caption.15}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces Distortion Values\relax }}{26}{table.caption.16}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Path Loss Measurements\relax }}{26}{table.caption.17}%
+\contentsline {table}{\numberline {6.4}{\ignorespaces Comparison on different operating systems\relax }}{28}{table.caption.18}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

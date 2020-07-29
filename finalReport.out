@@ -11,33 +11,35 @@
 \BOOKMARK [0][-]{chapter.3}{Channel Estimation}{}% 11
 \BOOKMARK [1][-]{section.3.1}{OFDM}{chapter.3}% 12
 \BOOKMARK [1][-]{section.3.2}{MIMO Channel Estimation}{chapter.3}% 13
-\BOOKMARK [2][-]{subsection.3.2.1}{Simple}{section.3.2}% 14
+\BOOKMARK [2][-]{subsection.3.2.1}{Maximum Ratio Combiner}{section.3.2}% 14
 \BOOKMARK [2][-]{subsection.3.2.2}{Zero Forcing}{section.3.2}% 15
 \BOOKMARK [2][-]{subsection.3.2.3}{MMSE}{section.3.2}% 16
 \BOOKMARK [0][-]{chapter.4}{Potential Hardware Setups}{}% 17
 \BOOKMARK [1][-]{section.4.1}{Software Defined Radios USRP}{chapter.4}% 18
-\BOOKMARK [1][-]{section.4.2}{MIMO Application Framework \(MIMO AFW\)}{chapter.4}% 19
-\BOOKMARK [2][-]{subsection.4.2.1}{USRP 2940}{section.4.2}% 20
-\BOOKMARK [2][-]{subsection.4.2.2}{PXIe-7976}{section.4.2}% 21
-\BOOKMARK [2][-]{subsection.4.2.3}{CDA-2990}{section.4.2}% 22
-\BOOKMARK [2][-]{subsection.4.2.4}{CPS-8910}{section.4.2}% 23
-\BOOKMARK [2][-]{subsection.4.2.5}{PXIe-6674T}{section.4.2}% 24
-\BOOKMARK [2][-]{subsection.4.2.6}{PXIe-1085}{section.4.2}% 25
-\BOOKMARK [2][-]{subsection.4.2.7}{PXIe-8135}{section.4.2}% 26
-\BOOKMARK [1][-]{section.4.3}{LTE Application Framework}{chapter.4}% 27
-\BOOKMARK [0][-]{chapter.5}{Experimantal Setup}{}% 28
-\BOOKMARK [1][-]{section.5.1}{LTE Application Framework}{chapter.5}% 29
-\BOOKMARK [1][-]{section.5.2}{Application Example}{chapter.5}% 30
-\BOOKMARK [0][-]{chapter.6}{Results}{}% 31
-\BOOKMARK [1][-]{section.6.1}{Transmit Power Measurements}{chapter.6}% 32
-\BOOKMARK [1][-]{section.6.2}{Path Loss Measurements}{chapter.6}% 33
-\BOOKMARK [1][-]{section.6.3}{Transmit and Receive Loopback}{chapter.6}% 34
-\BOOKMARK [1][-]{section.6.4}{Radar Calibration}{chapter.6}% 35
-\BOOKMARK [1][-]{section.6.5}{Hardware Performance}{chapter.6}% 36
-\BOOKMARK [2][-]{subsection.6.5.1}{USRP Sampling Rate}{section.6.5}% 37
-\BOOKMARK [2][-]{subsection.6.5.2}{Max Frame Rate for Demo}{section.6.5}% 38
-\BOOKMARK [1][-]{section.6.6}{Demo}{chapter.6}% 39
-\BOOKMARK [0][-]{chapter.7}{Conclusion and Outlook}{}% 40
-\BOOKMARK [0][-]{appendix.A}{Schematic Octoclock}{}% 41
-\BOOKMARK [0][-]{appendix.B}{Troubleshooting}{}% 42
-\BOOKMARK [0][-]{appendix.C}{Bibliography}{}% 43
+\BOOKMARK [2][-]{subsection.4.1.1}{PCIe-8371}{section.4.1}% 19
+\BOOKMARK [2][-]{subsection.4.1.2}{Host}{section.4.1}% 20
+\BOOKMARK [1][-]{section.4.2}{MIMO Application Framework \(MIMO AFW\)}{chapter.4}% 21
+\BOOKMARK [2][-]{subsection.4.2.1}{USRP 2940}{section.4.2}% 22
+\BOOKMARK [2][-]{subsection.4.2.2}{PXIe-7976}{section.4.2}% 23
+\BOOKMARK [2][-]{subsection.4.2.3}{CDA-2990}{section.4.2}% 24
+\BOOKMARK [2][-]{subsection.4.2.4}{CPS-8910}{section.4.2}% 25
+\BOOKMARK [2][-]{subsection.4.2.5}{PXIe-1085}{section.4.2}% 26
+\BOOKMARK [2][-]{subsection.4.2.6}{PXIe-6674T}{section.4.2}% 27
+\BOOKMARK [2][-]{subsection.4.2.7}{PXIe-8135}{section.4.2}% 28
+\BOOKMARK [1][-]{section.4.3}{LTE Application Framework}{chapter.4}% 29
+\BOOKMARK [0][-]{chapter.5}{Experimantal Setup}{}% 30
+\BOOKMARK [1][-]{section.5.1}{LTE Application Framework}{chapter.5}% 31
+\BOOKMARK [1][-]{section.5.2}{Application Example}{chapter.5}% 32
+\BOOKMARK [0][-]{chapter.6}{Results}{}% 33
+\BOOKMARK [1][-]{section.6.1}{Transmit Power Measurements}{chapter.6}% 34
+\BOOKMARK [1][-]{section.6.2}{Path Loss Measurements}{chapter.6}% 35
+\BOOKMARK [1][-]{section.6.3}{Transmit and Receive Loopback}{chapter.6}% 36
+\BOOKMARK [1][-]{section.6.4}{Radar Calibration}{chapter.6}% 37
+\BOOKMARK [1][-]{section.6.5}{Hardware Performance}{chapter.6}% 38
+\BOOKMARK [2][-]{subsection.6.5.1}{USRP Sampling Rate}{section.6.5}% 39
+\BOOKMARK [2][-]{subsection.6.5.2}{Max Frame Rate for Demo}{section.6.5}% 40
+\BOOKMARK [1][-]{section.6.6}{Demo}{chapter.6}% 41
+\BOOKMARK [0][-]{chapter.7}{Conclusion and Outlook}{}% 42
+\BOOKMARK [0][-]{appendix.A}{Schematic Octoclock}{}% 43
+\BOOKMARK [0][-]{appendix.B}{Troubleshooting}{}% 44
+\BOOKMARK [0][-]{appendix.C}{Bibliography}{}% 45
