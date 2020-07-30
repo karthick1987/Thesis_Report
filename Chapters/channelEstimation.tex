@@ -1,7 +1,76 @@
 \chapter{Channel Estimation}
 \label{ch:ChEst}
 
+LTE was chosen as the standard to use here as it is very mature and has readily available MATLAB/Labview based implementation. In the case of this thesis the aim is not to reinvent standard by redesigning pilot symbol placements. Instead existing standards were used in order to collect experimental data. This reduces design time and focusses more on the issue at hand which is channel estimation data of a MIMO Channel.
+
 \section{OFDM}\label{sec:OFDM}
+LTE is based on OFDMA in the physical layer which is a multi carrier communication scheme \cite{FazelKaiser}. As the name suggests OFDM uses orthogonal sub carriers from an orthonormal system to form the basis for independent data streams. For band limited transmission systems with finite access time per channel use the dimension of the parallel data stream is given by the equation \ref{eq:BandLim}  \cite{UtschickOFDM}.
+
+        \begin{equation} \label{eq:BandLim}
+            N = BT
+        \end{equation}
+
+        \begin{table}[H]
+            \begin{center}
+                \begin{tabular}{|c|l|}
+                    \hline
+                    Parameter& Description\\ \hline
+                    $N$& Dimension of system \\ \hline
+                    $B$& Signal Bandwidth \\ \hline
+                    $T$& Channel access time \\
+                    \hline
+                \end{tabular}
+                \caption{}
+                \label{tab:BandLimTrans}
+            \end{center}
+        \end{table}
+
+The orthonormal basis function can be mathematically modelled as the equation \ref{eq:OFDM} \cite{UtschickOFDM}.
+
+        \begin{equation} \label{eq:OFDM}
+            \begin{split}
+                \psi_{b,q} = p_{T_{b}}(t)exp(j2{\pi}q{\frac{t}{T}}) \\
+                p_{T_{b}}(t) = \left\{
+                    \begin{matrix}
+                        1; & t \in T_b \\
+                        0; & otherwise \\
+                    \end{matrix}\right.
+            \end{split}
+        \end{equation}
+
+        \begin{table}[H]
+            \begin{center}
+                \begin{tabular}{|c|l|}
+                    \hline
+                    Parameter& Description\\ \hline
+                    $\psi_{b,q}$& normalized orthogonal basis functions\\ \hline
+                    $b$& channel access slot\\ \hline
+                    $q$& sub carrier index\\ \hline
+                    $T$& channel access time \\ \hline
+                    $T_{b}$& $ t | bT \leq t < (b + 1)T \subset \mathbb{R}$ \\ \hline
+                \end{tabular}
+                \caption{Parameter definitions for OFDM Definition}
+                \label{tab:OFDMParam}
+            \end{center}
+        \end{table}
+
+
+        The transmitted data can hence be modelled as the following
+        \begin{equation} \label{eq:TxDataMath}
+            x_b(t) = \sum_{q=0}^{N-1}\underbrace{X_{b,q}}_\text{data} \psi_{b,q}(t)
+        \end{equation}
+
+        For a given ideal AWGN Channel, where there is no delay spread or multipath propogation, the corresponding received data is modelled as
+        \begin{equation} \label{eq:RxDataMathIdeal}
+            y_b(t) = \sum_{q=0}^{N-1}x_b(t) \psi_{b,q}(t) +\eta_b(t)
+        \end{equation}
+        where $\eta_b(t)$ is the additive noise
+
+        The demodulation is based on the same set of orthonormal basis vectors that as the receiver, hence we have
+        \begin{align*} \label{eq:InnerProductRxIdeal}
+            \hat{x}_{b,q} = \langle y,\psi_{b,q}(t)\rangle + \langle\eta_{b},\psi_{b,q}(t)\rangle = x_{b,q}(t) + \eta_{b,q} & & & \forall q = 1,...,N \\
+        \end{align*}
+
 
 \section{MIMO Channel Estimation}\label{sec:MIMO}
 

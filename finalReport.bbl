@@ -29,7 +29,15 @@ H.~Rohling, \emph{OFDM - Concepts for Future Communication Systems},
 3GPP, ``{TS 36.211 Technical Specification Group Radio Access Network; Physical
   Channels and Modulation (Release 13), V13.2.0},'' vol.~13, Jun. 2016.
 
+\bibitem{FazelKaiser}
+K.~Fazel and S.~Kaiser, \emph{Multi-Carrier and Spread Spectrum Systems},
+  2nd~ed.\hskip 1em plus 0.5em minus 0.4em\relax Wiley, Jun. 2008.
+
+\bibitem{UtschickOFDM}
+W.~Utschick, ``{Anwendungen in der Informationstechnik – Grundlagen der
+  Mehrfachzugriffsverfahren I und II}.''
+
 \bibitem{MIMOAFWGettingStarted}
-\emph{{MIMO Prototyping SystemGetting Started Guide}}, 2016.
+\emph{{MIMO Prototyping System Getting Started Guide}}, 2016.
 
 \end{thebibliography}

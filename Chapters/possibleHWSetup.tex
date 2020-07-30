@@ -1,7 +1,7 @@
 \chapter{Potential Hardware Setups}
 \label{ch:PotenHWSetup}
 
-Measurements of MIMO channel can be achieved in multiple methods. This chapter discusses some of the potential approaches which were implemented and elaborates each of their advantages and disadvantages.
+Measurements of MIMO channel can be achieved in multiple methods. This chapter discusses some of the potential approaches which were tested and elaborates each of their advantages and disadvantages. A detailed final implementation is described in Chapter \ref{ch:ExSetup} where the setup configurations are discussed. The following are some possible realisation for a MIMO Setup.
 
 \section{Software Defined Radios USRP}\label{sec:USRP}
 
@@ -30,15 +30,43 @@ USRP is a Software Defined Radio (SDR) designed by National Instruments that ena
 \end{table}
 
 \subsection{PCIe-8371}\label{ssec:PCIe-8371}
-The USRP SDRs are PXIe communication based devices. They connect to a Host/PC using a 1/4/8 way PCIe slot. For this setup a 4 lane PCIe daughter card was installed on the motherboard of the host PC to provide a dedicated PCIe communication port for the USRP.
+The USRP SDRs are PXIe communication based devices. They connect to a Host/PC using a 1/4/8 way PCIe slot. For this setup a 4 lane PCIe daughter card (\emph{PCIe-8371}) was installed on the motherboard of the host PC to provide a dedicated PCIe communication port for the USRP.
 
 \subsection{Host}\label{ssec:host}
-The host chosen to be used here is a Fujitsu Celcius M770. It has the following specifications.
+The host chosen to be used here is a Fujitsu Celcius M770 with the following specifications.
+
+\begin{table}[htb]
+    \begin{center}
+        \begin{tabular}{|l|l|}
+            \hline
+            \textbf{OS}                        & Microsoft Windows 10 Education                                                                                            \\ \hline
+            \textbf{Version}                   & 10.0.18363 Build 18363                                                                                                    \\ \hline
+            \textbf{OS Manufacturer}           & Microsoft Corporation                                                                                                     \\ \hline
+            \textbf{Systemname}                & TUEIMSV-PRAKT01                                                                                                           \\ \hline
+            \textbf{Manufacturer}              & FUJITSU                                                                                                                   \\ \hline
+            \textbf{Systemmodel}               & CELSIUS M770                                                                                                              \\ \hline
+            \textbf{Systemtype}                & x64-based PC                                                                                                              \\ \hline
+            \textbf{System-SKU}                & S26361-Kxxx-Vyyy                                                                                                          \\ \hline
+            \textbf{Processor}                 & \begin{tabular}[c]{@{}l@{}}Intel(R) Xeon(R) W-2123 CPU @ 3600 MHz\\ 4 Cores, 8 logical Processors\end{tabular}            \\ \hline
+                \textbf{BIOS-Version/-Date}        & \begin{tabular}[c]{@{}l@{}}FUJITSU // American Megatrends Inc. \\ V5.0.0.13 R1.8.0 for D3498-A1x, 08.10.2019\end{tabular} \\ \hline
+                    \textbf{SMBIOS-Version}            & 3.2                                                                                                                       \\ \hline
+                    \textbf{BIOS-Modus}                & UEFI                                                                                                                      \\ \hline
+                    \textbf{BaseBoard-Manfacturer}     & FUJITSU                                                                                                                   \\ \hline
+                    \textbf{BaseBoard-Product}         & D3498-A1                                                                                                                  \\ \hline
+                    \textbf{BaseBoard-Version}         & S26361-D3498-A1                                                                                                           \\ \hline
+                    \textbf{Platform Type}             & Workstation                                                                                                               \\ \hline
+                    \textbf{Installed Physical Memory} & 16,0 GB                                                                                                                   \\ \hline
+                    \textbf{Total Physical Memory}     & 15,6 GB                                                                                                                   \\ \hline
+        \end{tabular}
+    \end{center}
+    \caption{Fujitsu Celcius M770 Configuration}
+    \label{tb:HostConfig}
+\end{table}
 
 \section{MIMO Application Framework (MIMO AFW)}\label{sec:MIMOAFW}
 MIMO Application Framework (MIMO AFW) is a Software developed by National Instruments, that offers a comprehensive plug and play MIMO setup. This setup requires a host of additional hardware which are required for the functioning of the MIMO AFW \cite{MIMOAFWGettingStarted}. When setup with all the required Hardware MIMO AFW can support a Multi-user system with a maximum of 128 Antennas on the Base Station (BS) side and upto 12 Antennas on the User Equipment (UE) side.
 
-The Complete MIMO system with the hardware There are many different MIMO configurations possible and the hardware requirements of each of these configurations are mentioned in Table \ref{tb:MIMOAFWConf}. A high level system overview of the main features of MIMO AFW is as follows
+A list of different Hardware parts needed to run this MIMO AFW is listed in Table \ref{tb:MIMOAFWPartsList}. There are many different MIMO configurations possible and the hardware requirements of each of these configurations are mentioned in Table \ref{tb:MIMOAFWConf}. A high level system overview of the main features of MIMO AFW is as follows
 
 \begin{itemize}
 
@@ -53,8 +81,8 @@ The Complete MIMO system with the hardware There are many different MIMO configu
     \item FPGA based real time signal processing such as modulation, over-the-air synchronization, MIMO equalization and MIMO precoding
 \end{itemize}
 
-A minimum system is realisable with the following parts as listed in Table \ref{tb:MIMOAFWPartsList}
 
+\begin{landscape}% Landscape page
 \begin{table}[H]
     \begin{center}
         \begin{tabular}{|l|l|}
@@ -73,8 +101,6 @@ A minimum system is realisable with the following parts as listed in Table \ref{
     \label{tb:MIMOAFWPartsList}
 \end{table}
 
-
-\begin{landscape}% Landscape page
 \begin{table}[h]\footnotesize
     \begin{center}
         \begin{tabular}{|l|c|c|c|c|c|}
@@ -113,12 +139,15 @@ National instruments is a company that manufactures devices intended for differe
 The PXIe-6674T generates and routes clocks and trigger signals (PPS Signals) between PXI devices or chassis. This timing and synchronisation card not only generates an accurate clock but can also shift levels of an input signal according to the user's settings. Although the octoclock distributes the clock, it is generated, synchronised and level shifted by the PXIe-6674T.
 
 \subsection{PXIe-8135}\label{ssec:PXIe-8135}
-The PXIe-8135 is a PXI Controller needed to handle the different slot daughter cards installed in the \emph{PXIe-1085} (section \ref{ssec:PXIe-1085}). Its a Intel Cpre i7 based embedded controller for PXI express systems. The controller also has a variety of ports to support the 10/100/1000BASE-TX Gigabit Ethernet, 2 SuperSpeed USB ports and four Hi-Speed USB ports, as well as an integrated hard drive, serial port, and other peripheral I/O.
+The PXIe-8135 is a PXI Controller needed to handle the different slot daughter cards installed in the \emph{PXIe-1085} (section \ref{ssec:PXIe-1085}). Its a Intel Core i7 based embedded controller for PXI express systems. The controller also has a variety of ports to support the 10/100/1000BASE-TX Gigabit Ethernet, 2 SuperSpeed USB ports and four Hi-Speed USB ports, as well as an integrated hard drive, serial port, and other peripheral I/O.
 
-    \clearpage% Flush earlier floats (otherwise order might not be correct)
-    \thispagestyle{empty}% empty page style (?)
+\subsection{Implementation Advantages and Disadvantages}\label{ssec:MIMOAFWADVDISADV}
+The advantages of using MIMO AFW is that it reduces time to prototype as the functionality is readily available in the form of Hardware and Software, it is also a scalable model providing a solution with up to 128 BS antennas and 12 MS antennas. But given the amount of hardware required to have a minimum viable product, it is quite an expensive undertaking (over €100.000) and is hence cost preventative. Apart from that there is also the time cost to setup the instrument and check it functionality which is not to be neglected.
+
+    %\clearpage% Flush earlier floats (otherwise order might not be correct)
+    %\thispagestyle{empty}% empty page style (?)
     \begin{landscape}% Landscape page
-        \begin{table}[!htb]
+        \begin{table}[htb]
             %\begin{sidewaystable}[htp]
                 \begin{center}
             %\resizebox{\textwidth}{!}{
@@ -148,11 +177,20 @@ The PXIe-8135 is a PXI Controller needed to handle the different slot daughter c
             \label{tb:USRPPartsList}
         \end{table}
 \end{landscape}
-\clearpage% Flush page
+%\clearpage% Flush page
 
 \section{LTE Application Framework}\label{sec:LTEAFW}
 
-LTE Application Framework is a Software that National Instruments designed and offers to set up a LTE setup. This setup requires a host of additional hardware which are required for the functioning of the LTE AFW.
+        LTE Application Framework is a Software that National Instruments designed and offers to provides us a \emph{Downlink Only} 2x2 LTE setup. This setup does not require the additional hardware which are required for the functioning of the MIMO AFW.
+
+        \subsection{Hardware Requirements}\label{ssec:LTEAFWHW}
+        This setup is quite a simplified version of the MIMO AFW and only requires a pair of USRPs (\ref{sec:USRP}), a pair of the PCIe daughter cards(\ref{ssec:PCIe-8371}) and a host PC(\ref{ssec:host}). One USRP acts as a eNodeB with 2 antennas (Base Station) and the other USRP acts as a UE with 2 antennas.
+
+        \subsection{Software Requirements}\label{ssec:LTEAFWSW}
+        The LTE AFW Software template that NI provides in its example libraries only has a LTE SISO implementation. But an internal development version of a 2x2 MIMO Extension was issued to TUM for the sake of expediting the experimental setup since MIMO AFW was not a financial viable option. However the NI internal development version of the code was meant to be run on a version 2.1 of Labview Communication Suite which is not supported on Windows 10. Hence the project had to be ported to the latest version of Labview Communications Suite (now called Labview NXG). Details of the software project are described in Chapter \ref{ch:ExSetup}
+
+        \subsection{Implementation Advantages and Disadvantages}\label{ssec:LTEAFWADVDISADV}
+        The advantages of using LTE AFW is that it works with minimum hardware, albeit with a limited capability of providing only a 2x2 MIMO system. Unlike MIMO AFW which is capable of bidirectional MIMO communications, LTE AFW can only perform unidirectional communications, namely from the eNodeB(Base station) to the UE. However given all the time and budget constraints, LTE AFW was chosen as the preferred solution. The architecture of the software and the modifications are explained in the following chapter.
 
 %\begin{figure}[!htb]
 %    \centering
