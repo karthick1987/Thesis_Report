@@ -1,7 +1,7 @@
 \chapter{Potential Hardware Setups}
 \label{ch:PotenHWSetup}
 
-Measurements of MIMO channel can be achieved in multiple methods. This chapter discusses some of the potential approaches which were tested and elaborates each of their advantages and disadvantages. A detailed final implementation is described in Chapter \ref{ch:ExSetup} where the setup configurations are discussed. The following are some possible realisation for a MIMO Setup.
+MIMO channel measurements can be achieved using multiple methods. This chapter discusses some of the potential approaches which were tested and elaborates each of their advantages and disadvantages. A detailed final implementation is described in Chapter \ref{ch:ExSetup} where the setup configurations are discussed. The following are some possible realisation for a MIMO Setup.
 
 \section{Software Defined Radios USRP}\label{sec:USRP}
 
@@ -62,6 +62,8 @@ The host chosen to be used here is a Fujitsu Celcius M770 with the following spe
     \caption{Fujitsu Celcius M770 Configuration}
     \label{tb:HostConfig}
 \end{table}
+
+Streaming a Custom LTE Waveform into the 2 seperate USRP trasnmitters, would have been the simplest and the ideal solution. However since the 2 transmitters on a single device are not time synchronised, which is essential for MIMO transmission and reception, this was not an option. The details of the issues are described in the Appendix \ref{sec:USRPSync}.
 
 \section{MIMO Application Framework (MIMO AFW)}\label{sec:MIMOAFW}
 MIMO Application Framework (MIMO AFW) is a Software developed by National Instruments, that offers a comprehensive plug and play MIMO setup. This setup requires a host of additional hardware which are required for the functioning of the MIMO AFW \cite{MIMOAFWGettingStarted}. When setup with all the required Hardware MIMO AFW can support a Multi-user system with a maximum of 128 Antennas on the Base Station (BS) side and upto 12 Antennas on the User Equipment (UE) side.
@@ -181,7 +183,7 @@ The advantages of using MIMO AFW is that it reduces time to prototype as the fun
 
 \section{LTE Application Framework}\label{sec:LTEAFW}
 
-        LTE Application Framework is a Software that National Instruments designed and offers to provides us a \emph{Downlink Only} 2x2 LTE setup. This setup does not require the additional hardware which are required for the functioning of the MIMO AFW.
+        LTE Application Framework is a Software that National Instruments designed and offers to provides us a \emph{Downlink ONLY} 2x2 LTE setup. This setup does not require the additional hardware which are required for the functioning of the MIMO AFW.
 
         \subsection{Hardware Requirements}\label{ssec:LTEAFWHW}
         This setup is quite a simplified version of the MIMO AFW and only requires a pair of USRPs (\ref{sec:USRP}), a pair of the PCIe daughter cards(\ref{ssec:PCIe-8371}) and a host PC(\ref{ssec:host}). One USRP acts as a eNodeB with 2 antennas (Base Station) and the other USRP acts as a UE with 2 antennas.

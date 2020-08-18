@@ -1,3 +1,26 @@
+\chapter{Troubleshooting}\label{ch:troubleshooting}
+\section{Boot Order} \label{sec:BootOrder}
+\section{Synchronisation of the USRPs} \label{sec:USRPSync}
+
+The USRPs are complex devices which combine analog tranceivers and digital Xilinx Kintex-7 FPGA based engines, which does all the compute intensive tasks. Figure \ref{fig:USRPInternals} shows a block diagram of a \textbf{single} channel the internal components of the USRP. There are two such channels on a given USRP 2940.
+
+The figure shows that a single RF channel can be used either as a single transmitter(\textbf{TX1}) or a single receiver (\textbf{RX1/RX2}). RX1 and RX2 \textbf{cannot} be used simultaneously.
+
+The 2 channels per USRP are either synchronised using the REF IN signal which is a 10 MHz supplied by an external clock distributer (section \ref{ssec:CDA-2990}) or by using the internal 10MHz oscillator. But the RF path delay for the Low Noise Amplifiers (LNA) are not matched for both the channels in the USRP. This therefore leads to phase shifts between the 2 RF ports on the single USRP.
+
+Below are tests that show the phase difference when using the USRP and transmitting the same tone through both TX1 ports.
+
+%TODO
+
+\begin{landscape}% Landscape page
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[width=\linewidth]{images/USRPInternalsEdited.jpeg}
+        \caption{USRP 2940 Internal Components}%
+        \label{fig:USRPInternals}%
+    \end{figure}
+\end{landscape}
+
 \chapter{Schematic Octoclock}
 \label{ch:HWSchOctoClock}
 
@@ -12,7 +35,4 @@
 %    \label{fig:OctClkSch}%
 %\end{figure}
 
-\chapter{Troubleshooting}\label{ch:troubleshooting}
-\section{Boot Order} \label{sec:BootOrder}
-\section{Synchronisation of the USRPs} \label{sec:USRPSync}
 
