@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.7.10)  17 AUG 2020 15:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.7.10)  19 AUG 2020 12:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1340,26 +1340,24 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 ] [2
 
 ]
-Underfull \hbox (badness 10000) in alignment at lines 2--36
+Underfull \hbox (badness 10000) in alignment at lines 2--34
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 36--50
+Underfull \hbox (badness 10000) in alignment at lines 34--61
 [] []
  []
 
-) [3
+[3
 
 
-] (./Chapters/introduction.tex [4
-
-
-]
+]) [4] (./Chapters/introduction.tex
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 80.0pt on input line 1.
 ) [5
+
 
 ] (./Chapters/systemModel.tex [6
 
@@ -1376,13 +1374,21 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 Underfull \vbox (badness 4967) has occurred while \output is active []
 
  [9]
-[10]) [11] (./Chapters/channelEstimation.tex [12
+[10]
+<images/vert400.jpg, id=475, 652.4375pt x 165.61874pt>
+File: images/vert400.jpg Graphic file (type jpg)
+<use images/vert400.jpg>
+Package pdftex.def Info: images/vert400.jpg  used on input line 130.
+(pdftex.def)             Requested size: 199.16928pt x 50.55786pt.
+)
+Underfull \vbox (badness 2020) has occurred while \output is active []
 
-
-
-]
+ [11]
+[12 <./images/vert400.jpg>] (./Chapters/channelEstimation.tex
 Chapter 3.
 [13
+
+
 
 ]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
@@ -1390,7 +1396,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 6.0pt on input line 60.
  [14]
-<images/CP_illustration.png, id=490, 1517.67pt x 892.33376pt>
+<images/CP_illustration.png, id=512, 1517.67pt x 892.33376pt>
 File: images/CP_illustration.png Graphic file (type png)
 <use images/CP_illustration.png>
 Package pdftex.def Info: images/CP_illustration.png  used on input line 99.
@@ -1409,7 +1415,7 @@ File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
 (Font)              scaled to size 10.95pt on input line 269.
  [17]
-<images/MIMO_Illustration.jpg, id=532, 1626.075pt x 1007.765pt>
+<images/MIMO_Illustration.jpg, id=554, 1626.075pt x 1007.765pt>
 File: images/MIMO_Illustration.jpg Graphic file (type jpg)
 <use images/MIMO_Illustration.jpg>
 Package pdftex.def Info: images/MIMO_Illustration.jpg  used on input line 281.
@@ -1454,7 +1460,7 @@ Overfull \hbox (185.11443pt too wide) has occurred while \output is active
 
 ] (./Chapters/experimentalSetup.tex
 Chapter 5.
-<images/MIMOSetUpArrangement.png, id=606, 1008.76875pt x 738.76pt>
+<images/MIMOSetUpArrangement.png, id=629, 1008.76875pt x 738.76pt>
 File: images/MIMOSetUpArrangement.png Graphic file (type png)
 <use images/MIMOSetUpArrangement.png>
 Package pdftex.def Info: images/MIMOSetUpArrangement.png  used on input line 18
@@ -1468,7 +1474,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-<images/DLFPGATXImpl.png, id=611, 944.52875pt x 477.785pt>
+<images/DLFPGATXImpl.png, id=634, 944.52875pt x 477.785pt>
 File: images/DLFPGATXImpl.png Graphic file (type png)
 <use images/DLFPGATXImpl.png>
 Package pdftex.def Info: images/DLFPGATXImpl.png  used on input line 33.
@@ -1477,7 +1483,7 @@ Package pdftex.def Info: images/DLFPGATXImpl.png  used on input line 33.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [30 <./images/MIMOSetUpArrangement.png>]
-<images/DLFPGARXImpl.png, id=617, 894.34125pt x 271.0125pt>
+<images/DLFPGARXImpl.png, id=640, 894.34125pt x 271.0125pt>
 File: images/DLFPGARXImpl.png Graphic file (type png)
 <use images/DLFPGARXImpl.png>
 Package pdftex.def Info: images/DLFPGARXImpl.png  used on input line 40.
@@ -1507,91 +1513,123 @@ Chapter 7.
 Appendix A.
 [37
 
-]
-<images/USRPInternalsEdited.jpeg, id=652, 1111.15125pt x 523.9575pt>
+] [38]
+<images/USRPInternalsEdited.jpeg, id=686, 1111.15125pt x 523.9575pt>
 File: images/USRPInternalsEdited.jpeg Graphic file (type jpg)
 <use images/USRPInternalsEdited.jpeg>
-Package pdftex.def Info: images/USRPInternalsEdited.jpeg  used on input line 18
+Package pdftex.def Info: images/USRPInternalsEdited.jpeg  used on input line 26
 .
 (pdftex.def)             Requested size: 555.00024pt x 261.70627pt.
 
 Overfull \hbox (185.11443pt too wide) has occurred while \output is active
-[]|
+|[]
  []
 
-[38
+[39
 
  <./images/USRPInternalsEdited.jpeg>]
+<images/USRPHWConnections.png, id=692, 733.99219pt x 395.22656pt>
+File: images/USRPHWConnections.png Graphic file (type png)
+<use images/USRPHWConnections.png>
+Package pdftex.def Info: images/USRPHWConnections.png  used on input line 34.
+(pdftex.def)             Requested size: 369.88582pt x 199.17473pt.
+<images/PPSTrigFFT.png, id=693, 1927.2pt x 1043.9pt>
+File: images/PPSTrigFFT.png Graphic file (type png)
+<use images/PPSTrigFFT.png>
+Package pdftex.def Info: images/PPSTrigFFT.png  used on input line 41.
+(pdftex.def)             Requested size: 369.88582pt x 200.35007pt.
+<images/PPSTrig.jpg, id=694, 1052.43187pt x 569.87906pt>
+File: images/PPSTrig.jpg Graphic file (type jpg)
+<use images/PPSTrig.jpg>
+Package pdftex.def Info: images/PPSTrig.jpg  used on input line 50.
+(pdftex.def)             Requested size: 369.88582pt x 200.28674pt.
+ [40
+
+ <./images/USRPHWConnections.png> <./images/PPSTrigFFT.png>]
+<images/PPSTrigZoomIn.jpg, id=700, 1050.92625pt x 569.12625pt>
+File: images/PPSTrigZoomIn.jpg Graphic file (type jpg)
+<use images/PPSTrigZoomIn.jpg>
+Package pdftex.def Info: images/PPSTrigZoomIn.jpg  used on input line 58.
+(pdftex.def)             Requested size: 369.88582pt x 200.30875pt.
+ [41 <./images/PPSTrig.jpg> <./images/PPSTrigZoomIn.jpg>]
+
+LaTeX Warning: Reference `' on page 42 undefined on input line 70.
+
+<images/SyncFailCapture.png, id=706, 648.4225pt x 398.48875pt>
+File: images/SyncFailCapture.png Graphic file (type png)
+<use images/SyncFailCapture.png>
+Package pdftex.def Info: images/SyncFailCapture.png  used on input line 76.
+(pdftex.def)             Requested size: 369.88582pt x 227.31728pt.
+[42 <./images/SyncFailCapture.png>]
 Appendix B.
-<images/OctoclockSchematics/octoclock.pdf, id=657, 1228.59pt x 794.97pt>
+<images/OctoclockSchematics/octoclock.pdf, id=712, 1228.59pt x 794.97pt>
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 <use images/OctoclockSchematics/octoclock.pdf>
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf  used on inpu
-t line 29.
+t line 86.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 <use images/OctoclockSchematics/octoclock.pdf>
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf  used on inpu
-t line 29.
+t line 86.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 <use images/OctoclockSchematics/octoclock.pdf>
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf  used on inpu
-t line 29.
+t line 86.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
-<images/OctoclockSchematics/octoclock.pdf, id=661, page=1, 1228.59pt x 794.97pt
+<images/OctoclockSchematics/octoclock.pdf, id=716, page=1, 1228.59pt x 794.97pt
 >
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 <use images/OctoclockSchematics/octoclock.pdf, page 1>
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf , page1 used 
-on input line 29.
+on input line 86.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 <use images/OctoclockSchematics/octoclock.pdf, page 1>
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf , page1 used 
-on input line 29.
+on input line 86.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
-[39
-
+[43
 
 ]
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 <use images/OctoclockSchematics/octoclock.pdf, page 1>
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf , page1 used 
-on input line 29.
+on input line 86.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 <use images/OctoclockSchematics/octoclock.pdf, page 1>
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf , page1 used 
-on input line 29.
+on input line 86.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 <use images/OctoclockSchematics/octoclock.pdf, page 1>
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf , page1 used 
-on input line 29.
+on input line 86.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
- [40 <./images/OctoclockSchematics/octoclock.pdf>]
-<images/OctoclockSchematics/octoclock.pdf, id=675, page=2, 1228.59pt x 794.97pt
+ [44 <./images/OctoclockSchematics/octoclock.pdf>]
+<images/OctoclockSchematics/octoclock.pdf, id=729, page=2, 1228.59pt x 794.97pt
 >
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 <use images/OctoclockSchematics/octoclock.pdf, page 2>
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf , page2 used 
-on input line 29.
+on input line 86.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 <use images/OctoclockSchematics/octoclock.pdf, page 2>
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf , page2 used 
-on input line 29.
+on input line 86.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 <use images/OctoclockSchematics/octoclock.pdf, page 2>
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf , page2 used 
-on input line 29.
+on input line 86.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
- [41 <./images/OctoclockSchematics/octoclock.pdf>]) [42
+ [45 <./images/OctoclockSchematics/octoclock.pdf>]) [46
 
 
-] (./finalReport.bbl) [43
+] (./finalReport.bbl) [47
 
 
 ]
@@ -1608,17 +1646,20 @@ Package rerunfilecheck Info: File `finalReport.out' has not changed.
 (rerunfilecheck)             Checksum: 4134F6E2BBACF5FF94A44FD1796A0028;3301.
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 34354 strings out of 480478
- 657283 string characters out of 5905959
- 1009124 words of memory out of 5000000
- 49279 multiletter control sequences out of 15000+600000
- 599374 words of font info for 155 fonts, out of 8000000 for 9000
+ 34540 strings out of 480478
+ 660200 string characters out of 5905959
+ 1011944 words of memory out of 5000000
+ 49435 multiletter control sequences out of 15000+600000
+ 599541 words of font info for 157 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 76i,20n,102p,991b,997s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 76i,20n,102p,991b,1021s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texmf-d
 ist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texmf-dist/fonts/enc/dvips
 /base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -1634,10 +1675,10 @@ qtmr.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share
 /texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/ty
 pe1/public/newtx/ztmb.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/ztmr.
 pfb></usr/share/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on finalReport.pdf (53 pages, 962734 bytes).
+Output written on finalReport.pdf (57 pages, 1353770 bytes).
 PDF statistics:
- 786 PDF objects out of 1000 (max. 8388607)
- 691 compressed objects within 7 object streams
- 182 named destinations out of 1000 (max. 500000)
- 27105 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 845 PDF objects out of 1000 (max. 8388607)
+ 738 compressed objects within 8 object streams
+ 202 named destinations out of 1000 (max. 500000)
+ 27135 words of extra memory for PDF output out of 29859 (max. 10000000)
 

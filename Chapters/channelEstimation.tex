@@ -260,7 +260,7 @@ For non fully loaded OFDM systems which is typical in the real world the equatio
 
 \begin{equation}\label{eq:ReducedRankOFDMChEstEq}
     \begin{aligned}
-        \hat{H_{P,LS}} & = X^{-1}Y_P \\
+        \hat{H}_{P,LS} & = X^{-1}Y_P \\
     \end{aligned}
 \end{equation}
 
@@ -296,13 +296,14 @@ Once the channels propogation effects have been calculated each symbol has to be
     W_{MRC} = C\hat{H}^H
 \end{equation}
 where $C$ is a diagonal matrix with 
-$
-C_{k,k} = \left ( \sum_{m}\left | H_{m,k} \right |^2 \right )^{-1}
-$
+
+\begin{equation}
+    C_{k,k} = \left ( {\sum_{m}} \left | H_{m,k} \right |^2 \right )^{-1}
+\end{equation}
+
 and can be considered as a normaliser for the columns of the matrix $H$.
 
 \subsection{Zero Forcing}\label{ssec:ZF}
-
 
 \begin{equation}
     W_{ZF} = (\hat{H}^H\hat{H})^{-1}\hat{H}^H

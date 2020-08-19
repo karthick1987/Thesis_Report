@@ -3,7 +3,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Resource Block Grid for 2 sub frames\relax }}{10}{figure.caption.8}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces PSS Correlation\relax }}{11}{figure.caption.9}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Narrowband Omnidirectional Antenna used for transmitting and receiving the LTE Signals\relax }}{11}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Narrowband Omnidirectional Antenna used for transmitting and receiving the LTE Signals\relax }}{12}{figure.caption.10}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Cyclic prefix addition \cite {UtschickOFDM}\relax }}{15}{figure.caption.13}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces MIMO channel model\relax }}{18}{figure.caption.14}%
@@ -15,5 +15,10 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces USRP 2940 Internal Components\relax }}{38}{figure.caption.23}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces USRP 2940 Internal Components\relax }}{39}{figure.caption.23}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces The connections from the Octoclock to the USRP\relax }}{40}{figure.caption.24}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces The 10 MHz clock as seen at the output of two respective channels of the Octoclock. The yellow is from ch1 and the green is from channel 2 which are connected to USRP1 and USRP2 respectively. The top half is the Fourier transform and the bottom half is the time domain signal\relax }}{40}{figure.caption.25}%
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Figure shows a zoomed-out view of the PPS Trig Out which occurs every 1s and the high pulse is 200ms long.\relax }}{41}{figure.caption.26}%
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Figure shows the PPS trigger signal from the Octoclock. The slight shift is potentially an artifact from the measurement instrument as the bandwidth of the measurement tool was limited (20MHz).\relax }}{41}{figure.caption.27}%
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Unsynchronised IQ waveforms of the received signal\relax }}{42}{figure.caption.28}%
 \addvspace {10\p@ }

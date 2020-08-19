@@ -1,10 +1,12 @@
 \glossaryentry{MIMO?\glossentry{MIMO}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{GSM?\glossentry{GSM}|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{LTE?\glossentry{LTE}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{FPGA?\glossentry{FPGA}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{IEEE?\glossentry{IEEE}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{PDSCH?\glossentry{PDSCH}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{PDCCH?\glossentry{PDCCH}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{CRS?\glossentry{CRS}|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{RF?\glossentry{RF}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{PSS?\glossentry{PSS}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{SSS?\glossentry{SSS}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{PCIe?\glossentry{PCIe}|setentrycounter[]{page}\glsnumberformat}{1}
@@ -16,3 +18,5 @@
 \glossaryentry{OCXO?\glossentry{OCXO}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{AWGN?\glossentry{AWGN}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{OFDM?\glossentry{OFDM}|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{PLL?\glossentry{PLL}|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{VCO?\glossentry{VCO}|setentrycounter[]{page}\glsnumberformat}{1}
