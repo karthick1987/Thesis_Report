@@ -44,4 +44,7 @@ R.~M. Gray, ``{Toeplitz and CirculantMatrices: A review},'' {Deptartment of
 \bibitem{MIMOAFWGettingStarted}
 \emph{{MIMO Prototyping System Getting Started Guide}}, 2016.
 
+\bibitem{LTEAFWManual}
+\emph{{LabVIEW Communications LTE Application Framework 19.5}}, 2016.
+
 \end{thebibliography}

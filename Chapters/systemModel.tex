@@ -1,7 +1,7 @@
 \chapter{System Model}
 \label{ch:sysmodel}
 
-As mentioned in Chapter \ref{ch:intro}, the goal of this thesis is to obtain measurement data from the MIMO setup. This collected experimental data will be applied to the machine learning model which has been developed in parallel with this thesis. In this chapter the relevant fundamentals of the LTE standard, which will be used as a basis for our experiments are described on a high level.
+As mentioned in Chapter \ref{ch:intro}, the goal of this thesis is to obtain measurement data from the MIMO setup. This collected experimental data will be applied to the machine learning model, that has been developed in parallel with this thesis. This chapter explains the relevant fundamentals of the LTE standard, which will be used as a basis for the experiments are described on a high level.
 
 %\par
 %
@@ -9,36 +9,31 @@ As mentioned in Chapter \ref{ch:intro}, the goal of this thesis is to obtain mea
 
 \section{LTE}\label{sec:LTEProc}
 
-LTE stands of Long Term Evolution and is a successor standard to UMTS. LTE is a multicarrier approach for multiple access which uses Orthogonal Frequency-Division Multiple Access (OFDMA) in the physical layer. OFDM uses multiple carriers (known as sub carriers) spaced equally apart and can transmit independent data streams on each sub carrier \cite{rohling}.
+LTE stands of Long Term Evolution and is a successor standard to UMTS. LTE was chosen as a standard to use for the communication system as it is currently widespread in the telecommunications industry and because of the integrated support of simulation environments like MATLAB, Labview and Simulink. LTE is a multicarrier approach for multiple access which uses Orthogonal Frequency-Division Multiple Access (OFDMA) in the physical layer. OFDMA uses multiple carriers (known as sub carriers) spaced equally apart and can transmit independent data streams on each sub carrier \cite{rohling}.
 
-\par
+A LTE frame is commonly represented as a 2D time frequency grid, where the vertical axis represents the sub-carriers (Frequency) and the horizontal axis represents time. LTE also comes in 2 flavours Frequency Division Duplexing (FDD) and Time Division Duplexing (TDD). In this thesis the focus will be on FDD systems, which use seperate frequency bands, for uplink and for downlink data respectively. The advantage of an FDD system is that the uplink and downlink transmittion can happen simultaneously.
 
-Hence an LTE frame is commonly represented as a 2D time frequency grid, where the vertical axis represents the sub-carriers(Frequency) and the horizontal axis represents time. LTE also comes in 2 flavours Frequency Division Duplexing (FDD) and Time Division Duplexing (TDD). In this thesis the focus will be on FDD systems, which use seperate frequency bands, for uplink and for downlink data respectively. The advantage of an FDD system is that the uplink and downlink transmittion can happen simultaneously.
-
-LTE has a certain predefined signal symbol structure according to the standard \cite{3gpp36211}. In the following sections the frame structure and the different symbols in the LTE Frame shall be introduced.
+LTE has a certain predefined signalling symbol structure according to the standard \cite{3gpp36211}. In the following sections the frame structure and the different symbols in the LTE Frame shall be introduced.
 
 \section{LTE Waveform Processing}\label{sec:LTE Waveform Processing}
-LTE stands of Long Term Evolution and is a successor standard to UMTS. LTE is a multicarrier approach for multiple access which uses Orthogonal Frequency-Division Multiple Access (OFDMA) in the physical layer. OFDM uses multiple carriers (known as sub carriers) spaced equally apart in frequency and can transmit independent data streams on each sub carrier \cite{rohling}. LTE also comes in 2 flavours Frequency Division Duplexing (FDD) and Time Division Duplexing (TDD). In this report the focus will be on FDD systems, which uses seperate frequency bands for uplink and for downlink data so that the uplink and downlink data can be transmitted simultaneously.
-
-LTE was chosen as a standard to use for the communication system given the integrated support of simulation environments like MATLAB and Simulink and that it is currently widespread in the telecommunications industry.
 
 \subsection{Transmission} \label{ssec:Transmission}
 
-A dual antenna transmitter using a USRP software defined radio as mentioned in \ref{sec:USRP} is used for the interface. A modified version of the LTE Application framework with MIMO 2x2 extension is used to log the data and run with different parameters. The transmitter USRP is connected to a Host PC using a 4-lane PCIe connection. This is necessary for the high data throughput exchanged between the host and the devices.
+A dual antenna transmitter using a USRP software defined radio as mentioned in Section \ref{sec:USRP} is used as a transmitter. A modified version of the LTE Application framework with MIMO 2x2 extension is used to log the data. The transmitter USRP is connected to a Host PC using a 4-lane PCIe connection. This is necessary for the high data throughput exchanged between the host and the devices.
 
 LTE has a standardized frame structure which is commonly represented as a 2D time frequency grid, where the vertical axis represents the sub-carriers and the horizontal axis represents time. LTE also uses a predefined signalling structure according to the standard \cite{3gpp36211}. In the following sections the frame structure and the symbols relavent to channel estimation shall be introduced.
 
 \subsubsection{LTE Frame} \label{LTEFrame}
 
-A single frame is 10ms long and consists of 10 smaller units called subframe, each 1ms long. A symbol is the smallest unit of time for an LTE system and one subframe has 14 such symbols each approximately 66.7us long. Scheduling is normally done on a subframe basis for both uplink and downlink communication.
+A single frame is 10\si{\milli\second} long and consists of 10 smaller units called subframe, each 1\si{\milli\second} long. A symbol is the smallest unit of time for an LTE system and one subframe has 14 such symbols each approximately 66.7\si{\micro\second} long. Scheduling is normally done on a subframe basis for both uplink and downlink communication.
 
-LTE's time frequency grid contains many different signals each performing specific funtionality like broadcasting, control channel information, data transfer, among other functions.
+LTE's time frequency grid contains many different signals each performing specific funtionality like broadcasting, control channel information, user data, among other functions.
 
-For the puprpose of channel estmation, the most important signals are Primary Synchronisation Signal(PSS), Secondary Synchronisation Signal (SSS) and Cell Specific Reference Signal (CRS) which are described in detail in the subsequent sections.
+For the purpose of channel estmation and the application as outline in this thesis, the most important signals are Primary Synchronisation Signal (PSS), Secondary Synchronisation Signal (SSS) and Cell Specific Reference Signal (CRS) which are described in detail in the subsequent sections.
 
 \subsubsection {Primary Synchronisation Signal (PSS)} \label{sssec:PSS}
         OFDM is extremely time and frequency sensitive, hence it is very important to know the exact start of every frame. The PSS helps to achieve the synchronisation of the frame by using a specific sequence called the Zadoff-Chu sequence \cite{3gpp36211}.
-        The Zadoff-Chu sequence has the property of constant amplitude zero autocorrelation waveform (CAZAC sequences) that cyclically shifted versions of the waveform are orthogonal to each other. The sequence is described in Equation \ref{eq:ZCSeq} where {\em u}  can be 25,29 or 34 depending on the cell ID.
+        The Zadoff-Chu sequence has the property of constant amplitude zero autocorrelation waveform (CAZAC sequences) such that cyclically shifted versions of the waveform are orthogonal to original waveform. The sequence is described in Equation \ref{eq:ZCSeq} where {\em u}  can be 25,29 or 34 depending on the cell ID.
         The PSS is broadcast twice every radio frame and the symbols are identical each time.
 
 \begin{equation} \label{eq:ZCSeq}
@@ -50,10 +45,10 @@ For the puprpose of channel estmation, the most important signals are Primary Sy
 \end{equation}
 
 \subsubsection{Secondary Synchronisation Signal (SSS)} \label{sssec:SSS}
-        The SSS is a 62 bit pseudo random sequence \cite{3gpp36211}. It is broadcast twice in a frame once in subframe 0 and once in subframe 5, one symbol before the PSS. The 2 sequences of transmission in a frame are different so that the UE can identify which position in the frame the synchronisation happens.
+        The SSS is a 62 bit BPSK modulated pseudo random sequence \cite{3gpp36211}. It is broadcast twice in a frame once in subframe 0 and once in subframe 5, one symbol before the PSS. The 2 sequences of transmission in a frame are different so that the UE can identify which position in the frame the synchronisation happens.
 
 \subsubsection{Cell Specific Reference Signal (CRS)} \label{sssec:CRS}
-        As mentioned in Chapter \ref{ch:intro} the channel needs to be estimated in order to reverse the channel propogation effects. With the help of CRS the channel can be estimated by placing equally spaced reference symbols along every 6 subcarriers starting from subcarrier 2 on symbols 1, 8, 15, etc... and every 6 subcarriers starting from subcarrier 5 on symbols 5, 12, 19, etc...\cite{3gpp36211}. The signals received by the UE and the channel effects are inferred based on amplitude damping and phase shift. Placing the signals in the above defined spacing gives the best coverage to interpolate over in time and frequency.
+        As mentioned in Chapter \ref{ch:intro} the channel needs to be estimated in order to reverse the channel propogation effects. With the help of CRS the channel can be estimated by placing equally spaced reference symbols every 6 subcarriers starting from subcarrier 2 on symbols 1, 8, 15, etc... and every 6 subcarriers starting from subcarrier 5 on symbols 5, 12, 19, etc...\cite{3gpp36211}. The signals received by the UE and the channel effects are inferred based on amplitude damping and phase shift. Placing the signals in the above defined spacing gives the best coverage to interpolate over in time and frequency.
 
         The signals to be placed on the grid are decided by the Equation \ref{eq:CRS} as shown below, with the parameters defined in Table \ref{tab:CRSParam} \cite{3gpp36211}.
         \begin{equation} \label{eq:CRS}
@@ -76,16 +71,23 @@ For the puprpose of channel estmation, the most important signals are Primary Sy
             \end{center}
         \end{table}
 
-%\subsubsection{PDCCH}
-
-%//TODO add the time domain and spectrum figure
-
-\subsubsection{Final Waveform}
-All the signals mentioned in Section \ref{LTEFrame} are generated in Labview using the LTE Application Framework Software and arranged in a 2D grid of frequency and time as shown below in Figure \ref{fig:RBSignals}. The CRS are placed every 6 subcarriers in the frequency domain and every 3 or 4 time symbols apart, according to the position on the grid. Where as the PSS and SSS only repeat every 5 subframes.
+        In the case of multiple antennas, each antenna port has a dedicated CRS slots and have their corresponding positions on the OFDM time/frquency grid as shown in Figure \ref{fig:CRSMultiAntenna}. These CRS signals for different antennas are signaling overheads, which implies that they cannot be used for data transmission. On the receiver end this particular symbol is decoded and the channel estimate is calculated for the respective transmit antenna.
 
 \begin{figure}[H]
     \begin{center}
-        %\includegraphics[wisdth=\linewidth]{../ReportImages/RB_legend.jpg}
+        \includegraphics[width=\linewidth]{images/CRSMultiAntenna.png}
+        \caption{Reference Signal layout for multi antenna configurations of 1,2 and 4 antenna systems in LTE}
+        \label{fig:CRSMultiAntenna}
+    \end{center}
+\end{figure}
+
+
+\subsubsection{Final Waveform}
+All the signals mentioned in Section \ref{LTEFrame} are generated in Labview along with other signals that are not mentioned here due to the complexity are generated using the LTE Application Framework Software and arranged in a 2D grid of frequency and time as shown below in Figure \ref{fig:RBSignals}. The CRS for a 2 antenna system are placed every 6 subcarriers in the frequency domain and every 3 or 4 time symbols apart, according to the position on the grid. Where as the PSS and SSS only repeat every 5 subframes.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=10cm]{images/FrameLegend.png}
         \caption{Resource Block Grid for 2 sub frames}
         \label{fig:RBSignals}
     \end{center}
@@ -95,22 +97,20 @@ One of the disadvantages of using OFDM in the physical layer is the high peak to
 
 \subsection{Reception}
 
-For the LTE receiver processing a USRP captures in bursts and streams the data to a laptop connected via a USB interface. The signals are processed by a custom MATLAB application which performs the necessary steps to decode the LTE Frames, estimate the channel and display the information as a 3D surface. For the case of the demo the data was processed as soon as they were received from the USRP and the channel estimate was displayed in realtime. The data can alternatively be logged for offline postprocessing to get better granularity as intermittent processing delays dont appear.
+For the LTE receiver processing a USRP with 2 antennas acquires the RF data from both ports and processes the data in the FPGA in real time. The data requested by the host is then forwarded to it using the high speed PCIe interface. A more in depth explaination of the receiver processing is explained in Chapter \ref{ch:ExSetup}.
 
-Once enough samples have been captured (usually 2 or more Frames) the data can be processed in the following steps.
+The channel estimation data is forwarded from the FPGA IQ processing engine to the host which is then logged to a TDMS file (NI propriotory format) and post processed to extract samples for the purpose of the experiments. The main steps of the DL receiver processing once enough samples have been captured are the following.
 
 
 \subsubsection{Carrier Offset Estimation and Correction}
 OFDM is extremely senstive to frequency shifts in the received signal. In the case that the receiver or transmitter center frequency clock was not accurate enough, the frequency shift needs to be estimated and corrected. This is the very first step before processing the baseband waveform.
 
-%TODO
-
 \subsubsection{Frame synchronisation}
-As mentioned in Section \ref{LTEFrame} the synchronisation is a very important part of knowing where the LTE frame begins. This is done by correlating the received signal with the known Zadoff Chu Sequence and to look for the peak. Figure \ref{fig:PSSCorr} shows an example correlation of a Zadoff Chu sequence and a received signal containing 307200 samples in total amounting to 2 frames of a 10MHz Bandwidth LTE signal. 4 peaks are to be expected here as there are 2 frames, each containing 2 PSS sequences.
+As mentioned in Section \ref{LTEFrame} the synchronisation is a very important part of knowing where the LTE frame begins. This is done by correlating the received signal with the known Zadoff Chu Sequence and to look for the peak. Figure \ref{fig:PSSCorr} shows an example correlation of a Zadoff Chu sequence and a received signal containing 307200 samples in total amounting to 2 frames of a 10\si{\mega\hertz} Bandwidth LTE signal. 4 peaks are to be expected here as there are 2 frames, each containing 2 PSS sequences.
 
 \begin{figure}[H]
     \begin{center}
-        %\includegraphics[width=9cm]{../ReportImages/PSSCorrelation.jpg}
+        \includegraphics[width=9cm]{images/PSSCorrelation.jpg}
         \caption{PSS Correlation}
         \label{fig:PSSCorr}
     \end{center}
@@ -118,12 +118,11 @@ As mentioned in Section \ref{LTEFrame} the synchronisation is a very important p
 
 \subsubsection{Channel Estimation}
 
-Once the frame has been demodulated and the 2D OFDM grid has been obtained, the channel can be estimated based on the original pilot symbols structure known to the receiver, hence the phase and amplitude of the particular sub carrier can be obtained. A 2D wiener filter is applied in both the time and frequency axis to interpolate the channel estimate. More explained in the Chapter \ref{ch:ChEst}.
+Once the frame has been demodulated and the 2D OFDM grid has been obtained, the channel can be estimated based on the original pilot symbols structure known to the receiver, hence the phase and amplitude of the particular sub carrier can be obtained. A linear interpolator is applied in the frequency axis to interpolate the channel estimate from 200 subcarriers to 1200 subcarriers(for a full bandwidth system) and a zero order hold is used in the time axis until the next pilot symbol in the time domain is encountered. The details are explained in the Chapter \ref{ch:ChEst}.
 
-%TODO
 
 \subsection{Antenna}
-The analog time domain signal is transmitted from the USRP (Section \ref{sec:USRP}) over the air using a Triband antenna. For the setup an omni directional Antenna from TODO capable of transmitting and receiving around frequencies of 144, 400 or 1200 MHz. This antenna shown in Figure \ref{fig:USRPAnt} was used as the transmit and the receive antenna for the demo setup.
+The analog time domain signal is transmitted from the USRP (Section \ref{sec:USRP}) over the air using a Triband antenna. For the setup an omni directional Antenna from NI capable of transmitting and receiving around frequencies of 144, 400 or 1200 \si{\mega\hertz} is used for the transmitter and receiver as shown in Figure \ref{fig:USRPAnt}.
 
 \begin{figure}[H]
     \begin{center}

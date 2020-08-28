@@ -1,10 +1,10 @@
 \chapter{Channel Estimation}
 \label{ch:ChEst}
 
-LTE was chosen as the standard to use here as it is very mature and has readily available MATLAB/Labview based implementation. In the case of this thesis the aim is not to reinvent standard by redesigning pilot symbol placements. Instead existing standards were used in order to collect experimental data. This reduces design time and focusses more on the issue at hand which is channel estimation data of a MIMO Channel.
+LTE was chosen as the standard to use here as it is very mature and has readily available MATLAB/Labview based implementation. In the case of this thesis the aim is not to reinvent standard by redesigning pilot symbol placements, instead existing standards were used in order to collect experimental data. This reduces design time and focusses on the issue at hand which is channel estimation data of a MIMO Channel.
 
 \section{OFDM}\label{sec:OFDM}
-LTE is based on OFDMA in the physical layer which is a multi carrier communication scheme \cite{FazelKaiser}. As the name suggests OFDM uses orthogonal sub carriers from an orthonormal system to form the basis for independent data streams. For band limited transmission systems with finite access time per channel use the dimension of the parallel data stream is given by the equation \ref{eq:BandLim}  \cite{UtschickOFDM}.
+LTE is based on OFDMA in the physical layer which is a multi carrier communication scheme \cite{FazelKaiser}. As the name suggests OFDM uses orthogonal sub carriers from an orthonormal system to form the basis for independent data streams. For band limited transmission systems with finite access time per channel use the dimension of the parallel data stream is given by the Equation \ref{eq:BandLim}  \cite{UtschickOFDM}.
 
         \begin{equation} \label{eq:BandLim}
             N = BT
@@ -20,12 +20,12 @@ LTE is based on OFDMA in the physical layer which is a multi carrier communicati
                     $T$& Channel access time \\
                     \hline
                 \end{tabular}
-                \caption{}
+                \caption{Parallel data streams parameter description}
                 \label{tab:BandLimTrans}
             \end{center}
         \end{table}
 
-The orthonormal basis function can be mathematically modelled as the equation \ref{eq:OFDM} \cite{UtschickOFDM}.
+The orthonormal basis function can be mathematically modelled as the Equation \ref{eq:OFDM} \cite{UtschickOFDM}.
 
         \begin{equation} \label{eq:OFDM}
             \begin{split}
@@ -73,17 +73,17 @@ The orthonormal basis function can be mathematically modelled as the equation \r
             \end{aligned}
         \end{equation}
 
-        In the case of a channel with a delay spread (also referred to as multipath propogations) we model it as the following
+        In the case of a channel with delay spread (also referred to as multipath propogations) we model it as the following
         \begin{equation} \label{eq:DelaySpread}
             \begin{split}
                 h(t) = \sum_{l=0}^{L-1}h_l\delta{(t-l\frac{T}{N})} \\ 
             \end{split}
         \end{equation}
-        this causes the term $h_lx_{b,q}\psi_q(t-l\frac{T}{N}-bT)$ which leads to interference between adjacent channels $T_{b-1},T_{b},T_{b+1}$, etc.
+        where $h$ is the time domain channel taps. The term $h_lx_{b,q}\psi_q(t-l\frac{T}{N}-bT)$ leads to interference between adjacent channels $T_{b-1},T_{b},T_{b+1}$, etc. This has be avoided to have faithful reproduction of transmitted data on the receiver end.
 
 \subsection{Cyclic Prefix}\label{ssec:CP}
 
-As a result of Equation \ref{eq:DelaySpread} we have to compensate for the interference of the symbols of the $b_{th}$ channel with the other channels. A simple solution to this interference is a Cyclic prefix. As the name suggests it is a cyclic addition of the signal at the transmitter end, which means copying the beginning of the signal and adding it to the end. To this end $T = T + T_p$, where $T_p$ is the duration of the cyclic prefix. In the LTE standard the durations are predefined based the normal or extended mode \cite{3gpp36211}
+As a result of Equation \ref{eq:DelaySpread} we have to compensate for the interference of the symbols of the $b_{th}$ channel with the other channels. A simple solution to this interference is a Cyclic prefix. As the name suggests it is a cyclic addition of the signal at the transmitter end, which means copying the beginning of the signal and adding it to the end. To this end $T = T + T_p$, where $T_p$ is the duration of the cyclic prefix. In the LTE standard the cyclic prefix lengths are predefined based the normal or extended mode \cite{3gpp36211}
 
 \begin{equation}
     \begin{split}
@@ -209,7 +209,7 @@ Taking the DFT of equation \ref{eq:MatrixConvCPSimpl} gives
     y_b = \hat{H}x_b + \eta_{b} \Leftrightarrow Y_b = \frac{1}{N}F\hat{H}F^HX_b + F\eta_{b}
 \end{equation}
 
-Where $F$ is the fourier matrix. Since $\hat{H}$ is a circulant matrix (also a convolutional matrix) it can be broken down as equation \ref{eq:CircMtxExp} \cite{CircMatrixStanford}. The eigenvalues of the circulant matrix are the fourier transformed coefficients of the first column while the eigenvectors are the columns of the inverse fourier transform matrix. Equation \ref{eq:CircMtxExp} presents a eigenvector decomposition of matrix $H$ where $F^H$ is the inverse DFT matrix and $\Lambda$ is the diagonal matrix with entries being the fourier transform terms of the first column of the matrix $H$.
+Where $F$ is the fourier matrix. Since $\hat{H}$ is a circulant matrix (also a convolutional matrix) it can be broken down as equation \ref{eq:CircMtxExp} \cite{CircMatrixStanford}. The eigenvalues of the circulant matrix are the fourier transformed coefficients of the first column while the eigenvectors are the columns of the inverse fourier transform matrix. Equation \ref{eq:CircMtxExp} presents a eigenvector decomposition of matrix $\hat{H}$ where $F^H$ is the inverse DFT matrix and $\Lambda$ is the diagonal matrix with entries being the fourier transform terms of the first column of the matrix $\hat{H}$.
 
 \begin{equation}\label{eq:CircMtxExp}
     \begin{aligned}
@@ -234,7 +234,7 @@ where $\Lambda$, is a diagonal matrix and ${H}$ is the vector of channel coeffic
 
 %$\Lambda$ is therefore found easily which provides the channel coefficients in the frequency domain.
 
-In order to determine the channel propogation effects known pilot symbols are inserted in the transmit frames as mentioned in section \ref{sssec:CRS} and the channel effects are inferred from the demodulated symbol on the receiver side. Although populating all the subcarriers with pilots is the best approach, this leads to high channel reference signal overheads and less data bandwidth. Hence in practical system implementations the only $P$ out of $N$ subcarriers carry the pilots and the rest are interpolated.
+In order to determine the channel propogation effects known pilot symbols are inserted in the transmit frames as mentioned in Section \ref{sssec:CRS} and the channel effects are inferred from the demodulated symbol on the receiver side. Although populating all the subcarriers with pilots is the best approach, this leads to high channel reference signal overheads and less data bandwidth. Hence in practical system implementations only $P$ out of $N$ subcarriers carry the pilots and the rest are interpolated.
 
 \begin{equation}\label{eq:OFDMChEstEq}
     \begin{aligned}
@@ -244,11 +244,11 @@ In order to determine the channel propogation effects known pilot symbols are in
 $
 Y \in \mathbb{C}^{P}, H \in \mathbb{C}^{N}, \eta \in \mathbb{C}^{P} \text{ are vectors}
 \\ X = diag[X_{1},...,X_{P}] \in \mathbb{C}^{PxP}
-\\ \text{and } S: \mathbb{C}^{N} \rightarrow \mathbb{C}^{P} \Rightarrow  H \mapsto H_P = [H_{s1},...,H{sp}]^T.
+\\ \text{and } S: \mathbb{C}^{N} \rightarrow \mathbb{C}^{P} \Rightarrow  H \mapsto H_P = [H_{s1},...,H_{sp}]^T.
 $
 where $S$ is the selector matrix which selects $P$ out of $N$ subcarriers which carry the pilot symbols.
 
-For non fully loaded OFDM systems which is typical in the real world the equation \ref{eq:OFDMChEstEq} reduces to the equation below.
+For non fully loaded OFDM systems which is typical in the real world the Equation \ref{eq:OFDMChEstEq} reduces to the equation below.
 
 \begin{equation}\label{eq:ReducedRankOFDMChEstEq}
     \begin{aligned}
@@ -274,7 +274,7 @@ $H_P$ is then subsequently interpolated across all the $N$ subcarriers. This can
 
 \section{MIMO Channel Estimation}\label{sec:MIMO}
 
-For the MIMO channel estimate the basics is the same as described in the section \ref{ssec:PilotAssistedChEst}, except in a $N_t{\times}N_r$ system we have $N_tN_r$ possible channels per subcarrier. This is explained as follows, from figure \ref{fig:MIMOChannel} it can be seen that there are $N_tN_r$ channels per subcarrier in the frequency domain. Equation \ref{eq:OFDMChEstEq} is used to calculate each channel. This is enabled by non interfering pilots for different antennas. This \textbf{must} be followed for faithful channel estimation and is a necissary criteria which has been followed in the LTE standard.
+For the MIMO channel estimate the basics is the same as described in the Section \ref{ssec:PilotAssistedChEst}, except in a $N_t{\times}N_r$ system we have $N_tN_r$ possible channels per subcarrier. This is explained as follows, from Figure \ref{fig:MIMOChannel} it can be seen that there are $N_tN_r$ channels per subcarrier in the frequency domain. Equation \ref{eq:ReducedRankOFDMChEstEq} is used to calculate each channel. This is enabled by non interfering pilots for different antennas. This \textbf{must} be followed for faithful channel estimation and is a necessary criteria which has been followed in the LTE standard.
 
 \begin{figure}[H]
     \begin{center}
@@ -288,7 +288,7 @@ For the MIMO channel estimate the basics is the same as described in the section
     \hat{x} = Wy
 \end{equation}
 
-Once the channels propogation effects have been calculated each symbol has to be equalized to compensate the distortion effect caused by the dispersive channel. In the case of a MIMO channel there are 3 main algorithms which are
+Once the channels propogation effects have been calculated each symbol has to be equalized to compensate the distortion effect caused by the dispersive channel. In the case of a MIMO channel there are 3 main algorithms which are as follows
 
 \subsection{Maximum Ratio Combiner}\label{ssec:Simple}
 
@@ -309,7 +309,7 @@ and can be considered as a normaliser for the columns of the matrix $H$.
     W_{ZF} = (\hat{H}^H\hat{H})^{-1}\hat{H}^H
 \end{equation}
 
-Zero forcing is an algorithm that is avoided although given its simplicity, the reason being that the noise can be amplified in the case of a low SNR situation. Hence in practice this algoritm is avoided. The implimentation is a Least squares estimate of the vector $\hat{x}$
+Zero forcing is an algorithm that is avoided although given its simplicity, the reason being that the noise can be amplified in the case of a low SNR situation. Hence in practice this algoritm is avoided. The implimentation is a Least squares estimate of the vector $\hat{x}$.
 
 \subsection{MMSE}\label{ssec:MMSE}
 

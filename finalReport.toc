@@ -5,56 +5,63 @@
 \contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}%
 \contentsline {chapter}{\numberline {2}System Model}{7}{chapter.2}%
 \contentsline {section}{\numberline {2.1}LTE}{7}{section.2.1}%
-\contentsline {section}{\numberline {2.2}LTE Waveform Processing}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.2}LTE Waveform Processing}{8}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Transmission}{8}{subsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.1.1}LTE Frame}{8}{subsubsection.2.2.1.1}%
 \contentsline {subsubsection}{\numberline {2.2.1.2}Primary Synchronisation Signal (PSS)}{8}{subsubsection.2.2.1.2}%
 \contentsline {subsubsection}{\numberline {2.2.1.3}Secondary Synchronisation Signal (SSS)}{9}{subsubsection.2.2.1.3}%
 \contentsline {subsubsection}{\numberline {2.2.1.4}Cell Specific Reference Signal (CRS)}{9}{subsubsection.2.2.1.4}%
 \contentsline {subsubsection}{\numberline {2.2.1.5}Final Waveform}{10}{subsubsection.2.2.1.5}%
-\contentsline {subsection}{\numberline {2.2.2}Reception}{10}{subsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.2.1}Carrier Offset Estimation and Correction}{11}{subsubsection.2.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2.2}Frame synchronisation}{11}{subsubsection.2.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.2.3}Channel Estimation}{11}{subsubsection.2.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.3}Antenna}{11}{subsection.2.2.3}%
-\contentsline {chapter}{\numberline {3}Channel Estimation}{13}{chapter.3}%
-\contentsline {section}{\numberline {3.1}OFDM}{13}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Cyclic Prefix}{14}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Pilot assisted channel estimation}{17}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}MIMO Channel Estimation}{18}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Maximum Ratio Combiner}{19}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Zero Forcing}{19}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}MMSE}{19}{subsection.3.2.3}%
-\contentsline {chapter}{\numberline {4}Potential Hardware Setups}{21}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Software Defined Radios USRP}{21}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}PCIe-8371}{22}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Host}{22}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}MIMO Application Framework (MIMO AFW)}{23}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}USRP 2940}{25}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}PXIe-7976}{25}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}CDA-2990}{25}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}CPS-8910}{25}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}PXIe-1085}{25}{subsection.4.2.5}%
-\contentsline {subsection}{\numberline {4.2.6}PXIe-6674T}{26}{subsection.4.2.6}%
-\contentsline {subsection}{\numberline {4.2.7}PXIe-8135}{26}{subsection.4.2.7}%
-\contentsline {subsection}{\numberline {4.2.8}Implementation Advantages and Disadvantages}{26}{subsection.4.2.8}%
-\contentsline {section}{\numberline {4.3}LTE Application Framework}{28}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Hardware Requirements}{28}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Software Requirements}{28}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Implementation Advantages and Disadvantages}{28}{subsection.4.3.3}%
-\contentsline {chapter}{\numberline {5}Experimantal Setup}{29}{chapter.5}%
-\contentsline {section}{\numberline {5.1}LTE Application Framework MIMO Extension}{29}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}LTE AFW MIMO Externsion Architecture}{30}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}LTE AFW Host Software}{30}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}LTE AFW FPGA}{30}{subsection.5.1.3}%
-\contentsline {section}{\numberline {5.2}Application Example}{31}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Results}{33}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Data Loss}{33}{section.6.1}%
-\contentsline {chapter}{\numberline {7}Conclusion and Outlook}{35}{chapter.7}%
-\contentsline {section}{\numberline {7.1}FPGA File Port}{35}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Experiment with structured Channel}{35}{section.7.2}%
-\contentsline {chapter}{\numberline {A}Troubleshooting}{37}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Boot Order}{37}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Synchronisation of the USRPs}{37}{section.A.2}%
-\contentsline {chapter}{\numberline {B}Schematic Octoclock}{45}{appendix.B}%
-\contentsline {chapter}{Bibliography}{49}{appendix.C}%
+\contentsline {subsection}{\numberline {2.2.2}Reception}{11}{subsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.2.1}Carrier Offset Estimation and Correction}{12}{subsubsection.2.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2.2}Frame synchronisation}{12}{subsubsection.2.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.2.3}Channel Estimation}{12}{subsubsection.2.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.3}Antenna}{13}{subsection.2.2.3}%
+\contentsline {chapter}{\numberline {3}Channel Estimation}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}OFDM}{15}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Cyclic Prefix}{17}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Pilot assisted channel estimation}{19}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}MIMO Channel Estimation}{20}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Maximum Ratio Combiner}{21}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Zero Forcing}{21}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}MMSE}{21}{subsection.3.2.3}%
+\contentsline {chapter}{\numberline {4}Potential Hardware Setups}{23}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Software Defined Radios USRP}{23}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}PCIe-8371}{24}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Host}{24}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}MIMO Application Framework (MIMO AFW)}{25}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}USRP 2940}{27}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}PXIe-7976}{27}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}CDA-2990}{27}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}CPS-8910}{27}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}PXIe-1085}{27}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.6}PXIe-6674T}{28}{subsection.4.2.6}%
+\contentsline {subsection}{\numberline {4.2.7}PXIe-8135}{28}{subsection.4.2.7}%
+\contentsline {subsection}{\numberline {4.2.8}Implementation Advantages and Disadvantages}{28}{subsection.4.2.8}%
+\contentsline {section}{\numberline {4.3}LTE Application Framework}{30}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Hardware Requirements}{30}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Software Requirements}{30}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Implementation Advantages and Disadvantages}{30}{subsection.4.3.3}%
+\contentsline {chapter}{\numberline {5}Experimantal Setup}{31}{chapter.5}%
+\contentsline {section}{\numberline {5.1}LTE Application Framework MIMO Extension}{31}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}LTE AFW MIMO Extension Architecture}{31}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}LTE AFW Host Software}{34}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.1}Host Software Modifications}{35}{subsubsection.5.1.2.1}%
+\contentsline {subsubsection}{\numberline {5.1.2.2}DL Receiver}{36}{subsubsection.5.1.2.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.3}DL Transmitter}{39}{subsubsection.5.1.2.3}%
+\contentsline {subsection}{\numberline {5.1.3}LTE AFW FPGA}{39}{subsection.5.1.3}%
+\contentsline {subsubsection}{\numberline {5.1.3.1}DL TX IQ Processing}{39}{subsubsection.5.1.3.1}%
+\contentsline {subsubsection}{\numberline {5.1.3.2}DL RX IQ Processing}{39}{subsubsection.5.1.3.2}%
+\contentsline {section}{\numberline {5.2}Application Example}{42}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Results}{43}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Over-the-air Data Transmission}{43}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}SISO}{43}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}MIMO}{43}{subsection.6.1.2}%
+\contentsline {chapter}{\numberline {7}Conclusion and Outlook}{45}{chapter.7}%
+\contentsline {section}{\numberline {7.1}FPGA File Port}{45}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Experiment with structured Channel}{45}{section.7.2}%
+\contentsline {chapter}{\numberline {A}Troubleshooting}{47}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Boot Order}{47}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Synchronisation of the USRPs}{47}{section.A.2}%
+\contentsline {chapter}{\numberline {B}Schematic Octoclock}{55}{appendix.B}%
+\contentsline {chapter}{Bibliography}{59}{appendix.C}%

@@ -12,8 +12,8 @@ USRP is a Software Defined Radio (SDR) designed by National Instruments that ena
         \begin{tabular}{|l|c|}
         \hline
             Model                   & USRP2940          \\ \hline
-            Baseband Bandwidth      & 40MHz             \\ \hline
-            RF-Operating Frequency  & 50MHz-2200MHz     \\ \hline
+            Baseband Bandwidth      & 40\si{\mega\hertz}             \\ \hline
+            RF-Operating Frequency  & 50\si{\mega\hertz}-2200\si{\mega\hertz}     \\ \hline
             FPGA                    & Kintex-7 410T     \\ \hline
             No of Transmitters      & 2                 \\ \hline
             No of Receivers         & 2                 \\ \hline
@@ -21,8 +21,8 @@ USRP is a Software Defined Radio (SDR) designed by National Instruments that ena
             Oscillator              & Internal Crystal  \\ \hline
             ADC/DAC                 & 14 (For Rx)/16 (For Tx) bit         \\ \hline
             Frequency Accuracy      & 2.5 ppm           \\ \hline
-            Maximum Power Output    & 20dBm             \\ \hline
-            Maximum I/Q Sample Rate & 200MHz            \\ \hline
+            Maximum Power Output    & 20\si{\dB}\si{\milli}             \\ \hline
+            Maximum I/Q Sample Rate & 200\si{\mega\hertz}            \\ \hline
         \end{tabular}
     \end{center}
     \caption{USRP2940 SDR Product details}
@@ -30,7 +30,7 @@ USRP is a Software Defined Radio (SDR) designed by National Instruments that ena
 \end{table}
 
 \subsection{PCIe-8371}\label{ssec:PCIe-8371}
-The USRP SDRs are PXIe communication based devices. They connect to a Host/PC using a 1/4/8 way PCIe slot. For this setup a 4 lane PCIe daughter card (\emph{PCIe-8371}) was installed on the motherboard of the host PC to provide a dedicated PCIe communication port for the USRP.
+The USRP SDRs are PXIe communication based devices that connect to a Host/PC using a 1/4/8 way PCIe slot. For this setup a 4 lane PCIe daughter card (\emph{PCIe-8371}) was installed on the motherboard of the host PC to provide a dedicated PCIe communication port for the USRP.
 
 \subsection{Host}\label{ssec:host}
 The host chosen to be used here is a Fujitsu Celcius M770 with the following specifications.
@@ -42,15 +42,15 @@ The host chosen to be used here is a Fujitsu Celcius M770 with the following spe
             \textbf{OS}                        & Microsoft Windows 10 Education                                                                                            \\ \hline
             \textbf{Version}                   & 10.0.18363 Build 18363                                                                                                    \\ \hline
             \textbf{OS Manufacturer}           & Microsoft Corporation                                                                                                     \\ \hline
-            \textbf{Systemname}                & TUEIMSV-PRAKT01                                                                                                           \\ \hline
+            \textbf{System Name}                & TUEIMSV-PRAKT01                                                                                                           \\ \hline
             \textbf{Manufacturer}              & FUJITSU                                                                                                                   \\ \hline
-            \textbf{Systemmodel}               & CELSIUS M770                                                                                                              \\ \hline
-            \textbf{Systemtype}                & x64-based PC                                                                                                              \\ \hline
+            \textbf{System Model}               & CELSIUS M770                                                                                                              \\ \hline
+            \textbf{System Type}                & x64-based PC                                                                                                              \\ \hline
             \textbf{System-SKU}                & S26361-Kxxx-Vyyy                                                                                                          \\ \hline
-            \textbf{Processor}                 & \begin{tabular}[c]{@{}l@{}}Intel(R) Xeon(R) W-2123 CPU @ 3600 MHz\\ 4 Cores, 8 logical Processors\end{tabular}            \\ \hline
+            \textbf{Processor}                 & \begin{tabular}[c]{@{}l@{}}Intel(R) Xeon(R) W-2123 CPU @ 3600 \si{\mega\hertz}\\ 4 Cores, 8 logical Processors\end{tabular}            \\ \hline
                 \textbf{BIOS-Version/-Date}        & \begin{tabular}[c]{@{}l@{}}FUJITSU // American Megatrends Inc. \\ V5.0.0.13 R1.8.0 for D3498-A1x, 08.10.2019\end{tabular} \\ \hline
                     \textbf{SMBIOS-Version}            & 3.2                                                                                                                       \\ \hline
-                    \textbf{BIOS-Modus}                & UEFI                                                                                                                      \\ \hline
+                    \textbf{BIOS-Mode}                & UEFI                                                                                                                      \\ \hline
                     \textbf{BaseBoard-Manfacturer}     & FUJITSU                                                                                                                   \\ \hline
                     \textbf{BaseBoard-Product}         & D3498-A1                                                                                                                  \\ \hline
                     \textbf{BaseBoard-Version}         & S26361-D3498-A1                                                                                                           \\ \hline
@@ -63,7 +63,7 @@ The host chosen to be used here is a Fujitsu Celcius M770 with the following spe
     \label{tb:HostConfig}
 \end{table}
 
-Streaming a Custom LTE Waveform into the 2 seperate USRP trasnmitters, would have been the simplest and the ideal solution. However since the 2 transmitters on a single device are not time synchronised, which is essential for MIMO transmission and reception, this was not an option. The details of the issues are described in the Appendix \ref{sec:USRPSync}.
+Streaming a Custom LTE Waveform into the 2 seperate USRP transmitters, would have been the simplest and the ideal solution. However since the 2 transmitters on a single device are not time synchronised, which is essential for MIMO transmission and reception, this was not an option. The details of the issues are described in the Appendix \ref{sec:USRPSync}.
 
 \section{MIMO Application Framework (MIMO AFW)}\label{sec:MIMOAFW}
 MIMO Application Framework (MIMO AFW) is a Software developed by National Instruments, that offers a comprehensive plug and play MIMO setup. This setup requires a host of additional hardware which are required for the functioning of the MIMO AFW \cite{MIMOAFWGettingStarted}. When setup with all the required Hardware MIMO AFW can support a Multi-user system with a maximum of 128 Antennas on the Base Station (BS) side and upto 12 Antennas on the User Equipment (UE) side.
@@ -79,8 +79,7 @@ A list of different Hardware parts needed to run this MIMO AFW is listed in Tabl
     \item FPGA based real time signal processing such as modulation, over-the-air synchronization, MIMO equalization and MIMO precoding
     \item Scalable number of antennas (multi-antenna MS: between 2 and 12; BS: between 2 and 128). Interfaces and configuration adapt automatically
     \item Fully reconfigurable LTE like radio frame structure
-    \item Bi Directional TDD and FDD functionality transmission of 20MHz bandwidth
-    \item FPGA based real time signal processing such as modulation, over-the-air synchronization, MIMO equalization and MIMO precoding
+    \item Bi Directional TDD and FDD functionality transmission of 20\si{\mega\hertz} bandwidth
 \end{itemize}
 
 
@@ -129,19 +128,19 @@ As mentioned in Section \ref{sec:USRP}, this is the backbone of the architecture
 MIMO has very demanding operations that are quite compute intensive such as precoding, equalization as well as channel estimation in the frequency domain. In addition to the aforementioned processing tasks this FPGA card also perform the \emph{bit processing}. This PXIe communication based FPGA card contains a Xilinx Kintex-7 FPGA and moves data in and out using an 8 lane PCIe slot.
 
 \subsection{CDA-2990}\label{ssec:CDA-2990}
-This device also known as the Octoclock is a clock distribution accessory. It can either receive an input reference clock and distribute the clock to 8 other devices synchronously along with a PPS (Pulse Per Second). The CDA-2990 also contains an input for a GNSS Antenna which uses the GNSS signal to generate a PPS signal. In the absense of a GNSS Antenna the device generates its own internal clock based on an internal oven controlled oscillator (OCXO).
+This device also known as the Octoclock is a clock distribution accessory. It can either receive an input reference clock and distribute the clock to 8 other devices synchronously along with a PPS (Pulse Per Second) trigger. The CDA-2990 also contains an input for a GNSS Antenna which uses the GNSS signal to generate a PPS signal. In the absense of a GNSS Antenna the device generates its own internal clock based on an internal oven controlled oscillator (OCXO). The the inputs terminations are 50 Ohms as can be seen from Appendix \ref{ch:HWSchOctoClock}.
 
 \subsection{CPS-8910}\label{ssec:CPS-8910}
 The CPS-8910 is a 8 way PCIe data aggregator and has 2 upstream ports. With the 8 downstream ports it can aggregate large amounts of data from a maximum of 8 USRPs and send them out to a PC/Controller via the 2 other upstream ports. This is essential for Massive MIMO applications.
 
 \subsection{PXIe-1085}\label{ssec:PXIe-1085}
-National instruments is a company that manufactures devices intended for different industries and end applications. Hence they follow a modular approach to their designs. The PXIe-1085 is an 18 slot chassis, which can be populated by many different daughter cards suitable to the customers needs. Out of the 18 slots 16 are hybrid that can be populated with various add ones, and one slot is reserved for a timing and synchronisation slot as described in section \ref{ssec:PXIe-6674T} and the other reserved for a PXI-controller which is define in section \ref{ssec:PXIe-8135}. The chassis is capable of supporting a throughput of upto 24GBps.
+The PXIe-1085 is an 18 slot chassis, which can be populated by many different daughter cards suitable to the customers needs. Out of the 18 slots, 16 are hybrid that can be populated with various add ones, and one slot is reserved for a timing and synchronisation slot as described in Section \ref{ssec:PXIe-6674T} and the other reserved for a PXI-controller which is define in Section \ref{ssec:PXIe-8135}. The chassis is capable of supporting a throughput of upto 24GBps.
 
 \subsection{PXIe-6674T}\label{ssec:PXIe-6674T}
-The PXIe-6674T generates and routes clocks and trigger signals (PPS Signals) between PXI devices or chassis. This timing and synchronisation card not only generates an accurate clock but can also shift levels of an input signal according to the user's settings. Although the octoclock distributes the clock, it is generated, synchronised and level shifted by the PXIe-6674T.
+The PXIe-6674T generates and routes clocks and trigger signals (PPS Signals) between PXI devices or chassis. This timing and synchronisation card not only generates an accurate clock but can also shift levels of an input signal according to the user's settings. Although the octoclock distributes the clock, the signal is synchronised and level shifted by the PXIe-6674T.
 
 \subsection{PXIe-8135}\label{ssec:PXIe-8135}
-The PXIe-8135 is a PXI Controller needed to handle the different slot daughter cards installed in the \emph{PXIe-1085} (section \ref{ssec:PXIe-1085}). Its a Intel Core i7 based embedded controller for PXI express systems. The controller also has a variety of ports to support the 10/100/1000BASE-TX Gigabit Ethernet, 2 SuperSpeed USB ports and four Hi-Speed USB ports, as well as an integrated hard drive, serial port, and other peripheral I/O.
+The PXIe-8135 is a PXI Controller needed to handle the different slot daughter cards installed in the \emph{PXIe-1085} (Section \ref{ssec:PXIe-1085}). Its an Intel Core i7 based embedded controller for PXI express systems. The controller also has a variety of ports to support the 10/100/1000BASE-TX Gigabit Ethernet, 2 SuperSpeed USB ports and four Hi-Speed USB ports, as well as an integrated hard drive, serial port, and other peripheral I/O.
 
 \subsection{Implementation Advantages and Disadvantages}\label{ssec:MIMOAFWADVDISADV}
 The advantages of using MIMO AFW is that it reduces time to prototype as the functionality is readily available in the form of Hardware and Software, it is also a scalable model providing a solution with up to 128 BS antennas and 12 MS antennas. But given the amount of hardware required to have a minimum viable product, it is quite an expensive undertaking (over €100.000) and is hence cost preventative. Apart from that there is also the time cost to setup the instrument and check it functionality which is not to be neglected.
@@ -156,22 +155,22 @@ The advantages of using MIMO AFW is that it reduces time to prototype as the fun
                 \begin{tabular}{|l|l|l|c|c|c|c|c|}
                 \hline
                 \textbf{Model} & \textbf{\begin{tabular}[c]{@{}c@{}}RF-Frequency\\ Range\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}RF-Frontend\\ Bandwidth\end{tabular}} & \textbf{FPGA} & \textbf{Inputs} & \textbf{Outputs} & \textbf{Communication} & \textbf{GPS Osillator} \\ \hline
-                USRP-2940      & 5 MHz - 2.2 GHz            & 40 MHz                                & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
-                USRP-2940      & 50 MHz – 2.2 GHz            & 120 MHz                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
-                USRP-2942      & 400 MHz - 4.4 GHz           & 40 MHz                                & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
-                USRP-2942      & 400 MHz - 4.4 GHz           & 120 MHz                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
-                USRP-2943      & 1.2 GHz - 6 GHz             & 40 MHz                                & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
-                USRP-2943      & 1.2 GHz – 6 GHz             & 120 MHz                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
-                USRP-2944      & 10 MHz - 6 GHz              & 160 MHz                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
-                USRP-2945      & 10 MHz - 6 GHz              & 80 MHz                                & Kintex-7 410T & 4               & 0                & MXIe Ethernet          & No                     \\ \hline
-                USRP-2950      & 50 MHz - 2.2 GHz            & 40 MHz                                & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & Yes                    \\ \hline
-                USRP-2950      & 50 MHz - 2.2 GHz            & 120 MHz                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & Yes                    \\ \hline
-                USRP-2952      & 400 MHz - 4.4 GHz           & 40 MHz                                & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & Yes                    \\ \hline
-                USRP-2952      & 400 MHz - 4.4 GHz           & 120 MHz                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & Yes                    \\ \hline
-                USRP-2953      & 1.2 GHz - 6 GHz             & 40 MHz                                & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & Yes                    \\ \hline
-                USRP-2953      & 1.2 GHz - 6 GHz             & 120 MHz                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & Yes                    \\ \hline
-                USRP-2954      & 10 MHz - 6 GHz              & 160 MHz                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & Yes                    \\ \hline
-                USRP-2955      & 10 MHz - 6 GHz              & 80 MHz                                & Kintex-7 410T & 4               & 0                & MXIe Ethernet          & Yes                    \\ \hline
+                USRP-2940      & 5 \si{\mega\hertz} - 2.2 \si{\giga\hertz}            & 40 \si{\mega\hertz}                                & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
+                USRP-2940      & 50 \si{\mega\hertz} – 2.2 \si{\giga\hertz}            & 120 \si{\mega\hertz}                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
+                USRP-2942      & 400 \si{\mega\hertz} - 4.4 \si{\giga\hertz}           & 40 \si{\mega\hertz}                                & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
+                USRP-2942      & 400 \si{\mega\hertz} - 4.4 \si{\giga\hertz}           & 120 \si{\mega\hertz}                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
+                USRP-2943      & 1.2 \si{\giga\hertz} - 6 \si{\giga\hertz}             & 40 \si{\mega\hertz}                                & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
+                USRP-2943      & 1.2 \si{\giga\hertz} – 6 \si{\giga\hertz}             & 120 \si{\mega\hertz}                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
+                USRP-2944      & 10 \si{\mega\hertz} - 6 \si{\giga\hertz}              & 160 \si{\mega\hertz}                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & No                     \\ \hline
+                USRP-2945      & 10 \si{\mega\hertz} - 6 \si{\giga\hertz}              & 80 \si{\mega\hertz}                                & Kintex-7 410T & 4               & 0                & MXIe Ethernet          & No                     \\ \hline
+                USRP-2950      & 50 \si{\mega\hertz} - 2.2 \si{\giga\hertz}            & 40 \si{\mega\hertz}                                & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & Yes                    \\ \hline
+                USRP-2950      & 50 \si{\mega\hertz} - 2.2 \si{\giga\hertz}            & 120 \si{\mega\hertz}                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & Yes                    \\ \hline
+                USRP-2952      & 400 \si{\mega\hertz} - 4.4 \si{\giga\hertz}           & 40 \si{\mega\hertz}                                & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & Yes                    \\ \hline
+                USRP-2952      & 400 \si{\mega\hertz} - 4.4 \si{\giga\hertz}           & 120 \si{\mega\hertz}                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & Yes                    \\ \hline
+                USRP-2953      & 1.2 \si{\giga\hertz} - 6 \si{\giga\hertz}             & 40 \si{\mega\hertz}                                & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & Yes                    \\ \hline
+                USRP-2953      & 1.2 \si{\giga\hertz} - 6 \si{\giga\hertz}             & 120 \si{\mega\hertz}                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & Yes                    \\ \hline
+                USRP-2954      & 10 \si{\mega\hertz} - 6 \si{\giga\hertz}              & 160 \si{\mega\hertz}                               & Kintex-7 410T & 2               & 2                & MXIe Ethernet          & Yes                    \\ \hline
+                USRP-2955      & 10 \si{\mega\hertz} - 6 \si{\giga\hertz}              & 80 \si{\mega\hertz}                                & Kintex-7 410T & 4               & 0                & MXIe Ethernet          & Yes                    \\ \hline
                 \end{tabular}
             %}
             \end{center}
@@ -183,13 +182,13 @@ The advantages of using MIMO AFW is that it reduces time to prototype as the fun
 
 \section{LTE Application Framework}\label{sec:LTEAFW}
 
-        LTE Application Framework is a Software that National Instruments designed and offers to provides us a \emph{Downlink ONLY} 2x2 LTE setup. This setup does not require the additional hardware which are required for the functioning of the MIMO AFW.
+        LTE Application Framework is a Software that National Instruments designed and offers to provides us a \textbf{Downlink ONLY} 2x2 LTE setup. This setup does not require the additional hardware which are required for the functioning of the MIMO AFW.
 
         \subsection{Hardware Requirements}\label{ssec:LTEAFWHW}
-        This setup is quite a simplified version of the MIMO AFW and only requires a pair of USRPs (\ref{sec:USRP}), a pair of the PCIe daughter cards(\ref{ssec:PCIe-8371}) and a host PC(\ref{ssec:host}). One USRP acts as a eNodeB with 2 antennas (Base Station) and the other USRP acts as a UE with 2 antennas.
+        This setup is quite a simplified version of the MIMO AFW and only requires a pair of USRPs (Section \ref{sec:USRP}), a pair of the PCIe daughter cards(Section \ref{ssec:PCIe-8371}) and a host PC(Section \ref{ssec:host}). One USRP acts as a eNodeB with 2 antennas (Base Station) and the other USRP acts as a UE with 2 antennas.
 
         \subsection{Software Requirements}\label{ssec:LTEAFWSW}
-        The LTE AFW Software template that NI provides in its example libraries only has a LTE SISO implementation. But an internal development version of a 2x2 MIMO Extension was issued to TUM for the sake of expediting the experimental setup since MIMO AFW was not a financial viable option. However the NI internal development version of the code was meant to be run on a version 2.1 of Labview Communication Suite which is not supported on Windows 10. Hence the project had to be ported to the latest version of Labview Communications Suite (now called Labview NXG). Details of the software project are described in Chapter \ref{ch:ExSetup}
+        The LTE AFW Software template that NI provides in its example libraries only has a LTE SISO implementation. But an internal development version of a 2x2 MIMO Extension was issued to TUM for the sake of expediting the experimental setup since MIMO AFW was not a financial viable option. However the NI internal development version of the code was meant to be run on a version 2.1 of Labview Communication Suite which is not supported on Windows 10. Hence the project had to be ported to the latest version of Labview Communications Suite (now called Labview NXG). Details of the software project are described in Chapter \ref{ch:ExSetup}.
 
         \subsection{Implementation Advantages and Disadvantages}\label{ssec:LTEAFWADVDISADV}
         The advantages of using LTE AFW is that it works with minimum hardware, albeit with a limited capability of providing only a 2x2 MIMO system. Unlike MIMO AFW which is capable of bidirectional MIMO communications, LTE AFW can only perform unidirectional communications, namely from the eNodeB(Base station) to the UE. However given all the time and budget constraints, LTE AFW was chosen as the preferred solution. The architecture of the software and the modifications are explained in the following chapter.
