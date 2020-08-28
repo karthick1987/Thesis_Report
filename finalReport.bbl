@@ -47,4 +47,8 @@ R.~M. Gray, ``{Toeplitz and CirculantMatrices: A review},'' {Deptartment of
 \bibitem{LTEAFWManual}
 \emph{{LabVIEW Communications LTE Application Framework 19.5}}, 2016.
 
+\bibitem{JMMLINN}
+``{Invertible Neural Networks for MIMO Detection},'' Master's thesis,
+  {Technical University of Munich}, 2020.
+
 \end{thebibliography}

@@ -7,7 +7,7 @@ The second option (Section \ref{sec:MIMOAFW}) was financially unfeasible as the 
 
 \section{LTE Application Framework MIMO Extension}\label{sec:LTEAFWMIMOExt}
 
-LTE AFW is a SISO LTE Release 10 implementation, where as LTE AFW 2x2 MIMO Extension was developed internally by NI as a plugin to the SISO framework to demonstrate a proof of concept for their MIMO Application Framework product. The main goal of LTE 2x2 MIMO Extension was to demonstrate a functioning 2x2 MIMO System. It is implemented for \textbf{DL only}. The software is not readily available for customers to purchase, but it was given to MSV as a workaround for the MIMO implementation.
+LTE AFW is a SISO LTE Release 10 implementation, where as LTE AFW 2x2 MIMO Extension was developed internally by NI as a plugin to the SISO framework as a proof of concept for their MIMO Application Framework product. The main goal of LTE 2x2 MIMO Extension was to demonstrate a functioning 2x2 MIMO System. It is implemented for \textbf{DL only} without the UL feedback. The software is not readily available for customers to purchase, but it was given to MSV as a workaround for the MIMO implementation.
 
 For the implementation of the LTE AFW MIMO Extension as outlined in Chapter \ref{sec:LTEAFW} the equipment required is minimal. A set of 2 USRPs, one acting as a UE (Receiver) and the other acting as a Base Station (eNodeB) completes the transceiver chain and the Host PC does the graphing, data visualisation, user data communications and device setup. Figure \ref{fig:LTEAFWHWSetup} illustrates the simple HW connections required to make the device communicate with the host. For details on the part descriptions refer to Section \ref{ssec:LTEAFWHW}.
 
@@ -29,7 +29,16 @@ For the implementation of the LTE AFW MIMO Extension as outlined in Chapter \ref
 \end{figure}
 
 Figure %s \ref{fig:LTEAFWExtArch} and 
-\ref{fig:LTEAFW2DeviceOverview} shows the block diagram of the system in the DL, eNodeB and UE operation modes. Data streams that require high data rates for data transfer between host and FPGA are implemented as DMA FIFOs. These streams include the payload and UL data from host to FPGA and the received PDSCH/PUSCH transport blocks from FPGA to host. In-phase/quadrature (I/Q) samples for constellation and spectrum display as well as the channel estimation (\textbf{ONLY} \textit{h11} and \textit{h22}) values are also transferred from FPGA to host using DMA FIFOs. Further status information is transferred to the host by reading the indicator values \cite{LTEAFWManual}. As it can be seen both RX and TX components are implemented in the Host Software as well as in the FPGA Hardware. Hence the same application can be used as an \textit{eNodeB} as well as \textit{UE}. The \textit{eNodeB} mode uses the DL TX processing units and \textit{UE} uses the DL RX processing units which are explained in Section \ref{ssec:LTEAFWFPGA}. The following lists the various processing blocks in the application and a brief description of the corresponding tasks of each of the modules.
+\ref{fig:LTEAFW2DeviceOverview} shows the block diagram of the system in the DL eNodeB and UE operation modes. Data streams that require high data rates for data transfer between host and FPGA are implemented as DMA FIFOs. These streams include the payload and UL data from host to FPGA and the received PDSCH transport blocks from FPGA to host. In-phase/quadrature (I/Q) samples for constellation and spectrum display as well as the channel estimation (\textbf{ONLY} diagonal coefficients \textit{h11} and \textit{h22}) values are also transferred from FPGA to host using DMA FIFOs. Further status information is transferred to the host by reading the indicator values \cite{LTEAFWManual}. As it can be seen both RX and TX components are implemented in the Host Software as well as in the FPGA Hardware. Hence the same application can be used as an \textit{eNodeB} as well as \textit{UE}. The \textit{eNodeB} mode uses the DL TX processing units and \textit{UE} uses the DL RX processing units which are explained in Section \ref{ssec:LTEAFWFPGA}.
+
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=\linewidth]{images/LTEAFWExtArch.png}
+%    \caption{Overview of a Single device setup with loopback}
+%    \label{fig:LTEAFWExtArch}
+%\end{figure}
+
+The following lists the various processing blocks in the application and a brief description of the corresponding tasks of each of the modules as shown in Figure \ref{fig:LTEAFW2DeviceOverview}.
 
 \begin{itemize}
     \item \textbf{UDP read} -
@@ -68,8 +77,7 @@ Figure %s \ref{fig:LTEAFWExtArch} and
 %\end{figure}
 
 \subsection{LTE AFW Host Software}\label{ssec:LTEAFWHostSW}
-The LTE AFW 2x2 MIMO application uses a UDP stream to transfer data between the host and the device or vice versa. Figure \ref{fig:UDPDataTransfer} shows the end to end data flow starting from the host, going through the data FIFOs set up in the FPGAs and back to the host again where the received data is displayed.
-
+Each host implementation interfaces with the bitfile that was built from the corresponding FPGA implementation. It demonstrates the main functionalities for each implementation. This functionality includes configuration of the FPGA target, exchanging payload data, and monitoring the system status. The LTE AFW 2x2 MIMO application uses a UDP stream to transfer data between the host and the device or vice versa. Figure \ref{fig:UDPDataTransfer} shows the end to end data flow starting from the host, going through the data FIFOs set up in the FPGAs and back to the host again where the received data is displayed.
 \begin{figure}[H]
     \centering
     \includegraphics[width=8cm]{images/UDPDataTransfer.png}
@@ -88,11 +96,43 @@ The host software was heavily modified for the following reasons
     \item The project was not forwards compatible with the latest version of the Labview Communications System Design Suite.
 \end{itemize}
 
-As a result of the above mentioned point and to guarentee future compatibility, the project had to be ported to the latest version of \textit{LabVIEW Communication System Design Suite 4.0}, which was renamed as \textit{Labview NXG 4.0}. Missing dependencies had to be manually included and many driver related functionalities had to be modified as the newer version had a different driver implementation compared to the older version.
+As a result of the above mentioned points and to guarentee future compatibility, the project had to be ported to the latest version of \textit{LabVIEW Communication System Design Suite 4.0}, which was renamed as \textit{Labview NXG 4.0}. Missing dependencies had to be manually included and many driver related functionalities had to be modified as the newer version had a different driver implementation compared to the older version.
+
+\subsubsection{DL Transmitter}\label{ssec:LTEAFWTXOptions}
+
+The host side of the DL transmitter acts as the setup interface for the eNodeB and initiates the FPGA, the RF Frontend and monitors the status of the transmitter as well provides visual feedback of the TX power spectrum. Figure \ref{fig:DLRXAdvScreen} shows a screencapture of the TX Host panel.
+
+%TODO Add TX figure
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{images/SISORXADVEdited.png}
+    \caption{A Screencapture of the DL TX(eNodeB) in the application window}
+    \label{fig:DLRXAdvScreen}
+\end{figure}
+
+The Table \ref{tab:TXUSRPParam} shows the setup parameters used on the host.
+
+\begin{table}[H]
+    \begin{center}
+        \begin{tabular}{|l|l|}
+            \hline
+            \textbf{Parameter}                                                          & \textbf{Value} \\ \hline
+            Center Frequency                                                            & 1.2\si{\giga\hertz}         \\ \hline
+            TX RF Antenna Port On USRP
+  & TX1/RF0        \\ \hline
+                Cell ID                                                                     & 0              \\ \hline
+                LTE Duplexing Mode                                                          & FDD            \\ \hline
+                Transmitter Gain                                                        & 10\si{\dB}\si{\milli}           \\ \hline
+        \end{tabular}
+        \caption{Transmitter USRP Parameters Setup}
+        \label{tab:TXUSRPParam}
+    \end{center}
+\end{table}
 
 \subsubsection{DL Receiver}\label{ssec:LTEAFWRXOptions}
 
-The DL Receiver implements the end to end receiver chain from receiving the raw data from the RF Frontend to the OFDM processing, demodulation and LTE processing steps. Most of the complex resource intensive data processing is done onboard the FPGA as mentioned in Section \ref{ssec:LTEAFWFPGA}. Certain parameters of the receiver can be manually configured according to user specifications. The chosen settings for this experiment are listed in Table \ref{tab:RXUSRPParam}.
+The DL Receiver implements the end to end receiver chain from receiving the raw data from the RF Frontend to the OFDM processing, demodulation and LTE processing steps. Most of the complex resource intensive data processing is done onboard the FPGA as mentioned in Section \ref{ssec:LTEAFWFPGA}. Certain parameters of the receiver can be manually configured according to user specifications. Two important features were added to the receiver processing on the Host, namely \textit{data logging interface} and \textit{Equalizer Bypass switch}. These are custom requirements for the purposes of the experiment in this thesis. The chosen settings for this experiment are listed in Table \ref{tab:RXUSRPParam}.
 
 \begin{table}[H]
     \begin{center}
@@ -102,7 +142,7 @@ The DL Receiver implements the end to end receiver chain from receiving the raw 
             Center Frequency                                                            & 1.2\si{\giga\hertz}         \\ \hline
             Transmit IP Address	                                                        &
 127.0.0.1      \\ \hline
-            UDP Receive Port                                                            & 60000          \\ \hline
+            UDP Transmit Port                                                            & 60000          \\ \hline
             \begin{tabular}[c]{@{}l@{}}Receiver RX Antenna \\ Port On USRP\end{tabular} & RX2/RF1        \\ \hline
                 Cell ID                                                                     & 0              \\ \hline
                 LTE Duplexing Mode                                                          & FDD            \\ \hline
@@ -157,14 +197,28 @@ Table \ref{tab:RXUSRPParamDesc} describes the various graphs and indicators show
     \end{table}
 \end{landscape}
 
-\subsubsection{DL Transmitter}\label{ssec:LTEAFWTXOptions}
-
 \subsection{LTE AFW FPGA}\label{ssec:LTEAFWFPGA}
 LTE has demanding and resource intensive processing requirements and in the application framework, the processing blocks for the DL and UL TX and RX are implemented directly on the FPGA. They exchange the baseband data with the RF interface using target-scoped FIFOs. The processing on the FPGA has advantages because it provides lower latency and therefore enables real-time physical layer processing. The following section describe the steps involved in the DL TX and DL RX processing done on the FPGA.
 
 \subsubsection{DL TX IQ Processing}\label{sssec:DLTXIQProc}
 
-\begin{figure}[!htb]
+The PDCCH contains the DCI(Downlink Control Indicator) message which describes the DL data transmitted to the UE. Due to the criticality of this message it is highly redudant and repeated multiple times in a frame and has a low modulation, inorder to recover the signal on the receiver side. PDCCH contains information like resource blocks allocated, MCS scheme, MIMO Mode, etc \ldots which is vital for correct frame decoding.
+
+PDSCH is the user data which is to be encoded into the frame and mapped to appropriate resource blocks. It includes the resource mapping that assembles all 1200 subcarriers of the current symbol. The TX IQ Processing module is triggered after the PDCCH and PDSCH I/Q samples for the current subframe are generated.
+
+The index generator generates the timing information for each sample of the current OFDM symbol, such as subcarrier, resource block, OFDM symbol and subframe index. Depending on the current timing information, the index-to-channel mapping decides for each subcarrier, which reference signal or physical channel is mapped to it. The PSS sync sequence, the CRS and the UERS are precalculated and stored in a LUT. The PDCCH and PDSCH I/Q samples are read from a FIFO that was filled with all I/Q samples for the current subframe before the TX IQ Processing module was triggered. After combining all channels, the DC gap is inserted, and whitespace is added so that the resulting number of samples equals the FFT size of 2,048. The IFFT converts the frequency domain data into the time domain. Finally, the cyclic prefix is attached to the output of the IFFT. The resulting time-domain signal is transferred to the RF loop using a FIFO.
+
+The PSS, CRS and the UERS are stored in the FPGA LUTs and fed into the iFFT block based on the symbol and subcarrier index.
+
+%\begin{itemize}
+%    \item \textbf{PSS}
+%    \item \textbf{CRS}
+%    \item \textbf{UERS (if enabled)}
+%    \item \textbf{PDCCH}
+%    \item \textbf{PDSCH}
+%\end{itemize}
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{images/DLFPGATXImpl.png}
     \caption{Simplified implementation of the DL TX processing block of the FPGA}
@@ -173,7 +227,7 @@ LTE has demanding and resource intensive processing requirements and in the appl
 
 \subsubsection{DL RX IQ Processing}\label{sssec:DLRXIQProc}
 
-This module reads the radio-frame aligned signal in time domain and outputs the channel-equalized subcarriers that are associated to the physical channels. As shown in Figure \ref{fig:LTEAFWFPGADLRXProc}, it includes the following functional blocks
+The RX IQ processing is more complex than the TX IQ processing chain as it performs very resource intensive calculations. This module reads the radio-frame aligned signal in time domain and outputs the channel-equalized subcarriers that are associated to the physical channels. As shown in Figure \ref{fig:LTEAFWFPGADLRXProc}, it includes the following functional blocks
 
 \begin{figure}[!htb]
     \centering
@@ -192,7 +246,7 @@ This module reads the radio-frame aligned signal in time domain and outputs the 
     \item \textbf{Resource demapping} -
         The resource demapper selects the 1200 allocated subcarriers by removing the surrounding whitespace and the DC carrier in the center. Then it generates the timing information for each sample and the resource grid by marking each sample for its corresponding channel by using a Boolean cluster. The resource mapping is based on a fixed frame structure configuration described in the LTE specifications. All subsequent modules use this Boolean cluster with elements for each LTE channel to determine if this sample is relevant.
     \item \textbf{CRS based channel estimation and equalization} -
-        The FFT output data is fed into two separate channel estimation blocks running in parallel. The first channel estimation is based on the CRS. The channel estimate values are calculated by conjugate complex multiplications. A linear interpolation is applied in frequency domain between adjacent reference symbols. On the edges of the symbol, the nearest estimated value is replicated (zero order hold). OFDM symbols not containing CRS sequences rely on the last channel estimation (zero order hold in time) as shown in Figure \ref{fig:ChEstInterpolation}
+        The FFT output data is fed into two separate channel estimation blocks running in parallel. The first channel estimation is based on the CRS. The channel estimate values are calculated by conjugate complex multiplications. A linear interpolation is applied in frequency domain between adjacent reference symbols as explained in Section \ref{ssec:PilotAssistedChEst}. On the edges of the symbol, the nearest estimated value is replicated (zero order hold). OFDM symbols not containing CRS sequences rely on the last channel estimation (zero order hold in time) as shown in Figure \ref{fig:ChEstInterpolation}
     \item \textbf{UERS based channel estimation and equalization} -
         This signalling scheme is available for use but not actively used in this thesis.
 \end{itemize}
@@ -207,6 +261,60 @@ This module reads the radio-frame aligned signal in time domain and outputs the 
 \end{figure}
 
 \section{Application Example}\label{sec:AppEx}
+
+Once the above mentioned apparatus was setup, it was ready to be used to log data. At the time of writing this thesis there was another Bachelor thesis being conducted in parallel to use machine learning to reverse the effects of the Channel distortions.
+
+One of the main topics of communication technology is to reconstruct data at the
+receiver that was transmitted over a non-trivial channel. Figure \ref{fig:MLModel} shows the ML model being used to train the inverse neural network to retrive the sent data. It is only necessary to feed the trained network with the received signal y and it then computes the original signal x. The transmitted signals x are mapped to the received signals y in the natural way and then the origial signals are reconstructed by inverting this mapping in the online phase. The mapping is done with the help of invertible and composable transformation 
+
+
+The standard way of using Neural Networks for this task is to map the received signals y to the transmitted signals x \cite{JMMLINN}. For training the neural network, transmitted and received symbols and their corresponding Subband Noise are required.
+
+\begin{center}
+    \begin{figure}[H]
+    \begin{tikzpicture}
+        \tikzstyle{network} = [rectangle, draw, minimum height = 15mm, minimum width = 20mm, line width = 0.5mm]
+
+        \node (a) at (0, 0) {$\Bhat{x}_j$};
+        \node[network] at (3, 0) (b) {Singlestream ML};
+        \node[network] at (7, 0) (c) {$\text{INN}^{-1}$};
+        \node (d) at (11, 0) {$\B{y}_j = \B{Hx}_j + \B{n}_j$};
+
+        \draw[->, line width = 0.5mm] (d) to (c);
+        \draw[->, line width = 0.5mm] (c) to node [above] {$\Bhat{x}_{\text{estim}, j}$} (b) ;
+        \draw[->, line width = 0.5mm] (b) to (a);
+
+    \end{tikzpicture}
+    \caption{ML Model for learning the network}
+    \label{fig:MLModel}
+    \end{figure}
+\end{center}
+
+\subsection{Transmitted and Received Data}\label{ssec:XYPairs}
+
+With the Host applications modifications mentioned in Section \ref{ssec:LTEAFWHostSWMods}, the unequalized data was received and recorded by the RX USRP. Due to Host performance degradation (details in Section \ref{ssec:OTADataTrans}) custom user data was susceptible to data loss.
+
+Given the time constraints modifying the FPGA bit file was not an option as this step involved recompiling the whole FPGA project. Once compiled the bitfile had to be tested and verified. As the timeframe was rather tight, a decision was made to use the CRS symbols as the ($x$,$y$) pairs that were transmitted and received.
+
+Figure \ref{fig:XYPairsCRS} shows that the CRS Ant 1 symbols are intended for the frame to be sent on TX Port 1 where as the CRS Ant 2 symbols are intended for the frame to be transmitted on TX Antenna 2. The greyed out resource blocks are meant as placeholders where no data can be sent on them.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\linewidth]{images/MultiAntennaCRSXYPairEdited.png}
+    \caption{Illustration of the CRS signals and channel estimation coefficients used as the ($x$,$y$) pair}
+    \label{fig:XYPairsCRS}
+\end{figure}
+
+On the receiver side RX antenna 1 receives the frame, once decoded the distortion of the CRS Ant 1 symbols can be inferred from \textit{h11} channel estimation parameters. Similarly from the decoded frame on RX antenna 2, the distortion of the CRS Ant 2 symbols can be inferred from the \textit{h22} channel estimation parameters. This functions as our ($x$,$y$) pair as the equalization can be bypassed.
+
+\subsection{Subband and Wideband Noise}\label{ssec:SINR}
+
+The SINR estimation algorithm is based on filtering the potentially noise channel estimates derived for the CRS subcarrier or the UERS subcarrier, respectively.The noisy least squares (LS) channel estimates obtained for the reference symbol carriers are filtered by a de-noising low-pass filter to obtain LS channel estimates with reduced noise. The implemented prototype de-noising filter is a raised cosine filter with nine taps and the filter coefficients in the following Table \ref{tab:LPFCoeff}.
+
+The SINR value is calculated per subband, each of which occupies 8PRBs. so SINR0 is subband SINR for PRBs 0\ldots7, SINR1 is for PRBs 8\ldots15, etc\ldots It has a fixed point format with 8 bits signed fixed-point number with 6 integer and 2 fractional bits (range -32.00 \si{\dB} to +31.75 \si{\dB})
+
+According to NI, to further improve the provided SINR estimates an additional look-up table based fine-calibration stage was implemented in the application framework. The underlying look-up table has been derived by fine-calibration measurements
+
 \begin{table}[H]
     \begin{center}
         \begin{tabular}{|c|c|}
@@ -223,5 +331,15 @@ This module reads the radio-frame aligned signal in time domain and outputs the 
             8                          & 0                           \\ \hline
         \end{tabular}
     \end{center}
+    \caption{FIR filter Coefficients for filtering out the Channel Estimation values}
+    \label{tab:LPFCoeff}
 \end{table}
 
+\begin{figure}[H]
+    \centering
+    \subfloat[Magnitude Response]{{\includegraphics[width=6cm]{images/Freqz_SINR_LPF_mag.eps} }}%
+    \qquad
+    \subfloat[Phase Response]{{\includegraphics[width=6cm]{images/Freqz_SINR_LPF_phase.eps} }}%
+    \caption{Frequency response of the filter in Table \ref{tab:LPFCoeff}}%
+    \label{fig:SINRLPFResp}%
+\end{figure}

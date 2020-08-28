@@ -32,8 +32,12 @@
 \glossaryentry{FFT?\glossentry{FFT}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{iFFT?\glossentry{iFFT}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{DFT?\glossentry{DFT}|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{T2H?\glossentry{T2H}|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{H2T?\glossentry{H2T}|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{LUT?\glossentry{LUT}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{MCS?\glossentry{MCS}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{DCI?\glossentry{DCI}|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{PRB?\glossentry{PRB}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{UL?\glossentry{UL}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{DL?\glossentry{DL}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{NI?\glossentry{NI}|setentrycounter[]{page}\glsnumberformat}{1}

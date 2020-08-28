@@ -1,0 +1,22 @@
+\babel@toc {english}{}
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {chapter}{\numberline {2}Background}{2}
+\contentsline {section}{\numberline {2.1}Channel setup}{2}
+\contentsline {section}{\numberline {2.2}Transformations}{3}
+\contentsline {subsection}{\numberline {2.2.1}Inversion of Neural Networks}{3}
+\contentsline {subsection}{\numberline {2.2.2}Affine transformation}{5}
+\contentsline {subsection}{\numberline {2.2.3}Related Work}{5}
+\contentsline {chapter}{\numberline {3}Problem specification}{6}
+\contentsline {section}{\numberline {3.1}Project goal}{6}
+\contentsline {section}{\numberline {3.2}Approach}{6}
+\contentsline {section}{\numberline {3.3}Setup for the learning phase}{8}
+\contentsline {chapter}{\numberline {4}Invertible Neural Network for MIMO Detection}{9}
+\contentsline {section}{\numberline {4.1}Main structure of the Invertible Neural Network}{9}
+\contentsline {section}{\numberline {4.2}Coupling Layers}{11}
+\contentsline {section}{\numberline {4.3}Internal Neural Networks for parameter determination}{14}
+\contentsline {chapter}{\numberline {5}Detection}{16}
+\contentsline {chapter}{\numberline {6}Experiments}{18}
+\contentsline {section}{\numberline {6.1}Data Generation}{18}
+\contentsline {section}{\numberline {6.2}Network}{20}
+\contentsline {section}{\numberline {6.3}Discussion}{23}
+\contentsline {chapter}{Bibliography}{25}

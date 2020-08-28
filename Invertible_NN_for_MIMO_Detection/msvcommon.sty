@@ -1,0 +1,524 @@
+%
+% msvcommon.sty
+%
+% This style file defines some common macros for msv style and class
+% files
+%
+
+%----------------------------------------------------------------------
+% Identify package
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{msvcommon}%
+    [2015/04/20 v0.07.1 %
+    msvcommon.sty MSV macros and definitions]
+
+%----------------------------------------------------------------------
+% Check for equal strings and empty strings
+%
+\newif\ifequal
+\equalfalse
+\newcommand\isequal[2]{%
+    \equalfalse
+    \edef\equal@a{\expandafter\detokenize\expandafter{#1}}%
+    \edef\equal@b{\expandafter\detokenize\expandafter{#2}}%
+    \ifx\equal@a\equal@b
+        \equaltrue
+    \fi
+}
+\newif\ifempty
+\emptyfalse
+\newcommand\isempty[1]{%
+    \emptyfalse
+    \ifx\relax\detokenize{#1}\relax
+        \emptytrue
+    \fi
+}
+
+%----------------------------------------------------------------------
+% Options
+%
+\RequirePackage{kvoptions}%
+\SetupKeyvalOptions{family=msv,prefix=msv@}%
+% color
+\DeclareBoolOption{cmyk}%
+\DeclareComplementaryOption{rgb}{cmyk}%
+\DeclareVoidOption{print}{\msv@cmyktrue}%
+\DeclareBoolOption{hires}
+\DeclareComplementaryOption{lores}{hires}
+% default
+\DeclareDefaultOption{\relax}%
+% process options
+\ProcessKeyvalOptions*\relax
+
+%----------------------------------------------------------------------
+% Conditionals for XeTeX/LuaTeX
+% 
+\RequirePackage{ifpdf,ifxetex,ifluatex}
+\newif\ifxetexorluatex
+\ifxetex
+  \xetexorluatextrue
+\else
+  \ifluatex
+    \xetexorluatextrue
+  \else
+    \xetexorluatexfalse
+  \fi
+\fi
+\newif\ifanypdf
+\ifxetexorluatex
+  \anypdftrue
+\else
+  \ifpdf
+    \anypdftrue
+  \else
+    \anypdffalse
+  \fi
+\fi
+
+%----------------------------------------------------------------------
+% Packages
+%
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}%
+\RequirePackage{tikz}% tikz is needed for logos
+
+%----------------------------------------------------------------------
+% Language specific names and settings
+%
+
+% detect if current language is english
+\ifxetexorluatex
+\newcommand{\ifenglish}[2]{\ifthenelse{\equal{\languagename}{english}}{#1}{#2}}
+\else
+\RequirePackage{iflang}
+\newcommand{\ifenglish}[2]{\IfLanguageName{english}{#1}{#2}}
+\fi
+
+\newcommand\TUMname{Technische Universit\"at M\"unchen}
+\newcommand\EIname{\ifenglish%
+  {TUM Department of Electrical and Computer Engineering}%
+  {Fakult\"at f\"ur Elektrotechnik und Informationstechnik}}
+\newcommand\EInameGerman
+  {Fakult\"at f\"ur Elektrotechnik und Informationstechnik}
+\newcommand\MSVname{Professur f\"ur Methoden der Signalverarbeitung}
+\newcommand\MSVhead{Univ.-Prof.\ Dr.-Ing.\ Wolfgang Utschick}
+\newcommand\MSVcopyright{
+{\setlength{\parskip}{1ex}
+\setlength{\parindent}{0ex}
+\copyright~\the\year~\MSVname, \TUMname
+
+\ifenglish{%
+All rights reserved. Personnel and students at universities only may copy the material for their personal use and for educational purposes with proper referencing. Thew distribution to and copying by other persons and organizations as well as any commercial usage is not allowed without the written permission by the publisher.}{%
+Eine Weitergabe an und Nutzung durch andere Personen und Institutionen sowie eine kommerzielle Verwertung ist ohne schriftliche Genehmigung der Professur untersagt.}
+
+\MSVname\\
+\TUMname\\
+\ifenglish{%
+D-80290 M\"unchen\\
+Germany}{%
+80290 M\"unchen}
+
+http://www.msv.ei.tum.de}}
+
+%----------------------------------------------------------------------
+% Color definitions and settings
+%
+\ifmsv@cmyk
+    \PackageInfo{msvcommon}{Using cmyk color model}
+    % TUM Black/White colors
+    \definecolor{TUMBlack}           {cmyk}{0.00,0.00,0.00,1.00}  % Black
+    \definecolor{TUMWhite}           {cmyk}{0.00,0.00,0.00,0.00}  % White
+    % TUMBlue color (logo)
+    \definecolor{TUMBlue}            {cmyk}{1.00,0.43,0.00,0.00}  % Pantone 300 C
+    % Additional TUM blue colors
+    \definecolor{TUMDarkBlue}        {cmyk}{1.00,0.57,0.12,0.70}  % Pantone 540 C
+    \definecolor{TUMDarkerBlue}      {cmyk}{1.00,0.54,0.04,0.19}  % Pantone 301 C
+    \definecolor{TUMMediumBlue}      {cmyk}{0.90,0.48,0.00,0.00}  % Pantone 285 C
+    \definecolor{TUMLighterBlue}     {cmyk}{0.65,0.19,0.01,0.04}  % Pantone 542 C
+    \definecolor{TUMLightBlue}       {cmyk}{0.42,0.09,0.00,0.00}  % Pantone 283 C
+    % Additional TUM gray colors
+    \definecolor{TUMDarkGray}        {cmyk}{0.00,0.00,0.00,0.80}  % DarkGray   80% Black
+    \definecolor{TUMMediumGray}      {cmyk}{0.00,0.00,0.00,0.50}  % MediumGray 50% Black
+    \definecolor{TUMLightGray}       {cmyk}{0.00,0.00,0.00,0.20}  % LightGray  20% Black
+    % TUM Highlight colors
+    \definecolor{TUMGreen}           {cmyk}{0.35,0.00,1.00,0.20}  % Pantone 383 C
+    \definecolor{TUMOrange}          {cmyk}{0.00,0.65,0.95,0.00}  % Pantone 158 C
+    \definecolor{TUMIvory}           {cmyk}{0.03,0.04,0.14,0.08}  % Pantone 7527 C
+\else
+    \PackageInfo{msvcommon}{Using rgb color model}
+    % TUM Black/White colors
+    \definecolor{TUMBlack}           {rgb} {0.000,0.000,0.000}    % Black
+    \definecolor{TUMWhite}           {rgb} {1.000,1.000,1.000}    % White
+    % TUMBlue color (logo)
+    \definecolor{TUMBlue}            {rgb} {0.000,0.396,0.741}    % Pantone 300 C
+    % Additional TUM blue colors
+    \definecolor{TUMDarkBlue}        {rgb} {0.000,0.200,0.349}    % Pantone 540 C
+    \definecolor{TUMDarkerBlue}      {rgb} {0.000,0.322,0.576}    % Pantone 301 C
+    \definecolor{TUMMediumBlue}      {rgb} {0.000,0.451,0.812}    % Pantone 285 C
+    \definecolor{TUMLighterBlue}     {rgb} {0.392,0.627,0.784}    % Pantone 542 C
+    \definecolor{TUMLightBlue}       {rgb} {0.596,0.776,0.918}    % Pantone 283 C
+    % Additional TUM gray colors
+    \definecolor{TUMDarkGray}        {rgb} {0.345,0.345,0.353}    % DarkGray   80% Black
+    \definecolor{TUMMediumGray}      {rgb} {0.612,0.616,0.624}    % MediumGray 50% Black
+    \definecolor{TUMLightGray}       {rgb} {0.851,0.855,0.859}    % LightGray  20% Black
+    % TUM Highlight colors
+    \definecolor{TUMGreen}           {rgb} {0.635,0.678,0.000}    % Pantone 383 C
+    \definecolor{TUMOrange}          {rgb} {0.890,0.447,0.133}    % Pantone 158 C
+    \definecolor{TUMIvory}           {rgb} {0.855,0.843,0.796}    % Pantone 7527 C
+\fi
+    % TUM Presentation colors (only use in beamer presentations with rgb model)
+    \definecolor{TUMBeamerYellow}    {rgb} {1.000,0.706,0.000}    % RGB 255,180,000
+    \definecolor{TUMBeamerOrange}    {rgb} {1.000,0.502,0.000}    % RGB 255,128,000
+    \definecolor{TUMBeamerRed}       {rgb} {0.898,0.204,0.094}    % RGB 229,052,024
+    \definecolor{TUMBeamerDarkRed}   {rgb} {0.792,0.129,0.247}    % RGB 202,033,063
+    \definecolor{TUMBeamerBlue}      {rgb} {0.000,0.600,1.000}    % RGB 000,153,255
+    \definecolor{TUMBeamerLightBlue} {rgb} {0.255,0.745,1.000}    % RGB 065,190,255
+    \definecolor{TUMBeamerGreen}     {rgb} {0.569,0.675,0.420}    % RGB 145,172,107
+    \definecolor{TUMBeamerLightGreen}{rgb} {0.710,0.792,0.510}    % RGB 181,202,130
+
+% Default color model
+\ifmsv@cmyk
+    \AtBeginDocument{\selectcolormodel{cmyk}}
+\else
+    \AtBeginDocument{\selectcolormodel{rgb}}
+\fi
+
+%----------------------------------------------------------------------
+% TUM, EI, and MSV logos
+%
+% USAGE
+%   \TUMlogo{key=value}
+%   \EIlogo{key=value}
+%   \MSVlogo{key=value}
+%          Draw the TUM/EI/MSV logo with options
+%             height = <dimen> (default 1cm)
+%                        (EIlogo actually occupies 105% of height!)
+%             color  = <colorname> (default color is TUMBlue)
+%             white  = <colorname> (default color is TUMWhite)
+%          Only applicable to TUMLogo
+%             shape  = filled/outline (default is filled)
+%             filled = true/false (shortcut for shape=filled)
+%             outline = true/false (shortcut for shape=outline)
+
+% Main user commands for logos
+\newcommand\TUM[1]{\TUMlogo{#1}}%
+\newcommand\TUMlogo[1]{%
+    \setkeys{msvlogos}{#1}%
+    \csname msvlogos@TUM@\msvlogos@shape\endcsname
+}%
+\newcommand\EI[1]{\EIlogo{#1}}%
+\newcommand\EIlogo[1]{%
+    \setkeys{msvlogos}{#1}%
+    \msvlogos@EI
+}%
+\newcommand\MSV[1]{\MSVlogo{#1}}%
+\newcommand\MSVlogo[1]{%
+    \setkeys{msvlogos}{#1}%
+    \msvlogos@MSV
+}%
+
+% Define the options for the drawing commands
+\newcommand\msvlogos@shape{filled}
+\newcommand\msvlogos@color{TUMBlue}%
+\newlength\msvlogos@unitlength
+\setlength\msvlogos@unitlength{1cm}%
+\define@key{msvlogos}{shape}[filled]{%
+    \renewcommand\msvlogos@shape{#1}%
+}%
+\define@key{msvlogos}{color}[TUMBlue]{%
+    \renewcommand\msvlogos@color{#1}%
+}%
+\define@key{msvlogos}{height}[1cm]{%
+    \setlength\msvlogos@unitlength{#1}%
+}%
+
+% TUM logo (filled)
+\newcommand\msvlogos@TUM@filled{%
+    \begin{tikzpicture}[x=\msvlogos@unitlength,y=\msvlogos@unitlength]
+    \path[fill=\msvlogos@color,nonzero rule]
+    (0.170,0.822) --
+    (0.170,0.000) --
+    (0.348,0.000) --
+    (0.348,0.821) --
+    (0.546,0.821) --
+    (0.546,0.000) --
+    (1.113,0.000) --
+    (1.113,0.812) --
+    (1.314,0.812) --
+    (1.314,0.000) --
+    (1.501,0.000) --
+    (1.501,0.812) --
+    (1.706,0.812) --
+    (1.706,0.000) --
+    (1.892,0.000) --
+    (1.892,1.000) --
+    (0.933,1.000) --
+    (0.933,0.182) --
+    (0.728,0.182) --
+    (0.728,0.999) --
+    (0.000,0.999) --
+    (0.000,0.822) --
+    cycle
+    (0.170,0.822);
+    \end{tikzpicture}%
+}%
+\newcommand\msvlogos@TUM@outline{%
+\begin{tikzpicture}[x=\msvlogos@unitlength,y=\msvlogos@unitlength]
+    \path[fill=\msvlogos@color,nonzero rule]
+    (0.189,0.826) --
+    (0.189,0.024) --
+    (0.340,0.024) --
+    (0.340,0.825) --
+    (0.556,0.825) --
+    (0.556,0.024) --
+    (1.086,0.024) --
+    (1.086,0.816) --
+    (1.307,0.816) --
+    (1.307,0.024) --
+    (1.466,0.024) --
+    (1.466,0.816) --
+    (1.689,0.816) --
+    (1.689,0.024) --
+    (1.848,0.024) --
+    (1.848,0.976) --
+    (0.935,0.976) --
+    (0.935,0.178) --
+    (0.710,0.178) --
+    (0.710,0.975) --
+    (0.024,0.975) --
+    (0.024,0.826) --
+    cycle
+    (0.533,0.000) --
+    (0.533,0.801) --
+    (0.363,0.801) --
+    (0.363,0.000) --
+    (0.166,0.000) --
+    (0.166,0.802) --
+    (0.000,0.802) --
+    (0.000,0.999) --
+    (0.734,0.999) --
+    (0.734,0.201) --
+    (0.911,0.201) --
+    (0.911,1.000) --
+    (1.871,1.000) --
+    (1.871,0.000) --
+    (1.665,0.000) --
+    (1.665,0.793) --
+    (1.489,0.793) --
+    (1.489,0.000) --
+    (1.283,0.000) --
+    (1.283,0.793) --
+    (1.110,0.793) --
+    (1.110,0.000) --
+    cycle
+    (0.533,0.000);
+\end{tikzpicture}%
+}%
+
+% EI logo   !!! note that the true height will be 1.05 * height !!!
+\newcommand\msvlogos@EI{%
+\begin{tikzpicture}[x=\msvlogos@unitlength,y=\msvlogos@unitlength]
+    \path[fill=\msvlogos@color,nonzero rule]
+        (0.821,0.514) .. controls (0.785,0.419) and (0.750,0.329) ..
+        (0.690,0.329) .. controls (0.633,0.329) and (0.600,0.415) ..
+        (0.565,0.507) .. controls (0.523,0.615) and (0.477,0.737) ..
+        (0.377,0.737) .. controls (0.272,0.737) and (0.218,0.606) ..
+        (0.170,0.491) .. controls (0.137,0.413) and (0.106,0.338) ..
+        (0.067,0.329) .. controls (0.041,0.390) and (0.027,0.456) ..
+        (0.027,0.525) .. controls (0.027,0.803) and (0.253,1.029) ..
+        (0.531,1.029) .. controls (0.733,1.029) and (0.908,0.909) ..
+        (0.988,0.737) .. controls (0.903,0.729) and (0.862,0.620) ..
+        (0.821,0.514)
+        (0.679,0.021) --
+        (0.679,0.022) .. controls (0.901,0.087) and (1.056,0.293) ..
+        (1.056,0.525) .. controls (1.056,0.815) and (0.820,1.050) ..
+        (0.531,1.050) .. controls (0.241,1.050) and (0.006,0.815) ..
+        (0.006,0.525) .. controls (0.006,0.293) and (0.160,0.087) ..
+        (0.382,0.022) --
+        (0.382,0.021) --
+        (0.000,0.021) --
+        (0.000,0.000) --
+        (0.404,0.000) --
+        (0.404,0.037) --
+        (0.396,0.040) .. controls (0.250,0.080) and (0.134,0.183) ..
+        (0.073,0.315) .. controls (0.119,0.328) and (0.150,0.401) ..
+        (0.185,0.485) .. controls (0.230,0.596) and (0.283,0.721) ..
+        (0.377,0.721) .. controls (0.466,0.721) and (0.508,0.609) ..
+        (0.550,0.502) .. controls (0.587,0.404) and (0.622,0.313) ..
+        (0.690,0.313) .. controls (0.761,0.313) and (0.797,0.408) ..
+        (0.836,0.508) .. controls (0.876,0.612) and (0.917,0.719) ..
+        (0.995,0.721) .. controls (1.020,0.661) and (1.034,0.594) ..
+        (1.034,0.525) .. controls (1.034,0.300) and (0.883,0.100) ..
+        (0.666,0.040) --
+        (0.658,0.037) --
+        (0.658,0.000) --
+        (1.061,0.000) --
+        (1.061,0.021) --
+        cycle
+        (0.679,0.021);
+\end{tikzpicture}%
+}%
+
+% MSV logo
+\newcommand\msvlogos@MSV{%
+\begin{tikzpicture}[x=\msvlogos@unitlength,y=\msvlogos@unitlength]
+    \path[fill=\msvlogos@color!40,nonzero rule]
+    (0.0000,0.0000) --
+    (0.5972,0.0000) --
+    (0.5000,0.5000) --
+    (1.0000,0.5972) --
+    (1.0000,1.0000) --
+    (0.7332,1.0000) --
+    (0.5000,0.5000) --
+    (0.0000,0.7332) --
+    cycle;
+    \path[fill=\msvlogos@color,nonzero rule]
+    (0.0000,1.0000) --
+    (0.0000,0.7542) --
+    (0.0210,0.7444) --
+    (0.0210,0.9790) --
+    (0.7024,0.9790) --
+    (0.7122,1.0000) --
+    cycle
+    (1.0000,0.0000) --
+    (1.0000,0.5762) --
+    (0.9790,0.5721) --
+    (0.9790,0.0210) --
+    (0.6141,0.0210) --
+    (0.6182,0.0000) --
+    cycle;
+\end{tikzpicture}%
+}%
+
+% MSV logo filled (OLD --- DO NOT USE!)
+\newcommand\msvlogos@MSVOLD@filled{%
+\begin{tikzpicture}[x=\msvlogos@unitlength,y=\msvlogos@unitlength]
+    \path[fill=\msvlogos@@color,nonzero rule]
+    (0.000,0.000) --
+    (0.178,0.000) --
+    (0.178,0.822) --
+    (0.381,0.822) --
+    (0.381,0.000) --
+    (0.559,0.000) --
+    (0.559,0.822) --
+    (0.763,0.822) --
+    (0.763,0.000) --
+    (1.641,0.000) --
+    (1.641,0.589) --
+    (1.189,0.589) --
+    (1.189,0.822) --
+    (1.711,0.822) --
+    (1.711,0.000) --
+    (2.556,1.000) --
+    (2.323,1.000) --
+    (1.889,0.486) --
+    (1.889,1.000) --
+    (1.011,1.000) --
+    (1.011,0.411) --
+    (1.463,0.411) --
+    (1.463,0.178) --
+    (0.941,0.178) --
+    (0.941,1.000) --
+    (0.000,1.000) --
+    cycle;
+\end{tikzpicture}%
+}%
+
+% MSV logo outline (OLD --- DO NOT USE!)
+\newcommand\msvlogos@MSVOLD@outline{%
+\begin{tikzpicture}[x=\msvlogos@@unitlength,y=\msvlogos@@unitlength]
+    \path[fill=\msvlogos@@color,nonzero rule]
+    (0.024,0.024) --
+    (0.154,0.024) --
+    (0.153,0.846) --
+    (0.405,0.846) --
+    (0.405,0.024) --
+    (0.535,0.024) --
+    (0.535,0.846) --
+    (0.787,0.846) --
+    (0.787,0.024) --
+    (1.617,0.024) --
+    (1.617,0.565) --
+    (1.165,0.565) --
+    (1.165,0.846) --
+    (1.735,0.846) --
+    (1.735,0.064) --
+    (2.504,0.976) --
+    (2.333,0.976) --
+    (1.865,0.422) --
+    (1.865,0.976) --
+    (1.035,0.976) --
+    (1.035,0.435) --
+    (1.487,0.435) --
+    (1.487,0.154) --
+    (0.917,0.154) --
+    (0.917,0.976) --
+    (0.024,0.976) --
+    cycle
+    (0.000,0.000) --
+    (0.000,1.000) --
+    (0.941,1.000) --
+    (0.941,0.178) --
+    (1.463,0.178) --
+    (1.463,0.411) --
+    (1.011,0.411) --
+    (1.011,1.000) --
+    (1.889,1.000) --
+    (1.889,0.486) --
+    (2.323,1.000) --
+    (2.556,1.000) --
+    (1.711,0.000) --
+    (1.711,0.822) --
+    (1.189,0.822) --
+    (1.189,0.589) --
+    (1.641,0.589) --
+    (1.641,0.000) --
+    (0.763,0.000) --
+    (0.763,0.822) --
+    (0.559,0.822) --
+    (0.559,0.000) --
+    (0.381,0.000) --
+    (0.381,0.822) --
+    (0.178,0.822) --
+    (0.178,0.000) --
+    cycle
+    (0.000,1.000);
+\end{tikzpicture}%
+}%
+
+%----------------------------------------------------------------------
+% Other graphics resources
+%
+\newcommand\TUMbanner[1]{%
+    \ifmsv@cmyk
+        \ifpdf
+            \ifmsv@hires
+                \includegraphics[height=#1]{images/130409_Header_CMYK_hires.pdf}
+            \else
+                \includegraphics[height=#1]{images/130409_Header_CMYK.pdf}
+            \fi
+        \else
+            \ifmsv@hires
+                \includegraphics[height=#1]{images/130409_Header_CMYK_hires.eps}
+            \else
+                \includegraphics[height=#1]{images/130409_Header_CMYK.eps}
+            \fi
+        \fi
+    \else
+        \ifpdf
+            \ifmsv@hires
+                \includegraphics[height=#1]{images/130409_Header_RGB_hires.pdf}
+            \else
+                \includegraphics[height=#1]{images/130409_Header_RGB.pdf}
+            \fi
+        \else
+            \ifmsv@hires
+                \includegraphics[height=#1]{images/130409_Header_RGB_hires.eps}
+            \else
+                \includegraphics[height=#1]{images/130409_Header_RGB.eps}
+            \fi
+        \fi
+    \fi
+}
+

@@ -1,0 +1,112 @@
+% Fuer serifenlose Schriften gilt:
+% griechische Buchstaben (z.B. \alpha) und mathematische Akzente (z.B. \tilde{...})
+% funktionieren NICHT.
+%
+% DESHALB:
+% Diese Datei mit
+% \usepackage{random}
+% einbinden.
+%
+% Im mathematischen Modus folgende Befehle verwenden:
+% \random{latein. Buchstabe}    ... serifenlose Version des lateinischen Buchstaben
+% \Brandom{latein. Buchstabe}   ... serifenlose, fette Version des lateinischen Buchstaben
+% \randomg{Befehl f. griech. Buchstaben}  ... serifenlose Version des griechischen Buchstaben
+% \Brandomg{Befehl f. griech. Buchstaben} ... serifenlose, fette Version des griechischen Buchstaben
+% \ralpha, \rbeta etc.       ... Befehle fuer griechische Buchstaben
+% \rhat{}, \rtilde{} etc.    ... mathematische Akzente fuer serifenlose Zeichen
+% \Brhat{}, \Brtilde{} etc.  ... mathematische Akzente fuer serifenlose, fette Zeichen
+%
+% Beispiele:
+% \rhat{\random{a}}             ... serifenloses a mit Dach
+% \Brtilde{\Brandom{b}}         ... serifenloses, fettes b mit Tilde
+% \rcheck{\randomg{\ralpha}}    ... serifenloses alpha mit V
+% \Bbar{\Brandomg{\rlambda}}    ... serifenloses, fettes lamda mit Ueberstrich
+%
+%
+
+\ProvidesPackage{random}[2004/11/09 Sans serif fonts for formulas]
+
+% serifenlose Schriften (lateinische Buchstaben) deklarieren
+\DeclareMathAlphabet{\mathss}{T1}{cmss}{m}{sl}
+\DeclareMathAlphabet{\mathssbold}{T1}{cmss}{bx}{sl}
+\newcommand{\random}[1]{\mathss{#1}}
+\newcommand{\Brandom}[1]{\mathssbold{#1}}
+
+% serifenloser Systemzeichensatz fuer mathematische Akzente deklarieren
+\DeclareSymbolFont{sssymbols}{T1}{cmss}{m}{it}
+\SetSymbolFont{sssymbols}{bold}{T1}{cmss}{bx}{it}
+
+% serifenlose, mathematische Akzente definieren
+\DeclareMathAccent{\rhat}{\mathalpha}{sssymbols}{"02}
+\DeclareMathAccent{\rcheck}{\mathalpha}{sssymbols}{"07}
+\DeclareMathAccent{\rbreve}{\mathalpha}{sssymbols}{"08}
+\DeclareMathAccent{\racute}{\mathalpha}{sssymbols}{"01}
+\DeclareMathAccent{\rgrave}{\mathalpha}{sssymbols}{"00}
+\DeclareMathAccent{\rtilde}{\mathalpha}{sssymbols}{"03}
+\DeclareMathAccent{\rbar}{\mathalpha}{sssymbols}{"09}
+\DeclareMathAccent{\rdot}{\mathalpha}{sssymbols}{"0A}
+\DeclareMathAccent{\rddot}{\mathalpha}{sssymbols}{"04}
+
+% serifenloser, fetter Systemzeichensatz fuer mathematische Akzente deklarieren
+\DeclareSymbolFont{sssymbolsbold}{T1}{cmss}{bx}{it}
+\SetSymbolFont{sssymbols}{bold}{T1}{cmss}{bx}{it}
+
+% serifenlose, fette, mathematische Akzente definieren
+\DeclareMathAccent{\Brhat}{\mathalpha}{sssymbolsbold}{"02}
+\DeclareMathAccent{\Brcheck}{\mathalpha}{sssymbolsbold}{"07}
+\DeclareMathAccent{\Brbreve}{\mathalpha}{sssymbolsbold}{"08}
+\DeclareMathAccent{\Bracute}{\mathalpha}{sssymbolsbold}{"01}
+\DeclareMathAccent{\Brgrave}{\mathalpha}{sssymbolsbold}{"00}
+\DeclareMathAccent{\Brtilde}{\mathalpha}{sssymbolsbold}{"03}
+\DeclareMathAccent{\Brbar}{\mathalpha}{sssymbolsbold}{"09}
+\DeclareMathAccent{\Brdot}{\mathalpha}{sssymbolsbold}{"0A}
+\DeclareMathAccent{\Brddot}{\mathalpha}{sssymbolsbold}{"04}
+
+% type1 griechische Zeichensaetze
+\usepackage{psgreek}
+
+% serifenlose Schriften (griechische Buchstaben) deklarieren
+\DeclareMathAlphabet{\mathssgreek}{LGR}{cmss}{m}{sl}
+\DeclareMathAlphabet{\mathssgreekbold}{LGR}{cmss}{bx}{sl}
+\newcommand{\randomg}[1]{\mathssgreek{#1}}
+\newcommand{\Brandomg}[1]{\mathssgreekbold{#1}}
+
+% serifenlose, griechische Kleinbuchstaben
+\newcommand{\ralpha}{a}
+\newcommand{\rbeta}{b}
+\newcommand{\rgamma}{g}
+\newcommand{\rdelta}{d}
+\newcommand{\rvarepsilon}{e}
+\newcommand{\rzeta}{z}
+\newcommand{\reta}{h}
+\newcommand{\rtheta}{j}
+\newcommand{\riota}{i}
+\newcommand{\rkappa}{k}
+\newcommand{\rlambda}{l}
+\newcommand{\rmu}{m}
+\newcommand{\rnu}{n}
+\newcommand{\rxi}{x}
+\newcommand{\rpi}{p}
+\newcommand{\rrho}{r}
+\newcommand{\rsigma}{s}
+\newcommand{\rvarsigma}{c}
+\newcommand{\rtau}{t}
+\newcommand{\rupsilon}{u}
+\newcommand{\rvarphi}{f}
+\newcommand{\rchi}{q}
+\newcommand{\rpsi}{y}
+\newcommand{\romega}{w}
+
+% serifenlose, griechische Grossbuchstaben
+\newcommand{\rGamma}{G}
+\newcommand{\rDelta}{D}
+\newcommand{\rTheta}{J}
+\newcommand{\rLambda}{L}
+\newcommand{\rXi}{X}
+\newcommand{\rPi}{P}
+\newcommand{\rSigma}{S}
+\newcommand{\rUpsilon}{U}
+\newcommand{\rPhi}{F}
+\newcommand{\rPsi}{Y}
+\newcommand{\rOmega}{W}
+
