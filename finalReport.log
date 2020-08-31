@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.7.10)  28 AUG 2020 21:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.7.10)  31 AUG 2020 12:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -761,6 +761,18 @@ File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
 
+(/usr/share/texmf-dist/tex/latex/soul/soul.sty
+Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
+\SOUL@word=\toks48
+\SOUL@lasttoken=\toks49
+\SOUL@cmds=\toks50
+\SOUL@buffer=\toks51
+\SOUL@token=\toks52
+\SOUL@spaceskip=\skip81
+\SOUL@ttwidth=\dimen303
+\SOUL@uldp=\dimen304
+\SOUL@ulht=\dimen305
+)
 (/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
 
@@ -779,7 +791,7 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 (/usr/share/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-\@linkdim=\dimen303
+\@linkdim=\dimen306
 \Hy@linkcounter=\count330
 \Hy@pagecounter=\count331
 
@@ -809,7 +821,7 @@ Package hyperref Info: Bookmarks ON on input line 4717.
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5076.
-\XeTeXLinkMargin=\dimen304
+\XeTeXLinkMargin=\dimen307
 
 (/usr/share/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -819,8 +831,8 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
 \Fld@menulength=\count334
-\Field@Width=\dimen305
-\Fld@charsize=\dimen306
+\Field@Width=\dimen308
+\Fld@charsize=\dimen309
 Package hyperref Info: Hyper figures OFF on input line 6347.
 Package hyperref Info: Link nesting OFF on input line 6352.
 Package hyperref Info: Hyper index ON on input line 6355.
@@ -854,7 +866,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
-\Hy@SectionHShift=\skip81
+\Hy@SectionHShift=\skip82
 )
 (/usr/share/texmf-dist/tex/latex/pdfpages/pdfpages.sty
 Package: pdfpages 2020/01/28 v0.5q Insert pages of external PDF documents (AM)
@@ -862,26 +874,26 @@ Package: pdfpages 2020/01/28 v0.5q Insert pages of external PDF documents (AM)
 (/usr/share/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
 )
-\AM@pagewidth=\dimen307
-\AM@pageheight=\dimen308
+\AM@pagewidth=\dimen310
+\AM@pageheight=\dimen311
 
 (/usr/share/texmf-dist/tex/latex/pdfpages/pppdftex.def
 File: pppdftex.def 2020/01/28 v0.5q Pdfpages driver for pdfTeX (AM)
 )
 \AM@pagebox=\box74
-\AM@global@opts=\toks48
+\AM@global@opts=\toks53
 \AM@pagecnt=\count340
-\AM@toc@title=\toks49
+\AM@toc@title=\toks54
 \c@AM@survey=\count341
 \AM@templatesizebox=\box75
 )
 (/usr/share/texmf-dist/tex/latex/graphics/rotating.sty
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
 \c@r@tfl@t=\count342
-\rotFPtop=\skip82
-\rotFPbot=\skip83
+\rotFPtop=\skip83
+\rotFPbot=\skip84
 \rot@float@box=\box76
-\rot@mess@toks=\toks50
+\rot@mess@toks=\toks55
 )
 (/usr/share/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
@@ -896,8 +908,8 @@ Package: glossaries 2020/03/19 v4.46 (NLCT)
 
 (/usr/share/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
 Package: mfirstuc 2017/11/14 v2.06 (NLCT)
-\@glsmfirst=\toks51
-\@glsmrest=\toks52
+\@glsmfirst=\toks56
+\@glsmrest=\toks57
 )
 (/usr/share/texmf-dist/tex/latex/textcase/textcase.sty
 Package: textcase 2019/09/14 v1.00 Text only upper/lower case changing (DPC)
@@ -963,9 +975,9 @@ Package: fp-upn 1996/10/21
 (/usr/share/texmf-dist/tex/latex/fp/fp-eval.sty
 Package: fp-eval 1995/04/03
 )))
-\@dtl@toks=\toks53
+\@dtl@toks=\toks58
 \@dtl@tmpcount=\count355
-\dtl@tmplength=\skip84
+\dtl@tmplength=\skip85
 \dtl@sortresult=\count356
 \@dtl@numgrpsepcount=\count357
 \@dtl@datatype=\count358
@@ -983,31 +995,31 @@ Package: tracklang 2019/11/30 v1.4 (NLCT) Track Languages
 File: glossaries-english.ldf 2014/11/23 v1.0
 )
 \gls@level=\count362
-\@gls@tmpb=\toks54
-\gls@tmplen=\skip85
-\glskeylisttok=\toks55
-\glslabeltok=\toks56
-\glsshorttok=\toks57
-\glslongtok=\toks58
+\@gls@tmpb=\toks59
+\gls@tmplen=\skip86
+\glskeylisttok=\toks60
+\glslabeltok=\toks61
+\glsshorttok=\toks62
+\glslongtok=\toks63
 
 (/usr/share/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.sty
 Package: glossary-hypernav 2020/03/19 v4.46 (NLCT)
 )
 (/usr/share/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
 Package: glossary-list 2020/03/19 v4.46 (NLCT)
-\glslistdottedwidth=\skip86
+\glslistdottedwidth=\skip87
 )
 (/usr/share/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty
 Package: glossary-long 2020/03/19 v4.46 (NLCT)
 
 (/usr/share/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
-\LTleft=\skip87
-\LTright=\skip88
-\LTpre=\skip89
-\LTpost=\skip90
+\LTleft=\skip88
+\LTright=\skip89
+\LTpre=\skip90
+\LTpost=\skip91
 \LTchunksize=\count363
-\LTcapwidth=\dimen309
+\LTcapwidth=\dimen312
 \LT@head=\box77
 \LT@firsthead=\box78
 \LT@foot=\box79
@@ -1016,10 +1028,10 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LT@rows=\count365
 \c@LT@tables=\count366
 \c@LT@chunks=\count367
-\LT@p@ftn=\toks59
+\LT@p@ftn=\toks64
 )
-\glsdescwidth=\skip91
-\glspagelistwidth=\skip92
+\glsdescwidth=\skip92
+\glspagelistwidth=\skip93
 )
 (/usr/share/texmf-dist/tex/latex/glossaries/styles/glossary-super.sty
 Package: glossary-super 2020/03/19 v4.46 (NLCT)
@@ -1027,31 +1039,31 @@ Package: glossary-super 2020/03/19 v4.46 (NLCT)
 (/usr/share/texmf-dist/tex/latex/supertabular/supertabular.sty
 Package: supertabular 2020/02/02 v4.1g the supertabular environment
 \c@tracingst=\count368
-\ST@wd=\dimen310
-\ST@rightskip=\skip93
-\ST@leftskip=\skip94
-\ST@parfillskip=\skip95
-\ST@pageleft=\dimen311
-\ST@headht=\dimen312
-\ST@tailht=\dimen313
-\ST@pagesofar=\dimen314
-\ST@pboxht=\dimen315
-\ST@lineht=\dimen316
-\ST@prevht=\dimen317
-\ST@toadd=\dimen318
-\ST@dimen=\dimen319
+\ST@wd=\dimen313
+\ST@rightskip=\skip94
+\ST@leftskip=\skip95
+\ST@parfillskip=\skip96
+\ST@pageleft=\dimen314
+\ST@headht=\dimen315
+\ST@tailht=\dimen316
+\ST@pagesofar=\dimen317
+\ST@pboxht=\dimen318
+\ST@lineht=\dimen319
+\ST@prevht=\dimen320
+\ST@toadd=\dimen321
+\ST@dimen=\dimen322
 \ST@pbox=\box81
 ))
 (/usr/share/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
 Package: glossary-tree 2020/03/19 v4.46 (NLCT)
-\glstreeindent=\skip96
+\glstreeindent=\skip97
 ))
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowinset=\dimen320
-\pgfarrowlength=\dimen321
-\pgfarrowwidth=\dimen322
-\pgfarrowlinewidth=\dimen323
+\pgfarrowinset=\dimen323
+\pgfarrowlength=\dimen324
+\pgfarrowwidth=\dimen325
+\pgfarrowlinewidth=\dimen326
 ) (/usr/share/texmf-dist/tex/latex/ucs/ucs.sty
 Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
 
@@ -1059,14 +1071,14 @@ Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
 File: uni-global.def 2013/05/13 UCS: Unicode global data
 )
 \uc@secondtry=\count369
-\uc@combtoks=\toks60
-\uc@combtoksb=\toks61
-\uc@temptokena=\toks62
+\uc@combtoks=\toks65
+\uc@combtoksb=\toks66
+\uc@temptokena=\toks67
 )
 (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
-\inpenc@prehook=\toks63
-\inpenc@posthook=\toks64
+\inpenc@prehook=\toks68
+\inpenc@posthook=\toks69
 
 (/usr/share/texmf-dist/tex/latex/ucs/utf8x.def
 File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
@@ -1077,7 +1089,7 @@ Package: babel 2020/05/13 3.44 The Babel package
 (/usr/share/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2020/05/13 3.44 Babel common definitions
 \babel@savecnt=\count370
-\U@D=\dimen324
+\U@D=\dimen327
 \l@babelnohyphens=\language86
 
 (/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
@@ -1119,22 +1131,22 @@ LaTeX Warning: Label `fig:DLRXAdvScreen' multiply defined.
 
 ) (./Chapters/results.aux) (./Chapters/conclusion.aux) (./Chapters/appendix.aux
 ))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1176,16 +1188,16 @@ LaTeX Font Info:    ... okay on input line 154.
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count372
-\scratchdimen=\dimen325
+\scratchdimen=\dimen328
 \scratchbox=\box82
 \nofMPsegments=\count373
 \nofMParguments=\count374
-\everyMPshowfont=\toks65
+\everyMPshowfont=\toks70
 \MPscratchCnt=\count375
-\MPscratchDim=\dimen326
+\MPscratchDim=\dimen329
 \MPnumerator=\count376
 \makeMPintoPDFobject=\count377
-\everyMPtoPDFconversion=\toks66
+\everyMPtoPDFconversion=\toks71
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 
@@ -1204,14 +1216,14 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-LaTeX Info: Redefining \microtypecontext on input line 154.
+LaTeX Info: Redefining \microtypecontext on input line 164.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `roman'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using expansion set `roman'.
-LaTeX Info: Redefining \showhyphens on input line 154.
+LaTeX Info: Redefining \showhyphens on input line 164.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1242,7 +1254,7 @@ File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 )
 \c@lstlisting=\count380
 \AtBeginShipoutBox=\box83
-Package hyperref Info: Link coloring OFF on input line 154.
+Package hyperref Info: Link coloring OFF on input line 164.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1255,9 +1267,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count381
 )
-LaTeX Info: Redefining \ref on input line 154.
-LaTeX Info: Redefining \pageref on input line 154.
-LaTeX Info: Redefining \nameref on input line 154.
+LaTeX Info: Redefining \ref on input line 164.
+LaTeX Info: Redefining \pageref on input line 164.
+LaTeX Info: Redefining \nameref on input line 164.
 
 (./finalReport.out) (./finalReport.out)
 \@outlinefile=\write6
@@ -1269,7 +1281,7 @@ File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 154
+LaTeX Font Info:    Trying to load font information for U+msa on input line 164
 .
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1278,7 +1290,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 154
+LaTeX Font Info:    Trying to load font information for U+msb on input line 164
 .
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1320,14 +1332,14 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 18
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 19
 3.
 
 (/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 183.
+(Font)              scaled to size 12.0pt on input line 193.
  [1
 
 
@@ -1336,9 +1348,9 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 
 ]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 24.88pt on input line 183.
+(Font)              scaled to size 24.88pt on input line 193.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 188.
+(Font)              scaled to size 10.0pt on input line 198.
  [3
 
 
@@ -1350,7 +1362,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 ])
 \tf@lof=\write7
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 10.0pt on input line 190.
+(Font)              scaled to size 10.0pt on input line 200.
  [6]
 (./finalReport.lot)
 \tf@lot=\write8
@@ -1363,10 +1375,12 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 10.95pt on input line 2.
  [9
 
-])
+] [10])
 \tf@toc=\write9
- [10] (./finalReport.acr
-[1
+ [11] [12
+
+]
+(./finalReport.acr [1
 
 ] [2
 
@@ -1381,7 +1395,7 @@ Underfull \hbox (badness 10000) in alignment at lines 38--72
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 72--105
+Underfull \hbox (badness 10000) in alignment at lines 72--106
 [] []
  []
 
@@ -1389,7 +1403,7 @@ Underfull \hbox (badness 10000) in alignment at lines 72--105
 
 
 ]
-Underfull \hbox (badness 10000) in alignment at lines 105--108
+Underfull \hbox (badness 10000) in alignment at lines 106--110
 [] []
  []
 
@@ -1427,12 +1441,12 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 10.95pt on input line 36.
  [8] [9]
-<images/CRSMultiAntenna.png, id=544, 545.78906pt x 381.67593pt>
+<images/CRSMultiAntenna.png, id=575, 545.78906pt x 381.67593pt>
 File: images/CRSMultiAntenna.png Graphic file (type png)
 <use images/CRSMultiAntenna.png>
 Package pdftex.def Info: images/CRSMultiAntenna.png  used on input line 78.
 (pdftex.def)             Requested size: 369.88582pt x 258.66261pt.
-<images/FrameLegend.png, id=548, 435.1742pt x 326.38065pt>
+<images/FrameLegend.png, id=579, 435.1742pt x 326.38065pt>
 File: images/FrameLegend.png Graphic file (type png)
 <use images/FrameLegend.png>
 Package pdftex.def Info: images/FrameLegend.png  used on input line 90.
@@ -1444,13 +1458,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11 <./images/FrameLegend.png (PNG copy)>]
-<images/PSSCorrelation.jpg, id=563, 481.8pt x 340.27126pt>
+<images/PSSCorrelation.jpg, id=594, 481.8pt x 340.27126pt>
 File: images/PSSCorrelation.jpg Graphic file (type jpg)
 <use images/PSSCorrelation.jpg>
 Package pdftex.def Info: images/PSSCorrelation.jpg  used on input line 113.
 (pdftex.def)             Requested size: 256.0748pt x 180.85692pt.
  [12 <./images/PSSCorrelation.jpg>]
-<images/vert400.jpg, id=574, 652.4375pt x 165.61874pt>
+<images/vert400.jpg, id=605, 652.4375pt x 165.61874pt>
 File: images/vert400.jpg Graphic file (type jpg)
 <use images/vert400.jpg>
 Package pdftex.def Info: images/vert400.jpg  used on input line 129.
@@ -1464,7 +1478,7 @@ Chapter 3.
 [15
 
 ] [16]
-<images/CP_illustration.png, id=610, 1517.67pt x 892.33376pt>
+<images/CP_illustration.png, id=640, 1517.67pt x 892.33376pt>
 File: images/CP_illustration.png Graphic file (type png)
 <use images/CP_illustration.png>
 Package pdftex.def Info: images/CP_illustration.png  used on input line 99.
@@ -1475,7 +1489,7 @@ Overfull \hbox (40.3012pt too wide) detected at line 173
  []
 
 [18] [19]
-<images/MIMO_Illustration.jpg, id=649, 1626.075pt x 1007.765pt>
+<images/MIMO_Illustration.jpg, id=680, 1626.075pt x 1007.765pt>
 File: images/MIMO_Illustration.jpg Graphic file (type jpg)
 <use images/MIMO_Illustration.jpg>
 Package pdftex.def Info: images/MIMO_Illustration.jpg  used on input line 281.
@@ -1520,13 +1534,13 @@ Overfull \hbox (185.11443pt too wide) has occurred while \output is active
 
 ] (./Chapters/experimentalSetup.tex
 Chapter 5.
-<images/MIMOSetUpArrangement.png, id=726, 1008.76875pt x 738.76pt>
+<images/MIMOSetUpArrangement.png, id=756, 1008.76875pt x 738.76pt>
 File: images/MIMOSetUpArrangement.png Graphic file (type png)
 <use images/MIMOSetUpArrangement.png>
 Package pdftex.def Info: images/MIMOSetUpArrangement.png  used on input line 16
 .
 (pdftex.def)             Requested size: 312.9803pt x 229.20486pt.
-<images/LTEAFW2x2ExtBlockDiagram.png, id=727, 1303.87125pt x 719.68875pt>
+<images/LTEAFW2x2ExtBlockDiagram.png, id=757, 1303.87125pt x 719.68875pt>
 File: images/LTEAFW2x2ExtBlockDiagram.png Graphic file (type png)
 <use images/LTEAFW2x2ExtBlockDiagram.png>
 Package pdftex.def Info: images/LTEAFW2x2ExtBlockDiagram.png  used on input lin
@@ -1541,20 +1555,20 @@ Underfull \vbox (badness 4060) has occurred while \output is active []
 
  [32 <./images/MIMOSetUpArrangement.png> <./images/LTEAFW2x2ExtBlockDiagram.png
 >] [33]
-<images/UDPDataTransfer.png, id=750, 469.755pt x 706.64pt>
+<images/UDPDataTransfer.png, id=780, 469.755pt x 706.64pt>
 File: images/UDPDataTransfer.png Graphic file (type png)
 <use images/UDPDataTransfer.png>
 Package pdftex.def Info: images/UDPDataTransfer.png  used on input line 83.
 (pdftex.def)             Requested size: 227.62204pt x 342.4073pt.
 
 [34] [35 <./images/UDPDataTransfer.png>]
-<images/SISORXADVEdited.png, id=762, 1399.2275pt x 758.835pt>
+<images/SISORXADVEdited.png, id=792, 1399.2275pt x 758.835pt>
 File: images/SISORXADVEdited.png Graphic file (type png)
 <use images/SISORXADVEdited.png>
 Package pdftex.def Info: images/SISORXADVEdited.png  used on input line 109.
 (pdftex.def)             Requested size: 369.88582pt x 200.59242pt.
  [36 <./images/SISORXADVEdited.PNG>]
-<images/SISORXEdited.png, id=774, 1399.2275pt x 761.84625pt>
+<images/SISORXEdited.png, id=804, 1399.2275pt x 761.84625pt>
 File: images/SISORXEdited.png Graphic file (type png)
 <use images/SISORXEdited.png>
 Package pdftex.def Info: images/SISORXEdited.png  used on input line 160.
@@ -1584,7 +1598,7 @@ Overfull \hbox (185.11443pt too wide) has occurred while \output is active
  []
 
 [39]
-<images/DLFPGATXImpl.png, id=791, 944.52875pt x 477.785pt>
+<images/DLFPGATXImpl.png, id=822, 944.52875pt x 477.785pt>
 File: images/DLFPGATXImpl.png Graphic file (type png)
 <use images/DLFPGATXImpl.png>
 Package pdftex.def Info: images/DLFPGATXImpl.png  used on input line 223.
@@ -1596,20 +1610,20 @@ Underfull \vbox (badness 2293) has occurred while \output is active []
 
 
 ]
-<images/DLFPGARXImpl.png, id=798, 894.34125pt x 271.0125pt>
+<images/DLFPGARXImpl.png, id=829, 894.34125pt x 271.0125pt>
 File: images/DLFPGARXImpl.png Graphic file (type png)
 <use images/DLFPGARXImpl.png>
 Package pdftex.def Info: images/DLFPGARXImpl.png  used on input line 234.
 (pdftex.def)             Requested size: 369.88582pt x 112.08763pt.
 
 [41 <./images/DLFPGATXImpl.png> <./images/DLFPGARXImpl.png>] [42]
-<images/ChEstInterpolation.png, id=813, 635.37375pt x 313.17pt>
+<images/ChEstInterpolation.png, id=843, 635.37375pt x 313.17pt>
 File: images/ChEstInterpolation.png Graphic file (type png)
 <use images/ChEstInterpolation.png>
 Package pdftex.def Info: images/ChEstInterpolation.png  used on input line 256.
 
 (pdftex.def)             Requested size: 142.26378pt x 70.12093pt.
-<images/ChEstZOH.png, id=814, 562.1pt x 301.125pt>
+<images/ChEstZOH.png, id=844, 562.1pt x 301.125pt>
 File: images/ChEstZOH.png Graphic file (type png)
 <use images/ChEstZOH.png>
 Package pdftex.def Info: images/ChEstZOH.png  used on input line 258.
@@ -1618,7 +1632,7 @@ Package pdftex.def Info: images/ChEstZOH.png  used on input line 258.
 Underfull \vbox (badness 3954) has occurred while \output is active []
 
  [43 <./images/ChEstInterpolation.png> <./images/ChEstZOH.png>]
-<images/MultiAntennaCRSXYPairEdited.png, id=829, 624.3325pt x 310.15875pt>
+<images/MultiAntennaCRSXYPairEdited.png, id=860, 624.3325pt x 310.15875pt>
 File: images/MultiAntennaCRSXYPairEdited.png Graphic file (type png)
 <use images/MultiAntennaCRSXYPairEdited.png>
 Package pdftex.def Info: images/MultiAntennaCRSXYPairEdited.png  used on input 
@@ -1636,7 +1650,7 @@ Package epstopdf Info: Source file: <images/Freqz_SINR_LPF_mag.eps>
 eps-converted-to.pdf images/Freqz_SINR_LPF_mag.eps>
 (epstopdf)             \includegraphics on input line 340.
 Package epstopdf Info: Output file is already uptodate.
-<images/Freqz_SINR_LPF_mag-eps-converted-to.pdf, id=838, 435.6275pt x 326.21875
+<images/Freqz_SINR_LPF_mag-eps-converted-to.pdf, id=869, 435.6275pt x 326.21875
 pt>
 File: images/Freqz_SINR_LPF_mag-eps-converted-to.pdf Graphic file (type pdf)
 <use images/Freqz_SINR_LPF_mag-eps-converted-to.pdf>
@@ -1654,7 +1668,7 @@ to.pdf>
 e-eps-converted-to.pdf images/Freqz_SINR_LPF_phase.eps>
 (epstopdf)             \includegraphics on input line 342.
 Package epstopdf Info: Output file is already uptodate.
-<images/Freqz_SINR_LPF_phase-eps-converted-to.pdf, id=839, 435.6275pt x 326.218
+<images/Freqz_SINR_LPF_phase-eps-converted-to.pdf, id=870, 435.6275pt x 326.218
 75pt>
 File: images/Freqz_SINR_LPF_phase-eps-converted-to.pdf Graphic file (type pdf)
 <use images/Freqz_SINR_LPF_phase-eps-converted-to.pdf>
@@ -1668,34 +1682,104 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [46 <./images/Freqz_SINR_LPF_mag-eps-converted-to.pdf> <./images/Freqz_SINR_LPF
 _phase-eps-converted-to.pdf>] (./Chapters/results.tex
 Chapter 6.
-) [47
+LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 
+10.
+(/usr/share/texmf-dist/tex/latex/newtx/t1ntxtt.fd
+File: t1ntxtt.fd 2012/04/20 v3.1
+)
+LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
+(Font)              scaled to size 10.95pt on input line 10.
+LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
+(Font)              scaled to size 8.0pt on input line 12.
+ [47
 
 
 
-] (./Chapters/conclusion.tex [48
+]
+Overfull \hbox (4.51799pt too wide) in paragraph at lines 41--42
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (14.11809pt too wide) in paragraph at lines 50--51
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[48]
+Package epstopdf Info: Source file: <images/INNxn.eps>
+(epstopdf)                    date: 2020-08-31 11:21:03
+(epstopdf)                    size: 121363 bytes
+(epstopdf)             Output file: <images/INNxn-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-08-31 11:21:19
+(epstopdf)                    size: 41483 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/INNxn-eps-converted
+-to.pdf images/INNxn.eps>
+(epstopdf)             \includegraphics on input line 85.
+Package epstopdf Info: Output file is already uptodate.
+<images/INNxn-eps-converted-to.pdf, id=947, 375.4025pt x 297.11pt>
+File: images/INNxn-eps-converted-to.pdf Graphic file (type pdf)
+<use images/INNxn-eps-converted-to.pdf>
+Package pdftex.def Info: images/INNxn-eps-converted-to.pdf  used on input line 
+85.
+(pdftex.def)             Requested size: 369.88582pt x 292.76161pt.
+Package epstopdf Info: Source file: <images/INNyn.eps>
+(epstopdf)                    date: 2020-08-31 11:21:05
+(epstopdf)                    size: 125616 bytes
+(epstopdf)             Output file: <images/INNyn-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-08-31 11:21:20
+(epstopdf)                    size: 41304 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/INNyn-eps-converted
+-to.pdf images/INNyn.eps>
+(epstopdf)             \includegraphics on input line 92.
+Package epstopdf Info: Output file is already uptodate.
+<images/INNyn-eps-converted-to.pdf, id=948, 393.47pt x 297.11pt>
+File: images/INNyn-eps-converted-to.pdf Graphic file (type pdf)
+<use images/INNyn-eps-converted-to.pdf>
+Package pdftex.def Info: images/INNyn-eps-converted-to.pdf  used on input line 
+92.
+(pdftex.def)             Requested size: 312.9803pt x 236.32826pt.
+Package epstopdf Info: Source file: <images/INNResult.eps>
+(epstopdf)                    date: 2020-08-31 11:21:07
+(epstopdf)                    size: 106189 bytes
+(epstopdf)             Output file: <images/INNResult-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-08-31 11:21:20
+(epstopdf)                    size: 40325 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/INNResult-eps-conve
+rted-to.pdf images/INNResult.eps>
+(epstopdf)             \includegraphics on input line 99.
+Package epstopdf Info: Output file is already uptodate.
+<images/INNResult-eps-converted-to.pdf, id=949, 381.425pt x 297.11pt>
+File: images/INNResult-eps-converted-to.pdf Graphic file (type pdf)
+<use images/INNResult-eps-converted-to.pdf>
+Package pdftex.def Info: images/INNResult-eps-converted-to.pdf  used on input l
+ine 99.
+(pdftex.def)             Requested size: 369.88582pt x 288.13287pt.
+) [49 <./images/INNxn-eps-converted-to.pdf>] [50 <./images/INNyn-eps-converted-
+to.pdf>] [51 <./images/INNResult-eps-converted-to.pdf>]
+(./Chapters/conclusion.tex [52
 
 
 
 ]
 Chapter 7.
-) [49
+) [53
 
-] (./Chapters/appendix.tex [50
+] (./Chapters/appendix.tex [54
 
 
 
 ]
 Appendix A.
-[51
+[55
 
 ]
-<images/USRPHWConnections.png, id=891, 733.99219pt x 395.22656pt>
+<images/USRPHWConnections.png, id=1001, 733.99219pt x 395.22656pt>
 File: images/USRPHWConnections.png Graphic file (type png)
 <use images/USRPHWConnections.png>
 Package pdftex.def Info: images/USRPHWConnections.png  used on input line 25.
 (pdftex.def)             Requested size: 369.88582pt x 199.17473pt.
- [52 <./images/USRPHWConnections.png>]
-<images/USRPInternalsEdited.jpeg, id=897, 1111.15125pt x 523.9575pt>
+ [56 <./images/USRPHWConnections.png>]
+<images/USRPInternalsEdited.jpeg, id=1007, 1111.15125pt x 523.9575pt>
 File: images/USRPInternalsEdited.jpeg Graphic file (type jpg)
 <use images/USRPInternalsEdited.jpeg>
 Package pdftex.def Info: images/USRPInternalsEdited.jpeg  used on input line 33
@@ -1706,15 +1790,15 @@ Overfull \hbox (185.11443pt too wide) has occurred while \output is active
 |[]
  []
 
-[53
+[57
 
  <./images/USRPInternalsEdited.jpeg>]
-<images/PPSTrigFFT.png, id=903, 1927.2pt x 1043.9pt>
+<images/PPSTrigFFT.png, id=1013, 1927.2pt x 1043.9pt>
 File: images/PPSTrigFFT.png Graphic file (type png)
 <use images/PPSTrigFFT.png>
 Package pdftex.def Info: images/PPSTrigFFT.png  used on input line 43.
 (pdftex.def)             Requested size: 369.88582pt x 200.35007pt.
-<images/PPSTrig.jpg, id=907, 1052.43187pt x 569.87906pt>
+<images/PPSTrig.jpg, id=1017, 1052.43187pt x 569.87906pt>
 File: images/PPSTrig.jpg Graphic file (type jpg)
 <use images/PPSTrig.jpg>
 Package pdftex.def Info: images/PPSTrig.jpg  used on input line 54.
@@ -1722,16 +1806,16 @@ Package pdftex.def Info: images/PPSTrig.jpg  used on input line 54.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [54
+ [58
 
  <./images/PPSTrigFFT.png>]
-<images/PPSTrigZoomIn.jpg, id=912, 1050.92625pt x 569.12625pt>
+<images/PPSTrigZoomIn.jpg, id=1022, 1050.92625pt x 569.12625pt>
 File: images/PPSTrigZoomIn.jpg Graphic file (type jpg)
 <use images/PPSTrigZoomIn.jpg>
 Package pdftex.def Info: images/PPSTrigZoomIn.jpg  used on input line 61.
 (pdftex.def)             Requested size: 369.88582pt x 200.30875pt.
- [55 <./images/PPSTrig.jpg> <./images/PPSTrigZoomIn.jpg>]
-[56]
+ [59 <./images/PPSTrig.jpg> <./images/PPSTrigZoomIn.jpg>]
+[60]
 Package epstopdf Info: Source file: <images/SyncIssues.eps>
 (epstopdf)                    date: 2020-08-19 14:51:53
 (epstopdf)                    size: 122705 bytes
@@ -1742,7 +1826,7 @@ Package epstopdf Info: Source file: <images/SyncIssues.eps>
 erted-to.pdf images/SyncIssues.eps>
 (epstopdf)             \includegraphics on input line 80.
 Package epstopdf Info: Output file is already uptodate.
-<images/SyncIssues-eps-converted-to.pdf, id=925, 1491.5725pt x 746.79pt>
+<images/SyncIssues-eps-converted-to.pdf, id=1035, 1491.5725pt x 746.79pt>
 File: images/SyncIssues-eps-converted-to.pdf Graphic file (type pdf)
 <use images/SyncIssues-eps-converted-to.pdf>
 Package pdftex.def Info: images/SyncIssues-eps-converted-to.pdf  used on input 
@@ -1758,14 +1842,14 @@ Overfull \hbox (185.11443pt too wide) has occurred while \output is active
 |[]
  []
 
-[57
+[61
 
- <./images/SyncIssues-eps-converted-to.pdf>] [58
+ <./images/SyncIssues-eps-converted-to.pdf>] [62
 
 
 ]
 Appendix B.
-<images/OctoclockSchematics/octoclock.pdf, id=942, 1228.59pt x 794.97pt>
+<images/OctoclockSchematics/octoclock.pdf, id=1052, 1228.59pt x 794.97pt>
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 <use images/OctoclockSchematics/octoclock.pdf>
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf  used on inpu
@@ -1781,8 +1865,8 @@ File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf  used on inpu
 t line 89.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
-<images/OctoclockSchematics/octoclock.pdf, id=946, page=1, 1228.59pt x 794.97pt
->
+<images/OctoclockSchematics/octoclock.pdf, id=1056, page=1, 1228.59pt x 794.97p
+t>
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 <use images/OctoclockSchematics/octoclock.pdf, page 1>
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf , page1 used 
@@ -1793,7 +1877,7 @@ File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf , page1 used 
 on input line 89.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
-[59
+[63
 
 ]
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
@@ -1811,9 +1895,9 @@ File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf , page1 used 
 on input line 89.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
- [60 <./images/OctoclockSchematics/octoclock.pdf>]
-<images/OctoclockSchematics/octoclock.pdf, id=959, page=2, 1228.59pt x 794.97pt
->
+ [64 <./images/OctoclockSchematics/octoclock.pdf>]
+<images/OctoclockSchematics/octoclock.pdf, id=1069, page=2, 1228.59pt x 794.97p
+t>
 File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 <use images/OctoclockSchematics/octoclock.pdf, page 2>
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf , page2 used 
@@ -1829,37 +1913,37 @@ File: images/OctoclockSchematics/octoclock.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/OctoclockSchematics/octoclock.pdf , page2 used 
 on input line 89.
 (pdftex.def)             Requested size: 1228.587pt x 794.96806pt.
- [61 <./images/OctoclockSchematics/octoclock.pdf>]) [62
+ [65 <./images/OctoclockSchematics/octoclock.pdf>]) [66
 
 
-] (./finalReport.bbl) [63
+] (./finalReport.bbl) [67
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 274.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 274.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 284.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 284.
  (./finalReport.aux
 (./Chapters/introduction.aux) (./Chapters/systemModel.aux)
 (./Chapters/channelEstimation.aux) (./Chapters/possibleHWSetup.aux)
 (./Chapters/experimentalSetup.aux) (./Chapters/results.aux)
 (./Chapters/conclusion.aux) (./Chapters/appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 274.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 274.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 284.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 284.
 Package rerunfilecheck Info: File `finalReport.out' has not changed.
-(rerunfilecheck)             Checksum: FD9DE66C6ECC4D4CB73ED5534BCE8C7F;3651.
+(rerunfilecheck)             Checksum: 28AA86EF7B0B3C62EACF4B8EE698F98F;3874.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 37094 strings out of 480478
- 702198 string characters out of 5905959
- 1052892 words of memory out of 5000000
- 51860 multiletter control sequences out of 15000+600000
- 604106 words of font info for 180 fonts, out of 8000000 for 9000
+ 37672 strings out of 480478
+ 708788 string characters out of 5905959
+ 1100291 words of memory out of 5000000
+ 52372 multiletter control sequences out of 15000+600000
+ 604935 words of font info for 182 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 76i,20n,102p,1133b,1071s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 76i,20n,102p,1125b,1159s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texmf-d
 ist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texmf-dist/fonts/enc/dvips
 /base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
@@ -1873,14 +1957,15 @@ onts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 ></usr/share/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf-
-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw
-/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/ztmb.pfb><
-/usr/share/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texmf-dist/
-fonts/type1/public/newtx/ztmri.pfb>
-Output written on finalReport.pdf (73 pages, 1845993 bytes).
+dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texmf-dist/fonts/type1/ur
+w/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pf
+b></usr/share/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texmf-di
+st/fonts/type1/public/newtx/ztmr.pfb></usr/share/texmf-dist/fonts/type1/public/
+newtx/ztmri.pfb>
+Output written on finalReport.pdf (79 pages, 1979090 bytes).
 PDF statistics:
- 1097 PDF objects out of 1200 (max. 8388607)
- 945 compressed objects within 10 object streams
- 269 named destinations out of 1000 (max. 500000)
- 31331 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 1220 PDF objects out of 1440 (max. 8388607)
+ 1054 compressed objects within 11 object streams
+ 324 named destinations out of 1000 (max. 500000)
+ 31370 words of extra memory for PDF output out of 35830 (max. 10000000)
 

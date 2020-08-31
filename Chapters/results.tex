@@ -3,11 +3,100 @@
 
 Over the course of the internship many different parameters had to be determined and set up for the final demo. This chapters documents the results of all the experiments performed as well as the final demo of the working setup.
 
-\section{Over-the-air Data Transmission}\label{ssec:OTADataTrans}
+\section{Over-the-air User Data Transmission}\label{sec:OTADataTrans}
+
+Following the data transmission through over the air using LTE AFW, benchmarks were run to check the loss of data over the wireless medium. Data loss tests were profiled using \textit{iperf}, a software used to profile UDP traffic.
+
+A server and client of the version of the iperf application was used to test the wireless interface. Where the data was produced by the client on UDP port \texttt{50000} and received on the localhost \texttt{127.0.0.1} on UDP port \texttt{60000} once a SISO and MIMO Tx-Rx wireless interface was setup for the respective tests. The version of iperf used is shown below.
+
+\begin{lstlisting}[style=DOS]
+iperf version 2.0.9 (1 June 2016) pthreads
+\end{lstlisting}
+
+The command used to start up a Client is shown below.
+\begin{lstlisting}[style=DOS]
+iperf.exe -c 127.0.0.1 -u -i 1 -b 10M -t 10 -p 50000
+\end{lstlisting}
+
+The command used to start up a server is shown below.
+\begin{lstlisting}[style=DOS]
+iperf.exe -s -u -B 127.0.0.1 -i 1 -p 60000
+\end{lstlisting}
 
 \subsection{SISO}\label{ssec:SISOOTA}
 
+A SISO communications channel was setup with the Tx and Rx settings as mentioned in Table \ref{tab:TXUSRPParam} and \ref{tab:RXUSRPParam} using the LTE AFW template. On conducting UDP data flow tests, it was observed that there were no packet drops with a UDP data block loss rate of $0\%$.
+
 \subsection{MIMO}\label{ssec:MIMOOTA}
 
-Following the data transmission through over the air using LTE AFW, benchmarks were run to check the loss of data over the wireless medium. Tests were run using \textit{iperf} version 2.0.9.
+In the second test a MIMO communications channel was setup with the Tx and Rx settings as mentioned in Table \ref{tab:TXUSRPParam} and \ref{tab:RXUSRPParam} using the LTE MIMO AFW 2x2 extention software. On conducting UDP data flow tests, it was observed that there were large packet losses with a UDP data block loss rate of around $25\%$. Below is an output of the server client iperf application.
 
+
+\begin{lstlisting}[style=DOS]
+Microsoft Windows [Version 10.0.18363.1016]
+(c) 2019 Microsoft Corporation. Alle Rechte vorbehalten.
+
+C:\Users\ge69mog>cd Downloads\iperf-2.0.9-win64\iperf-2.0.9-win64
+
+C:\Users\ge69mog\Downloads\iperf-2.0.9-win64\iperf-2.0.9-win64>iperf.exe -s -u
+-B 127.0.0.1 -i 1 -p 60000
+------------------------------------------------------------
+Server listening on UDP port 60000
+Binding to local address 127.0.0.1
+Receiving 1470 byte datagrams
+UDP buffer size:  208 KByte (default)
+------------------------------------------------------------
+[  3] local 127.0.0.1 port 60000 connected with 127.0.0.1 port 49721
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0- 1.0 sec   996 KBytes  8.16 Mbits/sec   2.017 ms  166/  860 ((*@\textcolor{red}{19\%}@*)
+[  3] 0.00-1.00 sec  50 datagrams received out-of-order
+[  3]  1.0- 2.0 sec   904 KBytes  7.41 Mbits/sec   2.426 ms  227/  857 ((*@\textcolor{red}{26\%}@*))
+[  3] 1.00-2.00 sec  70 datagrams received out-of-order
+[  3]  2.0- 3.0 sec   902 KBytes  7.39 Mbits/sec   2.148 ms  219/  847 ((*@\textcolor{red}{26\%}@*))
+[  3] 2.00-3.00 sec  61 datagrams received out-of-order
+[  3]  3.0- 4.0 sec   916 KBytes  7.50 Mbits/sec   1.904 ms  222/  860 ((*@\textcolor{red}{26\%}@*))
+[  3] 3.00-4.00 sec  69 datagrams received out-of-order
+[  3]  4.0- 5.0 sec   871 KBytes  7.14 Mbits/sec   4.137 ms  206/  813 ((*@\textcolor{red}{25\%}@*))
+[  3] 4.00-5.00 sec  56 datagrams received out-of-order
+[  3]  5.0- 6.0 sec   953 KBytes  7.81 Mbits/sec   4.710 ms  226/  890 ((*@\textcolor{red}{25\%}@*))
+[  3] 5.00-6.00 sec  86 datagrams received out-of-order
+[  3]  6.0- 7.0 sec   828 KBytes  6.79 Mbits/sec   2.786 ms  253/  830 ((*@\textcolor{red}{30\%}@*))
+[  3] 6.00-7.00 sec  84 datagrams received out-of-order
+[  3]  7.0- 8.0 sec   843 KBytes  6.90 Mbits/sec   4.467 ms  250/  837 ((*@\textcolor{red}{30\%}@*))
+[  3] 7.00-8.00 sec  90 datagrams received out-of-order
+[  3]  8.0- 9.0 sec   970 KBytes  7.95 Mbits/sec   1.648 ms  200/  876 ((*@\textcolor{red}{23\%}@*))
+[  3] 8.00-9.00 sec  61 datagrams received out-of-order
+[  3]  0.0-10.0 sec  8.86 MBytes  7.43 Mbits/sec   2.888 ms 2183/ 8505 ((*@\textcolor{red}{26\%}@*))
+[  3] 0.00-10.00 sec  689 datagrams received out-of-order
+
+\end{lstlisting}
+
+From testing it was inferred that this loss rather stems from the CPU overhead in processing 2 simultaneous UDP streams of data, or the handling of UDP data by the LTE AFW 2x2 MIMO extension application.
+
+\section{CRS Data Transmission}\label{sec:CRSDataVisualisation}
+As seen from the results of the previous section, the data loss in the user data sent via UDP was not a feasible option for the purposes of this experiment as data had to be received any losses. As a result, it was decided to use the CRS symbols as sent and received data pairs. This was done by utilising $h_{11}$ and $h_{22}$ as received unequalized symbols.
+
+\section{Inverse Neural Network Detection}\label{sec:INNDet}
+
+\subsection{INN Constellation}\label{ssec:INNConstellation}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\linewidth]{images/INNxn.eps}
+    \caption{XY plot of the real parts of the input signals $x_1$ and $x_2$ with noise}
+    \label{fig:INNxn}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=11cm]{images/INNyn.eps}
+    \caption{XY plot of the real parts of the received signals $y_1$ and $y_2$}
+    \label{fig:INNyn}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\linewidth]{images/INNResult.eps}
+    \caption{XY plot of the real parts of the INN Estimated signals $\hat{y_1}$ and $\hat{y_2}$ }
+    \label{fig:INNyResult}
+\end{figure}

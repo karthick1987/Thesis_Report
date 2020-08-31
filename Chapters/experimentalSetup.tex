@@ -29,7 +29,7 @@ For the implementation of the LTE AFW MIMO Extension as outlined in Chapter \ref
 \end{figure}
 
 Figure %s \ref{fig:LTEAFWExtArch} and 
-\ref{fig:LTEAFW2DeviceOverview} shows the block diagram of the system in the DL eNodeB and UE operation modes. Data streams that require high data rates for data transfer between host and FPGA are implemented as DMA FIFOs. These streams include the payload and UL data from host to FPGA and the received PDSCH transport blocks from FPGA to host. In-phase/quadrature (I/Q) samples for constellation and spectrum display as well as the channel estimation (\textbf{ONLY} diagonal coefficients \textit{h11} and \textit{h22}) values are also transferred from FPGA to host using DMA FIFOs. Further status information is transferred to the host by reading the indicator values \cite{LTEAFWManual}. As it can be seen both RX and TX components are implemented in the Host Software as well as in the FPGA Hardware. Hence the same application can be used as an \textit{eNodeB} as well as \textit{UE}. The \textit{eNodeB} mode uses the DL TX processing units and \textit{UE} uses the DL RX processing units which are explained in Section \ref{ssec:LTEAFWFPGA}.
+\ref{fig:LTEAFW2DeviceOverview} shows the block diagram of the system in the DL eNodeB and UE operation modes. Data streams that require high data rates for data transfer between host and FPGA are implemented as DMA FIFOs. These streams include the payload and UL data from host to FPGA and the received PDSCH transport blocks from FPGA to host. In-phase/quadrature (I/Q) samples for constellation and spectrum display as well as the channel estimation (\textbf{ONLY} diagonal coefficients $h_{11}$ and $h_{22}$) values are also transferred from FPGA to host using DMA FIFOs. Further status information is transferred to the host by reading the indicator values \cite{LTEAFWManual}. As it can be seen both RX and TX components are implemented in the Host Software as well as in the FPGA Hardware. Hence the same application can be used as an \textit{eNodeB} as well as \textit{UE}. The \textit{eNodeB} mode uses the DL TX processing units and \textit{UE} uses the DL RX processing units which are explained in Section \ref{ssec:LTEAFWFPGA}.
 
 %\begin{figure}[H]
 %    \centering
@@ -265,7 +265,7 @@ The RX IQ processing is more complex than the TX IQ processing chain as it perfo
 Once the above mentioned apparatus was setup, it was ready to be used to log data. At the time of writing this thesis there was another Bachelor thesis being conducted in parallel to use machine learning to reverse the effects of the Channel distortions.
 
 One of the main topics of communication technology is to reconstruct data at the
-receiver that was transmitted over a non-trivial channel. Figure \ref{fig:MLModel} shows the ML model being used to train the inverse neural network to retrive the sent data. It is only necessary to feed the trained network with the received signal y and it then computes the original signal x. The transmitted signals x are mapped to the received signals y in the natural way and then the origial signals are reconstructed by inverting this mapping in the online phase. The mapping is done with the help of invertible and composable transformation 
+receiver that was transmitted over a non-trivial channel. Figure \ref{fig:MLModel} shows the ML model being used to train the inverse neural network to retrive the sent data. It is only necessary to feed the trained network with the received signal $y$ and it then computes the original signal $x$. The transmitted signals $x$ are mapped to the received signals $y$ in the natural way and then the origial signals are reconstructed by inverting this mapping in the online phase. The mapping is done with the help of invertible and composable transformation 
 
 
 The standard way of using Neural Networks for this task is to map the received signals y to the transmitted signals x \cite{JMMLINN}. For training the neural network, transmitted and received symbols and their corresponding Subband Noise are required.
@@ -292,9 +292,9 @@ The standard way of using Neural Networks for this task is to map the received s
 
 \subsection{Transmitted and Received Data}\label{ssec:XYPairs}
 
-With the Host applications modifications mentioned in Section \ref{ssec:LTEAFWHostSWMods}, the unequalized data was received and recorded by the RX USRP. Due to Host performance degradation (details in Section \ref{ssec:OTADataTrans}) custom user data was susceptible to data loss.
+With the Host applications modifications mentioned in Section \ref{ssec:LTEAFWHostSWMods}, the unequalized data was received and recorded by the RX USRP. Due to Host performance degradation (details in Section \ref{sec:OTADataTrans}) custom user data was susceptible to data loss.
 
-Given the time constraints modifying the FPGA bit file was not an option as this step involved recompiling the whole FPGA project. Once compiled the bitfile had to be tested and verified. As the timeframe was rather tight, a decision was made to use the CRS symbols as the ($x$,$y$) pairs that were transmitted and received.
+Given the time constraints modifying the FPGA bit file was not an option as this step involved recompiling the whole FPGA project. Once compiled the bitfile had to be tested and verified and given the tight timeframe, a decision was made to use the CRS symbols as the ($x$,$y$) pairs that were transmitted and received.
 
 Figure \ref{fig:XYPairsCRS} shows that the CRS Ant 1 symbols are intended for the frame to be sent on TX Port 1 where as the CRS Ant 2 symbols are intended for the frame to be transmitted on TX Antenna 2. The greyed out resource blocks are meant as placeholders where no data can be sent on them.
 
@@ -305,7 +305,7 @@ Figure \ref{fig:XYPairsCRS} shows that the CRS Ant 1 symbols are intended for th
     \label{fig:XYPairsCRS}
 \end{figure}
 
-On the receiver side RX antenna 1 receives the frame, once decoded the distortion of the CRS Ant 1 symbols can be inferred from \textit{h11} channel estimation parameters. Similarly from the decoded frame on RX antenna 2, the distortion of the CRS Ant 2 symbols can be inferred from the \textit{h22} channel estimation parameters. This functions as our ($x$,$y$) pair as the equalization can be bypassed.
+On the receiver side RX antenna 1 receives the frame, once decoded the distortion of the CRS Ant 1 symbols can be inferred from $h_{11}$ channel estimation parameters. Similarly from the decoded frame on RX antenna 2, the distortion of the CRS Ant 2 symbols can be inferred from the $h_{22}$ channel estimation parameters. This functions as our ($x$,$y$) pair as the equalization can be bypassed.
 
 \subsection{Subband and Wideband Noise}\label{ssec:SINR}
 

@@ -56,15 +56,18 @@
 \contentsline {subsection}{\numberline {5.2.1}Transmitted and Received Data}{44}{subsection.5.2.1}%
 \contentsline {subsection}{\numberline {5.2.2}Subband and Wideband Noise}{45}{subsection.5.2.2}%
 \contentsline {chapter}{\numberline {6}Results}{47}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Over-the-air Data Transmission}{47}{section.6.1}%
+\contentsline {section}{\numberline {6.1}Over-the-air User Data Transmission}{47}{section.6.1}%
 \contentsline {subsection}{\numberline {6.1.1}SISO}{47}{subsection.6.1.1}%
 \contentsline {subsection}{\numberline {6.1.2}MIMO}{47}{subsection.6.1.2}%
-\contentsline {chapter}{\numberline {7}Conclusion and Outlook}{49}{chapter.7}%
-\contentsline {section}{\numberline {7.1}FPGA File Port}{49}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Experiment with structured Channel}{49}{section.7.2}%
-\contentsline {section}{\numberline {7.3}TODO}{49}{section.7.3}%
-\contentsline {chapter}{\numberline {A}Troubleshooting}{51}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Boot Order}{51}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Synchronisation of the USRPs}{51}{section.A.2}%
-\contentsline {chapter}{\numberline {B}Schematic Octoclock}{59}{appendix.B}%
-\contentsline {chapter}{Bibliography}{63}{appendix.C}%
+\contentsline {section}{\numberline {6.2}CRS Data Transmission}{48}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Inverse Neural Network Detection}{49}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}INN Constellation}{49}{subsection.6.3.1}%
+\contentsline {chapter}{\numberline {7}Conclusion and Outlook}{53}{chapter.7}%
+\contentsline {section}{\numberline {7.1}FPGA File Port}{53}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Experiment with structured Channel}{53}{section.7.2}%
+\contentsline {section}{\numberline {7.3}TODO}{53}{section.7.3}%
+\contentsline {chapter}{\numberline {A}Troubleshooting}{55}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Boot Order}{55}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Synchronisation of the USRPs}{55}{section.A.2}%
+\contentsline {chapter}{\numberline {B}Schematic Octoclock}{63}{appendix.B}%
+\contentsline {chapter}{Bibliography}{67}{appendix.C}%

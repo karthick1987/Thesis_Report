@@ -27,12 +27,15 @@
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Magnitude Response}}}{46}{subfigure.12.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Phase Response}}}{46}{subfigure.12.2}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces XY plot of the real parts of the input signals $x_1$ and $x_2$ with noise\relax }}{49}{figure.caption.37}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces XY plot of the real parts of the received signals $y_1$ and $y_2$\relax }}{50}{figure.caption.38}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces XY plot of the real parts of the INN Estimated signals $\hat {y_1}$ and $\hat {y_2}$ \relax }}{51}{figure.caption.39}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces The connections from the Octoclock to the USRP\relax }}{52}{figure.caption.37}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces USRP 2940 Internal Components\relax }}{53}{figure.caption.38}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces The 10 MHz REF IN clock as seen at the output of two respective channels of the Octoclock. The yellow is from ch1 and the green is from channel 2 which are connected to USRP1 and USRP2 respectively. The top half is the Fourier transform and the bottom half is the time domain signal\relax }}{54}{figure.caption.39}%
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Figure shows a zoomed-out view of the PPS Trig Out which occurs every 1s and the high pulse is 200ms long.\relax }}{55}{figure.caption.40}%
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Figure shows the PPS trigger signal from the Octoclock. The slight shift is potentially an artifact from the measurement instrument as the bandwidth of the measurement tool was limited (20MHz).\relax }}{55}{figure.caption.41}%
-\contentsline {figure}{\numberline {A.6}{\ignorespaces The left waveforms are the TX waveforms and the right waveforms are the RX waveforms. It can be seen that the received IQ waveforms are unsynchronised and clearly have a phase shift\relax }}{57}{figure.caption.42}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces The connections from the Octoclock to the USRP\relax }}{56}{figure.caption.40}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces USRP 2940 Internal Components\relax }}{57}{figure.caption.41}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces The 10 MHz REF IN clock as seen at the output of two respective channels of the Octoclock. The yellow is from ch1 and the green is from channel 2 which are connected to USRP1 and USRP2 respectively. The top half is the Fourier transform and the bottom half is the time domain signal\relax }}{58}{figure.caption.42}%
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Figure shows a zoomed-out view of the PPS Trig Out which occurs every 1s and the high pulse is 200ms long.\relax }}{59}{figure.caption.43}%
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Figure shows the PPS trigger signal from the Octoclock. The slight shift is potentially an artifact from the measurement instrument as the bandwidth of the measurement tool was limited (20MHz).\relax }}{59}{figure.caption.44}%
+\contentsline {figure}{\numberline {A.6}{\ignorespaces The left waveforms are the TX waveforms and the right waveforms are the RX waveforms. It can be seen that the received IQ waveforms are unsynchronised and clearly have a phase shift\relax }}{61}{figure.caption.45}%
 \addvspace {10\p@ }

@@ -59,6 +59,16 @@
 \usepackage{siunitx}
 
 \usepackage{listings}
+\usepackage{soul,xcolor}\lstset{escapeinside={(*@}{@*)}}
+
+% User defined Listing
+\lstdefinestyle{DOS}
+{
+    backgroundcolor=\color{white},
+    basicstyle=\scriptsize\color{black}\ttfamily
+}
+
+
 \usepackage{hyperref}
 \usepackage{pdfpages}
 \usepackage{rotating}

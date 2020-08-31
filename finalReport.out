@@ -42,15 +42,18 @@
 \BOOKMARK [2][-]{subsection.5.2.1}{Transmitted and Received Data}{section.5.2}% 42
 \BOOKMARK [2][-]{subsection.5.2.2}{Subband and Wideband Noise}{section.5.2}% 43
 \BOOKMARK [0][-]{chapter.6}{Results}{}% 44
-\BOOKMARK [1][-]{section.6.1}{Over-the-air Data Transmission}{chapter.6}% 45
+\BOOKMARK [1][-]{section.6.1}{Over-the-air User Data Transmission}{chapter.6}% 45
 \BOOKMARK [2][-]{subsection.6.1.1}{SISO}{section.6.1}% 46
 \BOOKMARK [2][-]{subsection.6.1.2}{MIMO}{section.6.1}% 47
-\BOOKMARK [0][-]{chapter.7}{Conclusion and Outlook}{}% 48
-\BOOKMARK [1][-]{section.7.1}{FPGA File Port}{chapter.7}% 49
-\BOOKMARK [1][-]{section.7.2}{Experiment with structured Channel}{chapter.7}% 50
-\BOOKMARK [1][-]{section.7.3}{TODO}{chapter.7}% 51
-\BOOKMARK [0][-]{appendix.A}{Troubleshooting}{}% 52
-\BOOKMARK [1][-]{section.A.1}{Boot Order}{appendix.A}% 53
-\BOOKMARK [1][-]{section.A.2}{Synchronisation of the USRPs}{appendix.A}% 54
-\BOOKMARK [0][-]{appendix.B}{Schematic Octoclock}{}% 55
-\BOOKMARK [0][-]{appendix.C}{Bibliography}{}% 56
+\BOOKMARK [1][-]{section.6.2}{CRS Data Transmission}{chapter.6}% 48
+\BOOKMARK [1][-]{section.6.3}{Inverse Neural Network Detection}{chapter.6}% 49
+\BOOKMARK [2][-]{subsection.6.3.1}{INN Constellation}{section.6.3}% 50
+\BOOKMARK [0][-]{chapter.7}{Conclusion and Outlook}{}% 51
+\BOOKMARK [1][-]{section.7.1}{FPGA File Port}{chapter.7}% 52
+\BOOKMARK [1][-]{section.7.2}{Experiment with structured Channel}{chapter.7}% 53
+\BOOKMARK [1][-]{section.7.3}{TODO}{chapter.7}% 54
+\BOOKMARK [0][-]{appendix.A}{Troubleshooting}{}% 55
+\BOOKMARK [1][-]{section.A.1}{Boot Order}{appendix.A}% 56
+\BOOKMARK [1][-]{section.A.2}{Synchronisation of the USRPs}{appendix.A}% 57
+\BOOKMARK [0][-]{appendix.B}{Schematic Octoclock}{}% 58
+\BOOKMARK [0][-]{appendix.C}{Bibliography}{}% 59
