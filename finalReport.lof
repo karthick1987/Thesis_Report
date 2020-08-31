@@ -22,14 +22,14 @@
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Channel Estimation Interpolation over Frequency}}}{43}{subfigure.9.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Channel Estimation Zero order hold over time}}}{43}{subfigure.9.2}%
 \contentsline {figure}{\numberline {5.10}{\ignorespaces ML Model for learning the network\relax }}{44}{figure.caption.33}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Illustration of the CRS signals and channel estimation coefficients used as the ($x$,$y$) pair\relax }}{44}{figure.caption.34}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Illustration of the CRS signals and channel estimation coefficients used as the ($x$,$y$) pair\relax }}{45}{figure.caption.34}%
 \contentsline {figure}{\numberline {5.12}{\ignorespaces Frequency response of the filter in Table \ref {tab:LPFCoeff}\relax }}{46}{figure.caption.36}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Magnitude Response}}}{46}{subfigure.12.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Phase Response}}}{46}{subfigure.12.2}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces XY plot of the real parts of the input signals $x_1$ and $x_2$ with noise\relax }}{49}{figure.caption.37}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces XY plot of the real parts of the received signals $y_1$ and $y_2$\relax }}{50}{figure.caption.38}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces XY plot of the real parts of the INN Estimated signals $\hat {y_1}$ and $\hat {y_2}$ \relax }}{51}{figure.caption.39}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces XY plot of the real parts of the input signals $x_1$ and $x_2$ with noise\relax }}{50}{figure.caption.37}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces XY plot of the real parts of the received signals $y_1$ and $y_2$\relax }}{51}{figure.caption.38}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces XY plot of the real parts of the INN Estimated signals $\hat {y_1}$ and $\hat {y_2}$ \relax }}{52}{figure.caption.39}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {A.1}{\ignorespaces The connections from the Octoclock to the USRP\relax }}{56}{figure.caption.40}%

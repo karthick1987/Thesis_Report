@@ -100,7 +100,7 @@ As a result of the above mentioned points and to guarentee future compatibility,
 
 \subsubsection{DL Transmitter}\label{ssec:LTEAFWTXOptions}
 
-The host side of the DL transmitter acts as the setup interface for the eNodeB and initiates the FPGA, the RF Frontend and monitors the status of the transmitter as well provides visual feedback of the TX power spectrum. Figure \ref{fig:DLRXAdvScreen} shows a screencapture of the TX Host panel.
+The host side of the DL transmitter acts as the setup interface for the eNodeB and initiates the FPGA, the RF Frontend and monitors the status of the transmitter as well provides visual feedback of the TX power spectrum. Figure \ref{fig:DLTXScreen} shows a screencapture of the TX Host panel.
 
 %TODO Add TX figure
 
@@ -108,7 +108,7 @@ The host side of the DL transmitter acts as the setup interface for the eNodeB a
     \centering
     \includegraphics[width=\linewidth]{images/SISORXADVEdited.png}
     \caption{A Screencapture of the DL TX(eNodeB) in the application window}
-    \label{fig:DLRXAdvScreen}
+    \label{fig:DLTXScreen}
 \end{figure}
 
 The Table \ref{tab:TXUSRPParam} shows the setup parameters used on the host.
@@ -265,10 +265,9 @@ The RX IQ processing is more complex than the TX IQ processing chain as it perfo
 Once the above mentioned apparatus was setup, it was ready to be used to log data. At the time of writing this thesis there was another Bachelor thesis being conducted in parallel to use machine learning to reverse the effects of the Channel distortions.
 
 One of the main topics of communication technology is to reconstruct data at the
-receiver that was transmitted over a non-trivial channel. Figure \ref{fig:MLModel} shows the ML model being used to train the inverse neural network to retrive the sent data. It is only necessary to feed the trained network with the received signal $y$ and it then computes the original signal $x$. The transmitted signals $x$ are mapped to the received signals $y$ in the natural way and then the origial signals are reconstructed by inverting this mapping in the online phase. The mapping is done with the help of invertible and composable transformation 
+receiver that was transmitted over a non-trivial channel. Figure \ref{fig:MLModel} shows the ML model being used to train the inverse neural network to retrive the sent data. It is only necessary to feed the trained network with the received signal $y$ and it then computes the original signal $x$. The transmitted signals $x$ are mapped to the received signals $y$ in the natural way and then the origial signals are reconstructed by inverting this mapping in the online phase. The mapping is done with the help of invertible and composable transformation.
 
-
-The standard way of using Neural Networks for this task is to map the received signals y to the transmitted signals x \cite{JMMLINN}. For training the neural network, transmitted and received symbols and their corresponding Subband Noise are required.
+The standard way of using Neural Networks for this task is to map the received signals $y$ to the transmitted signals $x$ \cite{JMMLINN}. For training the neural network, transmitted and received symbols and their corresponding Subband Noise are required.
 
 \begin{center}
     \begin{figure}[H]
@@ -294,7 +293,7 @@ The standard way of using Neural Networks for this task is to map the received s
 
 With the Host applications modifications mentioned in Section \ref{ssec:LTEAFWHostSWMods}, the unequalized data was received and recorded by the RX USRP. Due to Host performance degradation (details in Section \ref{sec:OTADataTrans}) custom user data was susceptible to data loss.
 
-Given the time constraints modifying the FPGA bit file was not an option as this step involved recompiling the whole FPGA project. Once compiled the bitfile had to be tested and verified and given the tight timeframe, a decision was made to use the CRS symbols as the ($x$,$y$) pairs that were transmitted and received.
+Given the time constraints modifying the FPGA bit file was not an option as this step involved recompiling the whole FPGA project. Once compiled the bitfile had to be tested and verified and given the tight timeframe. Therefore a decision was made to use the CRS symbols as the ($x$,$y$) pairs that were transmitted and received. This was the only signal that was forwarded from the FPGA to the host, that was easy to use, already frame synchronised and spanned the whole bandwidth.
 
 Figure \ref{fig:XYPairsCRS} shows that the CRS Ant 1 symbols are intended for the frame to be sent on TX Port 1 where as the CRS Ant 2 symbols are intended for the frame to be transmitted on TX Antenna 2. The greyed out resource blocks are meant as placeholders where no data can be sent on them.
 
@@ -313,7 +312,7 @@ The SINR estimation algorithm is based on filtering the potentially noise channe
 
 The SINR value is calculated per subband, each of which occupies 8PRBs. so SINR0 is subband SINR for PRBs 0\ldots7, SINR1 is for PRBs 8\ldots15, etc\ldots It has a fixed point format with 8 bits signed fixed-point number with 6 integer and 2 fractional bits (range -32.00 \si{\dB} to +31.75 \si{\dB})
 
-According to NI, to further improve the provided SINR estimates an additional look-up table based fine-calibration stage was implemented in the application framework. The underlying look-up table has been derived by fine-calibration measurements
+According to NI, to further improve the provided SINR estimates an additional look-up table based fine-calibration stage was implemented in the application framework. The underlying look-up table has been empirically derived by fine-calibration measurements.
 
 \begin{table}[H]
     \begin{center}

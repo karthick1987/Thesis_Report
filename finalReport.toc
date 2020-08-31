@@ -54,12 +54,12 @@
 \contentsline {subsubsection}{\numberline {5.1.3.2}DL RX IQ Processing}{41}{subsubsection.5.1.3.2}%
 \contentsline {section}{\numberline {5.2}Application Example}{43}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}Transmitted and Received Data}{44}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Subband and Wideband Noise}{45}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.2}Subband and Wideband Noise}{44}{subsection.5.2.2}%
 \contentsline {chapter}{\numberline {6}Results}{47}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Over-the-air User Data Transmission}{47}{section.6.1}%
 \contentsline {subsection}{\numberline {6.1.1}SISO}{47}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}MIMO}{47}{subsection.6.1.2}%
-\contentsline {section}{\numberline {6.2}CRS Data Transmission}{48}{section.6.2}%
+\contentsline {subsection}{\numberline {6.1.2}MIMO}{48}{subsection.6.1.2}%
+\contentsline {section}{\numberline {6.2}CRS Data Transmission}{49}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Inverse Neural Network Detection}{49}{section.6.3}%
 \contentsline {subsection}{\numberline {6.3.1}INN Constellation}{49}{subsection.6.3.1}%
 \contentsline {chapter}{\numberline {7}Conclusion and Outlook}{53}{chapter.7}%
