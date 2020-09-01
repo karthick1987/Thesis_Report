@@ -102,18 +102,16 @@ As a result of the above mentioned points and to guarentee future compatibility,
 
 The host side of the DL transmitter acts as the setup interface for the eNodeB and initiates the FPGA, the RF Frontend and monitors the status of the transmitter as well provides visual feedback of the TX power spectrum. Figure \ref{fig:DLTXScreen} shows a screencapture of the TX Host panel.
 
-%TODO Add TX figure
-
-\begin{figure}[H]
+\begin{figure}[!htb]
     \centering
-    \includegraphics[width=\linewidth]{images/SISORXADVEdited.png}
+    \includegraphics[width=\linewidth]{images/MIMOTX.png}
     \caption{A Screencapture of the DL TX(eNodeB) in the application window}
     \label{fig:DLTXScreen}
 \end{figure}
 
 The Table \ref{tab:TXUSRPParam} shows the setup parameters used on the host.
 
-\begin{table}[H]
+\begin{table}[!htb]
     \begin{center}
         \begin{tabular}{|l|l|}
             \hline
@@ -157,14 +155,14 @@ The DL RX (UE) mode screens are shown in Figures \ref{fig:DLRXScreen} and \ref{f
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{images/SISORXEdited.png}
+    \includegraphics[width=\linewidth]{images/MIMORX.png}
     \caption{A Screencapture of the DL RX(UE) side application window}
     \label{fig:DLRXScreen}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{images/SISORXADVEdited.png}
+    \includegraphics[width=\linewidth]{images/MIMORXADV.png}
     \caption{A Screencapture of the DL RX(UE) Advanced Options in the application window}
     \label{fig:DLRXAdvScreen}
 \end{figure}
@@ -246,7 +244,8 @@ The RX IQ processing is more complex than the TX IQ processing chain as it perfo
     \item \textbf{Resource demapping} -
         The resource demapper selects the 1200 allocated subcarriers by removing the surrounding whitespace and the DC carrier in the center. Then it generates the timing information for each sample and the resource grid by marking each sample for its corresponding channel by using a Boolean cluster. The resource mapping is based on a fixed frame structure configuration described in the LTE specifications. All subsequent modules use this Boolean cluster with elements for each LTE channel to determine if this sample is relevant.
     \item \textbf{CRS based channel estimation and equalization} -
-        The FFT output data is fed into two separate channel estimation blocks running in parallel. The first channel estimation is based on the CRS. The channel estimate values are calculated by conjugate complex multiplications. A linear interpolation is applied in frequency domain between adjacent reference symbols as explained in Section \ref{ssec:PilotAssistedChEst}. On the edges of the symbol, the nearest estimated value is replicated (zero order hold). OFDM symbols not containing CRS sequences rely on the last channel estimation (zero order hold in time) as shown in Figure \ref{fig:ChEstInterpolation}
+        The FFT output data is fed into two separate channel estimation blocks running in parallel. The first channel estimation is based on the CRS. The channel estimate values are calculated by conjugate complex multiplications. A linear interpolation is applied in frequency domain between adjacent reference symbols as explained in Section \ref{ssec:PilotAssistedChEst}. On the edges of the symbol, the nearest estimated value is replicated (zero order hold). OFDM symbols not containing CRS sequences rely on the last channel estimation (zero order hold in time) as shown in Figure \ref{fig:ChEstInterpolation}.
+        One important flaw inherent to the hardware is the phase synchronisation between the RF front ends. The problem is explained extensively in Section \ref{sec:USRPSync}. This phase difference although existing on the transmitter side, can be corrected on the receiver side as the hardware based phase offset is constant for every run of the application. The phase offset compensation happens within FPGA in the channel estimation sub section. Once calculated the phase correction is applied to all the subcarriers and time symbols of the frame.
     \item \textbf{UERS based channel estimation and equalization} -
         This signalling scheme is available for use but not actively used in this thesis.
 \end{itemize}
@@ -342,3 +341,5 @@ According to NI, to further improve the provided SINR estimates an additional lo
     \caption{Frequency response of the filter in Table \ref{tab:LPFCoeff}}%
     \label{fig:SINRLPFResp}%
 \end{figure}
+
+All the code to this project can be found on a publicly visible the Github page \footnote{\url{https://github.com/karthick1987/MIMOTestJig}}. The instructions on the structure of the the project and how to run the applications can be found in the README.

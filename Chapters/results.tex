@@ -27,7 +27,7 @@ iperf.exe -s -u -B 127.0.0.1 -i 1 -p 60000
 
 A SISO communications channel was setup with the Tx and Rx settings as mentioned in Table \ref{tab:TXUSRPParam} and \ref{tab:RXUSRPParam} using the LTE AFW template. On conducting UDP data flow tests, it was observed that there were no packet drops with a UDP data block loss rate of $0\%$.
 
-As a next step a short video clip was fed into the UDP stream of the transmitter and received with no video and audio frame drops at all. The demo video can be seen here \cite{}.
+As a next step a short video clip was fed into the UDP stream of the transmitter and received with no video and audio frame drops at all. The demo video can be seen here \footnote{\url{https://drive.google.com/file/d/1PFWkfSUSSI4UC-m7nrF5EjYPyTy7iTYG/view?usp=sharing}}.
 
 \subsection{MIMO}\label{ssec:MIMOOTA}
 
@@ -93,9 +93,7 @@ And the related wideband SINR for each time symbol was also recorded, this was t
 
 \subsection{INN Constellation}\label{ssec:INNConstellation}
 
-Figure \ref{fig:INNxn} shows the input CRS signals added with random received noise wideband noise for the different time instants. If the signal was added with the wideband noise, then there are infinite mapping possibilties between the input and the output, as one point could map to a set of infinite continuous point on the output. And this would be a NP Hard problem. To avoid this the approach of adding the wideband noise was taken to create a clusters of inputs and corresponding outputs to form a bijective mapping. This was computable and could be used by the network. $x_1$ and $x_2$ are the real parts of the CRS signals for antenna port 0 and antenna port 1 respectively. These are QPSK signals that can take the possible values  $\pm \frac{1}{\sqrt{2}} \pm j \frac{1}{\sqrt{2}}$. Just using the real parts we have 4 possibilites where $x_1$ and $x_2$ can assume the value of $\pm \frac{1}{\sqrt{2}}$ each. But due to the inherent structure of the CRS symbols in the LTE standard, only one of the possible above combinations is found namely, +$\frac{1}{\sqrt{2}}$,-$\frac{1}{\sqrt{2}}$
-%\begin{equation} \label{eq:QPSKSymbols} 
-%\end{equation}
+Figure \ref{fig:INNxn} shows the input CRS signals added with random received noise wideband noise for the different time instants. If the signal was added with the wideband noise, then there are infinite mapping possibilties between the input and the output, as one point could map to a set of infinite continuous point on the output. And this would be a NP Hard problem. To avoid this the approach of adding the wideband noise was taken to create a clusters of inputs and corresponding outputs to form a bijective mapping. This was computable and could be used by the network. $x_1$ and $x_2$ are the real parts of the CRS signals for antenna port 0 and antenna port 1 respectively. These are QPSK signals that can take the possible values  $\pm \frac{1}{\sqrt{2}} \pm j \frac{1}{\sqrt{2}}$ each. Just using the real parts we have 4 possibilites where $x_1$ and $x_2$ can assume the value of $\pm \frac{1}{\sqrt{2}}$ each. But due to the inherent structure of the CRS symbols in the LTE standard, only one of the possible above combinations is found namely, +$\frac{1}{\sqrt{2}}$,-$\frac{1}{\sqrt{2}}$.
 
 \begin{figure}[!htb]
     \centering
@@ -104,16 +102,22 @@ Figure \ref{fig:INNxn} shows the input CRS signals added with random received no
     \label{fig:INNxn}
 \end{figure}
 
-The Figure \ref{fig:INNyn} shows the received channel estimates $y_1 = h_{11}$ and $y_2 = h_{22}$. The phase shift in the various samples, represents the channel distortion effects.
+The Figure \ref{fig:INNyn} shows the received channel estimates $y_1 = h_{11}$ and $y_2 = h_{22}$. As power of this signal is highly attenuated as the air interface leads to a lot of losses. The phase shift in the various samples, represents the channel distortion effects.
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{images/INNyn.eps}
     \caption{XY plot of the real parts of the received signals $y_1$ and $y_2$}
     \label{fig:INNyn}
 \end{figure}
 
-\begin{figure}[!htb]
+The Figure \ref{fig:INNyResult} is the output of the INN which estimates the signals $y$ based on the training data the neural network was fed with. On clustering the input and the estimated data in each of the 4 quarters of the XY plot, it was found that the detection accuracy was close to $\textbf{22}\%$.
+
+It is to be noted that only one pair of input data namely +$\frac{1}{\sqrt{2}}$,-$\frac{1}{\sqrt{2}}$ was available instead of all 4 possibilities namely $\pm \frac{1}{\sqrt{2}}$,$\pm \frac{1}{\sqrt{2}}$. This was due to the fact that the CRS symbols chosen as the $(x,y)$ transmit and receive pair (as mentioned earlier) are in fact a predefined sequence as per the LTE standard.
+
+One particular reason for the low detection rate could potentially be because of the complexity of the channel on the one hand and the complexity of the neural network on the otherhand. It is possible to achieve better results with some fine tuning of the neural network.
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{images/INNResult.eps}
     \caption{XY plot of the real parts of the INN Estimated signals $\hat{y_1}$ and $\hat{y_2}$ }
