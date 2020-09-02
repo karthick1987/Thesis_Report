@@ -1,15 +1,17 @@
 \chapter{Conclusion and Outlook}\label{ch:conOutlook}
 
-A partially functioning MIMO experimental setup was achieved in this thesis. It is partial because of the dropped user data packets and secondly as its not a truely synchronised transmitter system. As explained in Section \ref{sssec:DLRXIQProc}, the hardware is not a true synchronous transceiver meaning that the 2 transmitting antennas are not time synchronised due to the phase differences in the RF paths. This is an extremely limiting factor in the ability to run custom MIMO experiments. Also given the limitations in the software and hardware delivered to MSV from NI, this was the best possible outcome with the hardware at hand. However with the modification listed below, better results could be achieved.
+A partially functioning MIMO experimental setup was achieved in this thesis. Firstly it is partial because of the dropped user data packets and secondly as its not a truely synchronised transmitter system. As explained in Section \ref{sssec:DLRXIQProc}, the hardware is not a true synchronous transceiver meaning that the 2 transmitting antennas are not time synchronised due to the phase differences in the RF paths. This is an extremely limiting factor in the ability to run custom MIMO experiments. Also given the limitations in the software and hardware delivered to MSV from NI, this was the best possible outcome with the hardware at hand. However with the modification listed below, better results could be achieved.
 
 \section{FPGA File Port}\label{sec:FPGAChange}
-Currently the FPGA Hardware design is where all the data is being received from the RF Front end and processed. This is a pre compiled bit file delivered by NI to work with their version of the LTE AFW Software. To adapt the design to suit the needs of the current research, the FPGA bit file has to be ported to suit our design needs.
+Currently the FPGA Hardware design is where all the data is being received from the RF Front end and processed in real time. This FPGA hardware file is a pre compiled bit file delivered by NI to work with the older version of the LTE AFW Software. To adapt the design to suit the needs of the current research, the FPGA bit file has to be ported over to the latest version of Labview NXG to suit the design needs of the team.
 
 \section{Transmitting User Defined Data}\label{sec:TransUserDefData}
-Once the FPGA bit file has been modified, a custom pattern can be transmitted in the shared data channel (PDSCH) instead of the CRS signals. The CRS signals were chosen as they were only a work around, and they enabled quick prototyping of the MIMO system without FPGA bitfile modification. More profiling has to be done to eliminate the data loss on the MIMO systems. Once identified, a pseudo random pattern with a fixed seed can also be generated and sent over the air. Finally there is also the possibility of sending custom bit streams over the air.
+Once the FPGA bit file has been modified, a user defined pattern can be transmitted through the shared data channel (PDSCH) instead of the CRS signals. The CRS signals were chosen as they were only a work around, and they enabled quick prototyping of the MIMO system without FPGA bitfile modification.
+
+To be able to use the PDSCH channel, the implementation has to be changed to eliminate the data loss on the MIMO systems. Once the source of the packet drop has been identified, a pseudo random pattern with a fixed seed can also be generated and sent over the air. Finally there is also the possibility of sending custom bit streams over the air.
 
 \section{Experiments with structured Channel}\label{sec:StrucChannel}
-Structured channels could first be built using reflectors, instead of having a single Line of Sight (LOS) channel. The structure of the channel can be verified (using a Singular Value Decomposition of the channel matrix) if and only if all the channel coefficients are available.
+Structured channels could first be built using reflectors, instead of having a single Line of Sight (LOS) channel. The structure of the channel can be verified (using a Singular Value Decomposition of the channel matrix) if and only if all the channel coefficients are available. Once this channel has been created, experiments can be run for with this channel.
 
 \section{Wideband Antennas}\label{sec:WdBdAntennas}
 

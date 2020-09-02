@@ -1,0 +1,301 @@
+%
+% msvpresentation.sty
+%
+% This style file defines style options for beamer presentations
+%
+
+%----------------------------------------------------------------------
+% Identify package
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{msvpresentation}%
+    [2016/06/24 v0.1 %
+    msvpresentation.sty MSV style for beamer presentations]
+
+%----------------------------------------------------------------------
+% Class options
+%
+\RequirePackage{kvoptions}%
+\SetupKeyvalOptions{family=msvpresentation,prefix=msvpresentation@}%
+\DeclareBoolOption{colorblock}
+\DeclareBoolOption{frameblock}
+\DeclareBoolOption{bw}
+% Process options
+\DeclareOption*{}
+\DeclareDefaultOption{}
+\ProcessOptions*\relax
+\ProcessKeyvalOptions*\relax
+
+\newcommand\msvpresentation@basecolor{TUMDarkerBlue}
+\newcommand\msvpresentation@secondarycolor{TUMBlue} % Color for TUM Logo
+\ifmsvpresentation@bw
+  \renewcommand\msvpresentation@basecolor{black}
+  \renewcommand\msvpresentation@secondarycolor{black}
+\fi
+
+%----------------------------------------------------------------------
+% Setup Beamer basics and fonts
+%
+\usetheme{default}
+\mode<presentation>
+\usefonttheme{professionalfonts} % do not mess with fonts
+\RequirePackage[scaled]{helvet}
+\beamertemplatenavigationsymbolsempty
+\setbeamerfont{footnote}{size=\tiny}
+\mode<all>
+
+%----------------------------------------------------------------------
+% Margins and spacings
+%
+\newlength{\outermargin}
+\setlength{\outermargin}{0.03\paperwidth}
+\newlength{\frametitlemargin} % top magin for frame titles
+\setlength{\frametitlemargin}{4\outermargin} % low title for nice looks
+
+% a posteriori adjustment of headline spacing
+\newcommand\raisetitle{\addtolength\frametitlemargin{-\outermargin}}
+\newcommand\lowertitle{\addtolength\frametitlemargin{\outermargin}}
+
+\setbeamersize{text margin left=\outermargin,text margin right=\outermargin}
+\setbeamertemplate{frametitle}{\vspace*{-2.325em}\parbox[t]{0.87\textwidth}{\noindent\setlength\baselineskip{12pt}\insertframetitle}}% undo beamercolorbox spacings
+
+
+% Lists
+\setbeamercolor{itemize subitem}{fg=black}
+\setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
+\setbeamertemplate{itemize items}{\raise1.5pt\hbox{\tiny$\bullet$}}
+\setbeamertemplate{itemize subitem}{\color{black}\small$-$}
+
+%----------------------------------------------------------------------
+% Define some MSV headline and footline templates
+%
+% headline templates:
+%   no              nothing
+%   tum             TUM Logo right, frame header high
+%   msvtum          TUM Logo right, MSV/EI/TUM left, frame header low
+%
+% footline templates:
+%   no              nothing
+%   minimal         frame number, no line
+%   author          author, frame number
+%   authortitle     author, title, frame number
+%
+\defbeamertemplate*{headline}{no}{\vskip\outermargin}
+
+\defbeamertemplate*{headline}{tum}{%
+\makebox[0pt][t]{%
+\raisebox{-0.035\paperwidth}[0pt][0pt]{\raisebox{-\outermargin}[0pt][0pt]{%
+  \hskip\paperwidth\llap{\TUMlogo{height=0.035\paperwidth,color=\msvpresentation@secondarycolor}\hskip\outermargin}
+}}}%
+ \vskip\frametitlemargin%
+}
+
+\defbeamertemplate*{headline}{msvtum}{%
+\makebox[0pt][t]{%
+\raisebox{-\outermargin}[0pt][0pt]{%
+  \hskip\outermargin%
+    \begin{minipage}[t]{0.5\paperwidth}%
+      \color{\msvpresentation@secondarycolor}\fontsize{3.5pt}{7pt}\selectfont \MSVname\vskip0.8pt\EIname\phantom{g}\vskip0.8pt\TUMname
+    \end{minipage}
+  }%
+}
+\makebox[0pt][t]{%
+\raisebox{-0.035\paperwidth}[0pt][0pt]{\raisebox{-\outermargin}[0pt][0pt]{%
+  \hskip\paperwidth\llap{\TUMlogo{height=0.035\paperwidth,color=\msvpresentation@secondarycolor}\hskip\outermargin}
+}}%
+}%
+  \vskip\frametitlemargin%
+}
+
+
+\defbeamertemplate*{footline}{no}{}
+
+\defbeamertemplate*{footline}{minimal}{%
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=1.0\paperwidth,ht=2mm,dp=2mm,center]{}%
+            \insertframenumber%
+        \end{beamercolorbox}%
+    }%
+    \vskip 0pt%
+}
+
+\defbeamertemplate*{footline}{author}{%
+    \leavevmode%
+    \vskip 1pt%
+    \hbox{%
+        \begin{beamercolorbox}[wd=\paperwidth,ht=2mm,dp=2mm]{}%
+          \makebox[\outermargin]{}%
+          \insertshortauthor%
+          \hfill%
+          \insertframenumber%
+          \makebox[\outermargin]{}%
+        \end{beamercolorbox}%
+    }%
+    \vskip 0pt%
+}
+
+\defbeamertemplate*{footline}{authortitle}{%
+    \leavevmode%
+    \vskip 1pt%
+    \hbox{%
+        \begin{beamercolorbox}[wd=\paperwidth,ht=2mm,dp=2mm]{}%
+          \makebox[\outermargin]{}%
+          \insertshortauthor\; | \;\insertshorttitle%
+          \hfill%
+          \insertframenumber%
+          \makebox[\outermargin]{}%
+        \end{beamercolorbox}%
+    }%
+    \vskip 0pt%
+}
+
+%----------------------------------------------------------------------
+% Define MSV title page templates
+%
+\setbeamerfont{title}{size={\fontsize{17}{17}},parent=structure}
+\setbeamercolor{title}{fg=black}
+
+\defbeamertemplate*{title page}{tum}[1][]
+{
+  \begingroup
+    \begin{beamercolorbox}[sep=0pt,left,#1]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \par\vskip1em%
+    \begin{beamercolorbox}[sep=0pt,left,#1]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[sep=0pt,left,#1]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[sep=0pt,left,#1]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}%
+    \vfill%
+      {\usebeamercolor[fg]{titlegraphic}
+        \hfill
+        \ifmsvpresentation@bw %
+          \includegraphics[height=0.4\paperheight]{TUMUhrenturmBW.png}% star-version not working on luise
+        \else%
+          \includegraphics[height=0.4\paperheight]{TUMUhrenturm.png}% star-version not working on luise
+        \fi%
+        \vspace*{-2em}
+      }%
+  \endgroup%
+}
+
+%----------------------------------------------------------------------
+% Recalculate height of header and footer at each frame
+%
+\RequirePackage{etoolbox}
+\pretocmd{\beamer@@@@frame}{%
+\addtocounter{framenumber}{1}%
+\beamer@calculateheadfoot%
+\addtocounter{framenumber}{-1}}{}{}
+
+%----------------------------------------------------------------------
+% Block environments
+%
+% This is from the old msvbeamer.cls
+% Some workarounds are needed to allow for framed blocks (option frameblock)
+%
+
+% Option: colorblock
+% Use light blue backgrounds to highlight blocks
+\ifmsvpresentation@colorblock
+    \setbeamercolor{block title}{fg=\msvpresentation@basecolor,bg=\msvpresentation@basecolor!7!TUMWhite}%
+    \setbeamercolor{block body}{fg=TUMBlack,bg=\msvpresentation@basecolor!7!TUMWhite}%
+    \setbeamercolor{block title example}{fg=TUMBeamerGreen,bg=\msvpresentation@basecolor!7!TUMWhite}%
+    \setbeamercolor{block body example}{fg=TUMBlack,bg=\msvpresentation@basecolor!7!TUMWhite}%
+    \setbeamercolor{block title alerted}{fg=TUMBeamerRed,bg=\msvpresentation@basecolor!7!TUMWhite}%
+    \setbeamercolor{block body alerted}{fg=TUMBlack,bg=\msvpresentation@basecolor!7!TUMWhite}%
+\fi
+
+% Option: frameblock
+% Use framed boxes to highlight blocks
+
+\ifmsvpresentation@frameblock
+    \setbeamercolor{block title}{fg=\msvpresentation@basecolor,bg=\msvpresentation@basecolor}%
+    \setbeamercolor{block body}{fg=TUMBlack,bg=TUMWhite}%
+    \setbeamercolor{block title example}{fg=TUMBeamerGreen,bg=TUMBeamerGreen}%
+    \setbeamercolor{block body example}{fg=TUMBlack,bg=TUMWhite}%
+    \setbeamercolor{block title alerted}{fg=TUMBeamerRed,bg=TUMBeamerRed}%
+    \setbeamercolor{block body alerted}{fg=TUMBlack,bg=TUMWhite}%
+
+    \definecolor{msvpresentation@block@titlecolor}{named}{TUMBlack}
+    \definecolor{msvpresentation@block@textcolor}{named}{TUMBlack}
+    \definecolor{msvpresentation@block@rulecolor}{named}{TUMBlack}
+    \definecolor{msvpresentation@block@bgcolor}{named}{TUMWhite}
+    \newlength{\msvpresentation@block@rule}\setlength{\msvpresentation@block@rule}{1pt}
+    \newlength{\msvpresentation@block@sep}\setlength{\msvpresentation@block@sep}{7pt}
+    \newlength{\msvpresentation@block@titlesep}\setlength{\msvpresentation@block@titlesep}{0pt}
+    \newlength{\msvpresentation@block@textwidth}
+    \newsavebox{\msvpresentation@block@content}
+    \newenvironment{msvpresentation@block}[1]{%
+      \setlength{\fboxrule}{\msvpresentation@block@rule}%
+      \setlength{\fboxsep}{\msvpresentation@block@sep}%
+      \setlength{\msvpresentation@block@textwidth}{\textwidth}%
+      \addtolength{\msvpresentation@block@textwidth}{-2\msvpresentation@block@rule}%
+      \addtolength{\msvpresentation@block@textwidth}{-2\msvpresentation@block@sep}%
+      \begin{lrbox}{\msvpresentation@block@content}%
+        \isempty{#1}%
+        \ifempty%
+        \else%
+        \hbox\bgroup\begin{minipage}{\msvpresentation@block@textwidth}\begin{flushleft}%
+            \vskip 0pt%
+            {\usebeamerfont*{block title}\color{msvpresentation@block@titlecolor}#1}\vskip\msvpresentation@block@titlesep%
+            \color{msvpresentation@block@textcolor}%
+          }{%
+            % \vskip -4pt \vskip 4pt%
+          \end{flushleft}\end{minipage}\egroup\end{lrbox}%
+        \fi%
+      % draw the whole thing
+      \ifmsvpresentation@colorblock%
+      \colorbox{msvpresentation@block@bgcolor}{\usebox{\msvpresentation@block@content}}%
+      \else%
+      \fcolorbox{msvpresentation@block@rulecolor}{msvpresentation@block@bgcolor}{\usebox{\msvpresentation@block@content}}%
+      \fi
+    }
+
+    \renewenvironment{block}[1]{%
+      \usebeamercolor{block title}
+      \definecolor{msvpresentation@block@titlecolor}{named}{fg}%
+      \definecolor{msvpresentation@block@rulecolor}{named}{bg}%
+      \usebeamercolor{block body}
+      \definecolor{msvpresentation@block@textcolor}{named}{fg}%
+      \definecolor{msvpresentation@block@bgcolor}{named}{bg}%
+      \begin{msvpresentation@block}{#1}%
+      }{%
+      \end{msvpresentation@block}%
+    }%
+    \renewenvironment{exampleblock}[1]{%
+      \usebeamercolor{block title example}
+      \definecolor{msvpresentation@block@titlecolor}{named}{fg}%
+      \definecolor{msvpresentation@block@rulecolor}{named}{bg}%
+      \usebeamercolor{block body example}
+      \definecolor{msvpresentation@block@textcolor}{named}{fg}%
+      \definecolor{msvpresentation@block@bgcolor}{named}{bg}%
+      \begin{msvpresentation@block}{#1}%
+      }{%
+      \end{msvpresentation@block}%
+    }%
+    \renewenvironment{alertblock}[1]{%
+      \usebeamercolor{block title alerted}
+      \definecolor{msvpresentation@block@titlecolor}{named}{fg}%
+      \definecolor{msvpresentation@block@rulecolor}{named}{bg}%
+      \usebeamercolor{block body alerted}
+      \definecolor{msvpresentation@block@textcolor}{named}{fg}%
+      \definecolor{msvpresentation@block@bgcolor}{named}{bg}%
+      \begin{msvpresentation@block}{#1}%
+      }{%
+      \end{msvpresentation@block}%
+    }%
+
+\fi
+
