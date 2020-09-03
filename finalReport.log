@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.7.10)  2 SEP 2020 15:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.7.10)  3 SEP 2020 15:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1402,20 +1402,10 @@ Underfull \hbox (badness 10000) in alignment at lines 106--110
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 80.0pt on input line 1.
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--11
-
- []
-
 [5
 
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
-
- []
-
-) [6] (./Chapters/systemModel.tex
+]) [6] (./Chapters/systemModel.tex
 Chapter 2.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1992,7 +1982,7 @@ s/t1xtt.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/sh
 are/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts
 /type1/public/newtx/ztmb.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/zt
 mr.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on finalReport.pdf (79 pages, 2174165 bytes).
+Output written on finalReport.pdf (79 pages, 2174122 bytes).
 PDF statistics:
  1264 PDF objects out of 1440 (max. 8388607)
  1093 compressed objects within 11 object streams

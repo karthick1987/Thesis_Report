@@ -1,0 +1,5 @@
+\babel@toc {english}{}
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{A Typical Slide}{2}{0}{1}
+\beamer@sectionintoc {2}{Main Part}{20}{0}{2}
+\beamer@sectionintoc {3}{Conclusion}{21}{0}{3}

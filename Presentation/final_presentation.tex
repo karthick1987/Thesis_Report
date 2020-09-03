@@ -1,6 +1,41 @@
 \documentclass[10pt,t]{beamer}
 \usepackage{msvcommon}
 
+%Imported from Thesis Report
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage[titletoc]{appendix}
+\usepackage{siunitx}
+
+\usepackage{listings}
+\usepackage{soul,xcolor}\lstset{escapeinside={(*@}{@*)}}
+
+% User defined Listing
+\lstdefinestyle{DOS}
+{
+    backgroundcolor=\color{white},
+    basicstyle=\scriptsize\color{black}\ttfamily
+}
+
+\usepackage{hyperref}
+\usepackage{pdfpages}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage[acronym,nomain,nonumberlist,toc,shortcuts]{glossaries}
+
+
+% Packages for Jonas Maas's Thesis Tikz block diagrams
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+\newcommand{\B}[1]{\boldsymbol{#1}}
+\newcommand{\Bhat}[1]{\boldsymbol{\hat{#1}}}
+\newcommand{\e}[1]{\emph{#1}}
+
+\usepackage{caption}
+
 % -------------------------------------------------------------------------------
 % ** Input Encoding
 % - utf8x is recommended at MSV
@@ -21,13 +56,11 @@
 % Note: final argument to babel sets the main language
 %
 \ifxetex%
-  \usepackage{polyglossia}
-%  \setmainlanguage{english}
-%  \setotherlanguage{german}
-  \setmainlanguage{german}
-  \setotherlanguage{english}
+\usepackage{polyglossia}
+  \setmainlanguage{english}
+  \setotherlanguage{german}
 \else
-  \usepackage[english,ngerman]{babel} 
+  \usepackage[ngerman,english]{babel}
 \fi
 
 
@@ -85,17 +118,96 @@
 \section{Introduction}
 \subsection{A Typical Slide}
 
-
 %Intro Page
 
 \begin{frame}{Introduction}
-Dieser Folienmaster gilt bei offiziellen Präsentationen im Rahmen der TUM. Es ist darauf zu achten,
-dass wir uns in einem durchgängigen Layout präsentieren.
 
-\bigskip % Use \bigskips between paragraphs (do not set \parskip as this distorts block environments)
+    \begin{itemize}
+        \item Channel Estimation is vital for any Wireless systems
+        \item Required to revert the channel propogation effects
 
-Abweichungen vom vorgegebenen Layout bitte auf ein Minimum reduzieren.
+            \pause
+
+        \item For perfect Channel estimation, pilot symbols are to be placed on all sub carriers
+        \item For massive MIMO $\Rightarrow$ No. of Antennas $\propto$ Pilot overhead
+
+            \pause
+        \item Current reseach for potential solutions include
+            \begin{itemize}
+                \item Model based channel estimation % where a 3D model of the environment is saved and ray tracing is used to find the Channel
+                \item Machine learning based algorithms to find the channel
+            \end{itemize}
+    \end{itemize}
+
+%\bigskip % Use \bigskips between paragraphs (do not set \parskip as this distorts block environments)
+
 \end{frame}
+
+\begin{frame}{Summary of Thesis}
+    \begin{itemize}
+        \item Setup a MIMO Test Jig
+            \pause
+        \item Collect real world experimental Tx-Rx data from the MIMO Setup
+            \pause
+
+        \item Use the data to train a Inverted Neural Network as shown below
+            \bigskip
+
+            \begin{center}
+                \begin{figure}[H]
+                    \resizebox{8cm}{!}{
+                        \begin{tikzpicture}
+                            \tikzstyle{network} = [rectangle, draw, minimum height = 15mm, minimum width = 20mm, line width = 0.5mm]
+
+                            \node (a) at (0, 0) {$\Bhat{x}_j$};
+                            \node[network] at (3, 0) (b) {Singlestream ML};
+                            \node[network] at (7, 0) (c) {$\text{INN}^{-1}$};
+                            \node (d) at (11, 0) {$\B{y}_j = \B{Hx}_j + \B{n}_j$};
+
+                            \draw[->, line width = 0.5mm] (d) to (c);
+                            \draw[->, line width = 0.5mm] (c) to node [above] {$\Bhat{x}_{\text{estim}, j}$} (b) ;
+                            \draw[->, line width = 0.5mm] (b) to (a);
+
+                        \end{tikzpicture}
+                    }
+                    \caption{ML Model for learning the network}
+                    \label{fig:MLModel}
+                \end{figure}
+            \end{center}
+
+
+            %\begin{itemize}
+            %    \item Machine learning based channel prediction algorithms
+            %\end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Summary of Thesis}
+
+    \begin{itemize}
+        \item LTE Fundamentals
+        \item Possible Options for a MIMO Setup
+        \item Chosen Experimental Setup
+        \item Results
+        \item Conclusions and future work
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{LTE Fundamentals}
+\end{frame}
+
+\begin{frame}{Possible Options for a MIMO Setup}
+\end{frame}
+
+\begin{frame}{Experimental Setup}
+\end{frame}
+
+\begin{frame}{Demo}
+\end{frame}
+
+\begin{frame}{Results}
+\end{frame}
+
 
 {
     \begin{frame}{A Slide with a different header}
