@@ -15,32 +15,64 @@
 \headcommand {\beamer@framepages {9}{9}}
 \headcommand {\slideentry {1}{1}{5}{10/10}{A Typical Slide}{0}}
 \headcommand {\beamer@framepages {10}{10}}
-\headcommand {\slideentry {1}{1}{6}{11/11}{A Typical Slide}{0}}
-\headcommand {\beamer@framepages {11}{11}}
-\headcommand {\slideentry {1}{1}{7}{12/12}{A Typical Slide}{0}}
-\headcommand {\beamer@framepages {12}{12}}
-\headcommand {\slideentry {1}{1}{8}{13/13}{A Typical Slide}{0}}
-\headcommand {\beamer@framepages {13}{13}}
-\headcommand {\slideentry {1}{1}{9}{14/15}{A Typical Slide}{0}}
-\headcommand {\beamer@framepages {14}{15}}
-\headcommand {\slideentry {1}{1}{10}{16/17}{A Typical Slide}{0}}
-\headcommand {\beamer@framepages {16}{17}}
-\headcommand {\slideentry {1}{1}{11}{18/18}{A Typical Slide}{0}}
-\headcommand {\beamer@framepages {18}{18}}
-\headcommand {\slideentry {1}{1}{12}{19/19}{A Typical Slide}{0}}
+\headcommand {\slideentry {1}{1}{6}{11/16}{A Typical Slide}{0}}
+\headcommand {\beamer@framepages {11}{16}}
+\headcommand {\slideentry {1}{1}{7}{17/18}{A Typical Slide}{0}}
+\headcommand {\beamer@framepages {17}{18}}
+\headcommand {\slideentry {1}{1}{8}{19/19}{A Typical Slide}{0}}
 \headcommand {\beamer@framepages {19}{19}}
-\headcommand {\beamer@sectionpages {2}{19}}
-\headcommand {\beamer@subsectionpages {2}{19}}
-\headcommand {\sectionentry {2}{Main Part}{20}{Main Part}{0}}
-\headcommand {\slideentry {2}{0}{1}{20/20}{}{0}}
+\headcommand {\slideentry {1}{1}{9}{20/20}{A Typical Slide}{0}}
 \headcommand {\beamer@framepages {20}{20}}
-\headcommand {\beamer@sectionpages {20}{20}}
-\headcommand {\beamer@subsectionpages {20}{20}}
-\headcommand {\sectionentry {3}{Conclusion}{21}{Conclusion}{0}}
-\headcommand {\slideentry {3}{0}{1}{21/21}{}{0}}
-\headcommand {\beamer@framepages {21}{21}}
-\headcommand {\beamer@partpages {1}{21}}
-\headcommand {\beamer@subsectionpages {21}{21}}
-\headcommand {\beamer@sectionpages {21}{21}}
-\headcommand {\beamer@documentpages {21}}
-\headcommand {\gdef \inserttotalframenumber {15}}
+\headcommand {\slideentry {1}{1}{10}{21/22}{A Typical Slide}{0}}
+\headcommand {\beamer@framepages {21}{22}}
+\headcommand {\slideentry {1}{1}{11}{23/23}{A Typical Slide}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\slideentry {1}{1}{12}{24/24}{A Typical Slide}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\slideentry {1}{1}{13}{25/25}{A Typical Slide}{0}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\slideentry {1}{1}{14}{26/31}{A Typical Slide}{0}}
+\headcommand {\beamer@framepages {26}{31}}
+\headcommand {\slideentry {1}{1}{15}{32/32}{A Typical Slide}{0}}
+\headcommand {\beamer@framepages {32}{32}}
+\headcommand {\slideentry {1}{1}{16}{33/33}{A Typical Slide}{0}}
+\headcommand {\beamer@framepages {33}{33}}
+\headcommand {\slideentry {1}{1}{17}{34/35}{A Typical Slide}{0}}
+\headcommand {\beamer@framepages {34}{35}}
+\headcommand {\slideentry {1}{1}{18}{36/36}{A Typical Slide}{0}}
+\headcommand {\beamer@framepages {36}{36}}
+\headcommand {\slideentry {1}{1}{19}{37/37}{A Typical Slide}{0}}
+\headcommand {\beamer@framepages {37}{37}}
+\headcommand {\slideentry {1}{1}{20}{38/38}{A Typical Slide}{0}}
+\headcommand {\beamer@framepages {38}{38}}
+\headcommand {\slideentry {1}{1}{21}{39/39}{A Typical Slide}{0}}
+\headcommand {\beamer@framepages {39}{39}}
+\headcommand {\slideentry {1}{1}{22}{40/40}{A Typical Slide}{0}}
+\headcommand {\beamer@framepages {40}{40}}
+\headcommand {\slideentry {1}{1}{23}{41/41}{A Typical Slide}{0}}
+\headcommand {\beamer@framepages {41}{41}}
+\headcommand {\slideentry {1}{1}{24}{42/42}{A Typical Slide}{0}}
+\headcommand {\beamer@framepages {42}{42}}
+\headcommand {\slideentry {1}{1}{25}{43/44}{A Typical Slide}{0}}
+\headcommand {\beamer@framepages {43}{44}}
+\headcommand {\slideentry {1}{1}{26}{45/46}{A Typical Slide}{0}}
+\headcommand {\beamer@framepages {45}{46}}
+\headcommand {\slideentry {1}{1}{27}{47/47}{A Typical Slide}{0}}
+\headcommand {\beamer@framepages {47}{47}}
+\headcommand {\slideentry {1}{1}{28}{48/48}{A Typical Slide}{0}}
+\headcommand {\beamer@framepages {48}{48}}
+\headcommand {\beamer@sectionpages {2}{48}}
+\headcommand {\beamer@subsectionpages {2}{48}}
+\headcommand {\sectionentry {2}{Main Part}{49}{Main Part}{0}}
+\headcommand {\slideentry {2}{0}{1}{49/49}{}{0}}
+\headcommand {\beamer@framepages {49}{49}}
+\headcommand {\beamer@sectionpages {49}{49}}
+\headcommand {\beamer@subsectionpages {49}{49}}
+\headcommand {\sectionentry {3}{Conclusion}{50}{Conclusion}{0}}
+\headcommand {\slideentry {3}{0}{1}{50/50}{}{0}}
+\headcommand {\beamer@framepages {50}{50}}
+\headcommand {\beamer@partpages {1}{50}}
+\headcommand {\beamer@subsectionpages {50}{50}}
+\headcommand {\beamer@sectionpages {50}{50}}
+\headcommand {\beamer@documentpages {50}}
+\headcommand {\gdef \inserttotalframenumber {31}}

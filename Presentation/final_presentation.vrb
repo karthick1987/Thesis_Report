@@ -1,0 +1,38 @@
+\frametitle{Results - Data Loss}
+\begin{lstlisting}[style=DOS,basicstyle=\fontsize{5}{6}\selectfont]
+    Microsoft Windows [Version 10.0.18363.1016]
+    (c) 2019 Microsoft Corporation. Alle Rechte vorbehalten.
+
+    C:\Users\ge69mog>cd Downloads\iperf-2.0.9-win64\iperf-2.0.9-win64
+
+    C:\Users\ge69mog\Downloads\iperf-2.0.9-win64\iperf-2.0.9-win64>iperf.exe -s -u
+    -B 127.0.0.1 -i 1 -p 60000
+    ------------------------------------------------------------
+    Server listening on UDP port 60000
+    Binding to local address 127.0.0.1
+    Receiving 1470 byte datagrams
+    UDP buffer size:  208 KByte (default)
+    ------------------------------------------------------------
+    [  3] local 127.0.0.1 port 60000 connected with 127.0.0.1 port 49721
+    [ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+    [  3]  0.0- 1.0 sec   996 KBytes  8.16 Mbits/sec   2.017 ms  166/  860 ((*@\textcolor{red}{19\%}@*))
+    [  3] 0.00-1.00 sec  50 datagrams received out-of-order
+    [  3]  1.0- 2.0 sec   904 KBytes  7.41 Mbits/sec   2.426 ms  227/  857 ((*@\textcolor{red}{26\%}@*))
+    [  3] 1.00-2.00 sec  70 datagrams received out-of-order
+    [  3]  2.0- 3.0 sec   902 KBytes  7.39 Mbits/sec   2.148 ms  219/  847 ((*@\textcolor{red}{26\%}@*))
+    [  3] 2.00-3.00 sec  61 datagrams received out-of-order
+    [  3]  3.0- 4.0 sec   916 KBytes  7.50 Mbits/sec   1.904 ms  222/  860 ((*@\textcolor{red}{26\%}@*))
+    [  3] 3.00-4.00 sec  69 datagrams received out-of-order
+    [  3]  4.0- 5.0 sec   871 KBytes  7.14 Mbits/sec   4.137 ms  206/  813 ((*@\textcolor{red}{25\%}@*))
+    [  3] 4.00-5.00 sec  56 datagrams received out-of-order
+    [  3]  5.0- 6.0 sec   953 KBytes  7.81 Mbits/sec   4.710 ms  226/  890 ((*@\textcolor{red}{25\%}@*))
+    [  3] 5.00-6.00 sec  86 datagrams received out-of-order
+    [  3]  6.0- 7.0 sec   828 KBytes  6.79 Mbits/sec   2.786 ms  253/  830 ((*@\textcolor{red}{30\%}@*))
+    [  3] 6.00-7.00 sec  84 datagrams received out-of-order
+    [  3]  7.0- 8.0 sec   843 KBytes  6.90 Mbits/sec   4.467 ms  250/  837 ((*@\textcolor{red}{30\%}@*))
+    [  3] 7.00-8.00 sec  90 datagrams received out-of-order
+    [  3]  8.0- 9.0 sec   970 KBytes  7.95 Mbits/sec   1.648 ms  200/  876 ((*@\textcolor{red}{23\%}@*))
+    [  3] 8.00-9.00 sec  61 datagrams received out-of-order
+    [  3]  0.0-10.0 sec  8.86 MBytes  7.43 Mbits/sec   2.888 ms 2183/ 8505 ((*@\textcolor{red}{26\%}@*))
+    [  3] 0.00-10.00 sec  689 datagrams received out-of-order
+    \end{lstlisting}
